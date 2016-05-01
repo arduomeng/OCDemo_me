@@ -1,0 +1,559 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03082F771CA816A500D8A103 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03082F761CA816A500D8A103 /* main.m */; };
+		03082F7A1CA816A500D8A103 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03082F791CA816A500D8A103 /* AppDelegate.m */; };
+		03082F7D1CA816A500D8A103 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03082F7C1CA816A500D8A103 /* ViewController.m */; };
+		03082F801CA816A500D8A103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03082F7E1CA816A500D8A103 /* Main.storyboard */; };
+		03082F821CA816A500D8A103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03082F811CA816A500D8A103 /* Assets.xcassets */; };
+		03082F851CA816A500D8A103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03082F831CA816A500D8A103 /* LaunchScreen.storyboard */; };
+		03082F901CA816A500D8A103 /* ______Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03082F8F1CA816A500D8A103 /* ______Tests.m */; };
+		03082F9B1CA816A500D8A103 /* ______UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03082F9A1CA816A500D8A103 /* ______UITests.m */; };
+		03082FAA1CA816FB00D8A103 /* weiboWelcome.m in Sources */ = {isa = PBXBuildFile; fileRef = 03082FA91CA816FB00D8A103 /* weiboWelcome.m */; };
+		03082FAC1CA8171B00D8A103 /* weiboWelcome.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03082FAB1CA8171B00D8A103 /* weiboWelcome.xib */; };
+		035DB2FE1CA968000092D11F /* composeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 035DB2FC1CA968000092D11F /* composeViewController.m */; };
+		035DB2FF1CA968000092D11F /* composeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035DB2FD1CA968000092D11F /* composeViewController.xib */; };
+		035DB3021CA969250092D11F /* composeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 035DB3011CA969250092D11F /* composeButton.m */; };
+		035DB3051CA96A770092D11F /* menuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 035DB3041CA96A770092D11F /* menuItem.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03082F8C1CA816A500D8A103 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03082F6A1CA816A500D8A103 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03082F711CA816A500D8A103;
+			remoteInfo = "微博启动动画";
+		};
+		03082F971CA816A500D8A103 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03082F6A1CA816A500D8A103 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03082F711CA816A500D8A103;
+			remoteInfo = "微博启动动画";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03082F721CA816A500D8A103 /* 微博启动动画.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博启动动画.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03082F761CA816A500D8A103 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		03082F781CA816A500D8A103 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		03082F791CA816A500D8A103 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		03082F7B1CA816A500D8A103 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		03082F7C1CA816A500D8A103 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		03082F7F1CA816A500D8A103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		03082F811CA816A500D8A103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		03082F841CA816A500D8A103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		03082F861CA816A500D8A103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03082F8B1CA816A500D8A103 /* 微博启动动画Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "微博启动动画Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03082F8F1CA816A500D8A103 /* ______Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "______Tests.m"; sourceTree = "<group>"; };
+		03082F911CA816A500D8A103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03082F961CA816A500D8A103 /* 微博启动动画UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "微博启动动画UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03082F9A1CA816A500D8A103 /* ______UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "______UITests.m"; sourceTree = "<group>"; };
+		03082F9C1CA816A500D8A103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03082FA81CA816FB00D8A103 /* weiboWelcome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weiboWelcome.h; sourceTree = "<group>"; };
+		03082FA91CA816FB00D8A103 /* weiboWelcome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = weiboWelcome.m; sourceTree = "<group>"; };
+		03082FAB1CA8171B00D8A103 /* weiboWelcome.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = weiboWelcome.xib; sourceTree = "<group>"; };
+		035DB2FB1CA968000092D11F /* composeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = composeViewController.h; sourceTree = "<group>"; };
+		035DB2FC1CA968000092D11F /* composeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = composeViewController.m; sourceTree = "<group>"; };
+		035DB2FD1CA968000092D11F /* composeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = composeViewController.xib; sourceTree = "<group>"; };
+		035DB3001CA969250092D11F /* composeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = composeButton.h; sourceTree = "<group>"; };
+		035DB3011CA969250092D11F /* composeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = composeButton.m; sourceTree = "<group>"; };
+		035DB3031CA96A770092D11F /* menuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuItem.h; sourceTree = "<group>"; };
+		035DB3041CA96A770092D11F /* menuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menuItem.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03082F6F1CA816A500D8A103 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03082F881CA816A500D8A103 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03082F931CA816A500D8A103 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03082F691CA816A500D8A103 = {
+			isa = PBXGroup;
+			children = (
+				03082F741CA816A500D8A103 /* 微博启动动画 */,
+				03082F8E1CA816A500D8A103 /* 微博启动动画Tests */,
+				03082F991CA816A500D8A103 /* 微博启动动画UITests */,
+				03082F731CA816A500D8A103 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		03082F731CA816A500D8A103 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03082F721CA816A500D8A103 /* 微博启动动画.app */,
+				03082F8B1CA816A500D8A103 /* 微博启动动画Tests.xctest */,
+				03082F961CA816A500D8A103 /* 微博启动动画UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03082F741CA816A500D8A103 /* 微博启动动画 */ = {
+			isa = PBXGroup;
+			children = (
+				03082F781CA816A500D8A103 /* AppDelegate.h */,
+				03082F791CA816A500D8A103 /* AppDelegate.m */,
+				03082F7B1CA816A500D8A103 /* ViewController.h */,
+				03082F7C1CA816A500D8A103 /* ViewController.m */,
+				03082F7E1CA816A500D8A103 /* Main.storyboard */,
+				03082F811CA816A500D8A103 /* Assets.xcassets */,
+				03082F831CA816A500D8A103 /* LaunchScreen.storyboard */,
+				03082F861CA816A500D8A103 /* Info.plist */,
+				03082F751CA816A500D8A103 /* Supporting Files */,
+				03082FA81CA816FB00D8A103 /* weiboWelcome.h */,
+				03082FA91CA816FB00D8A103 /* weiboWelcome.m */,
+				03082FAB1CA8171B00D8A103 /* weiboWelcome.xib */,
+				035DB2FB1CA968000092D11F /* composeViewController.h */,
+				035DB2FC1CA968000092D11F /* composeViewController.m */,
+				035DB2FD1CA968000092D11F /* composeViewController.xib */,
+				035DB3001CA969250092D11F /* composeButton.h */,
+				035DB3011CA969250092D11F /* composeButton.m */,
+				035DB3031CA96A770092D11F /* menuItem.h */,
+				035DB3041CA96A770092D11F /* menuItem.m */,
+			);
+			path = "微博启动动画";
+			sourceTree = "<group>";
+		};
+		03082F751CA816A500D8A103 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				03082F761CA816A500D8A103 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		03082F8E1CA816A500D8A103 /* 微博启动动画Tests */ = {
+			isa = PBXGroup;
+			children = (
+				03082F8F1CA816A500D8A103 /* ______Tests.m */,
+				03082F911CA816A500D8A103 /* Info.plist */,
+			);
+			path = "微博启动动画Tests";
+			sourceTree = "<group>";
+		};
+		03082F991CA816A500D8A103 /* 微博启动动画UITests */ = {
+			isa = PBXGroup;
+			children = (
+				03082F9A1CA816A500D8A103 /* ______UITests.m */,
+				03082F9C1CA816A500D8A103 /* Info.plist */,
+			);
+			path = "微博启动动画UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		03082F711CA816A500D8A103 /* 微博启动动画 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03082F9F1CA816A500D8A103 /* Build configuration list for PBXNativeTarget "微博启动动画" */;
+			buildPhases = (
+				03082F6E1CA816A500D8A103 /* Sources */,
+				03082F6F1CA816A500D8A103 /* Frameworks */,
+				03082F701CA816A500D8A103 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "微博启动动画";
+			productName = "微博启动动画";
+			productReference = 03082F721CA816A500D8A103 /* 微博启动动画.app */;
+			productType = "com.apple.product-type.application";
+		};
+		03082F8A1CA816A500D8A103 /* 微博启动动画Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03082FA21CA816A500D8A103 /* Build configuration list for PBXNativeTarget "微博启动动画Tests" */;
+			buildPhases = (
+				03082F871CA816A500D8A103 /* Sources */,
+				03082F881CA816A500D8A103 /* Frameworks */,
+				03082F891CA816A500D8A103 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03082F8D1CA816A500D8A103 /* PBXTargetDependency */,
+			);
+			name = "微博启动动画Tests";
+			productName = "微博启动动画Tests";
+			productReference = 03082F8B1CA816A500D8A103 /* 微博启动动画Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		03082F951CA816A500D8A103 /* 微博启动动画UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03082FA51CA816A500D8A103 /* Build configuration list for PBXNativeTarget "微博启动动画UITests" */;
+			buildPhases = (
+				03082F921CA816A500D8A103 /* Sources */,
+				03082F931CA816A500D8A103 /* Frameworks */,
+				03082F941CA816A500D8A103 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03082F981CA816A500D8A103 /* PBXTargetDependency */,
+			);
+			name = "微博启动动画UITests";
+			productName = "微博启动动画UITests";
+			productReference = 03082F961CA816A500D8A103 /* 微博启动动画UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		03082F6A1CA816A500D8A103 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = LCS;
+				TargetAttributes = {
+					03082F711CA816A500D8A103 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 8RSWW685EX;
+					};
+					03082F8A1CA816A500D8A103 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 8RSWW685EX;
+						TestTargetID = 03082F711CA816A500D8A103;
+					};
+					03082F951CA816A500D8A103 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 8RSWW685EX;
+						TestTargetID = 03082F711CA816A500D8A103;
+					};
+				};
+			};
+			buildConfigurationList = 03082F6D1CA816A500D8A103 /* Build configuration list for PBXProject "微博启动动画" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 03082F691CA816A500D8A103;
+			productRefGroup = 03082F731CA816A500D8A103 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				03082F711CA816A500D8A103 /* 微博启动动画 */,
+				03082F8A1CA816A500D8A103 /* 微博启动动画Tests */,
+				03082F951CA816A500D8A103 /* 微博启动动画UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		03082F701CA816A500D8A103 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03082F851CA816A500D8A103 /* LaunchScreen.storyboard in Resources */,
+				03082F821CA816A500D8A103 /* Assets.xcassets in Resources */,
+				03082F801CA816A500D8A103 /* Main.storyboard in Resources */,
+				03082FAC1CA8171B00D8A103 /* weiboWelcome.xib in Resources */,
+				035DB2FF1CA968000092D11F /* composeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03082F891CA816A500D8A103 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03082F941CA816A500D8A103 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03082F6E1CA816A500D8A103 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03082F7D1CA816A500D8A103 /* ViewController.m in Sources */,
+				035DB2FE1CA968000092D11F /* composeViewController.m in Sources */,
+				03082F7A1CA816A500D8A103 /* AppDelegate.m in Sources */,
+				03082F771CA816A500D8A103 /* main.m in Sources */,
+				035DB3021CA969250092D11F /* composeButton.m in Sources */,
+				03082FAA1CA816FB00D8A103 /* weiboWelcome.m in Sources */,
+				035DB3051CA96A770092D11F /* menuItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03082F871CA816A500D8A103 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03082F901CA816A500D8A103 /* ______Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03082F921CA816A500D8A103 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03082F9B1CA816A500D8A103 /* ______UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03082F8D1CA816A500D8A103 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03082F711CA816A500D8A103 /* 微博启动动画 */;
+			targetProxy = 03082F8C1CA816A500D8A103 /* PBXContainerItemProxy */;
+		};
+		03082F981CA816A500D8A103 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03082F711CA816A500D8A103 /* 微博启动动画 */;
+			targetProxy = 03082F971CA816A500D8A103 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		03082F7E1CA816A500D8A103 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03082F7F1CA816A500D8A103 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		03082F831CA816A500D8A103 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03082F841CA816A500D8A103 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		03082F9D1CA816A500D8A103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		03082F9E1CA816A500D8A103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		03082FA01CA816A500D8A103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "微博启动动画/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "www.lcs.com.------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		03082FA11CA816A500D8A103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "微博启动动画/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "www.lcs.com.------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		03082FA31CA816A500D8A103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "微博启动动画Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "www.lcs.com.------Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/微博启动动画.app/微博启动动画";
+			};
+			name = Debug;
+		};
+		03082FA41CA816A500D8A103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "微博启动动画Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "www.lcs.com.------Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/微博启动动画.app/微博启动动画";
+			};
+			name = Release;
+		};
+		03082FA61CA816A500D8A103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "微博启动动画UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "www.lcs.com.------UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "微博启动动画";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		03082FA71CA816A500D8A103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "微博启动动画UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "www.lcs.com.------UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "微博启动动画";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03082F6D1CA816A500D8A103 /* Build configuration list for PBXProject "微博启动动画" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03082F9D1CA816A500D8A103 /* Debug */,
+				03082F9E1CA816A500D8A103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03082F9F1CA816A500D8A103 /* Build configuration list for PBXNativeTarget "微博启动动画" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03082FA01CA816A500D8A103 /* Debug */,
+				03082FA11CA816A500D8A103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03082FA21CA816A500D8A103 /* Build configuration list for PBXNativeTarget "微博启动动画Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03082FA31CA816A500D8A103 /* Debug */,
+				03082FA41CA816A500D8A103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03082FA51CA816A500D8A103 /* Build configuration list for PBXNativeTarget "微博启动动画UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03082FA61CA816A500D8A103 /* Debug */,
+				03082FA71CA816A500D8A103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 03082F6A1CA816A500D8A103 /* Project object */;
+}

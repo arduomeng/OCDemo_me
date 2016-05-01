@@ -1,0 +1,16 @@
+insert into t_food_type (name) values('家常菜');
+insert into t_food_type (name) values('川菜');
+insert into t_food_type (name) values('鲁菜');
+insert into t_food_type (name) values('湘菜');
+insert into t_food_type (name) values('粤菜');
+insert into t_food_type (name) values('浙菜');
+insert into t_food_type (name) values('闽菜');
+insert into t_food_type (name) values('苏菜');
+insert into t_food_type (name) values('徽菜');
+insert into t_food_type (name) values('京菜');
+insert into t_food_type (name) values('东北菜');
+insert into t_food_type (name) values('西北菜');
+insert into t_food_type (name) values('面点');
+insert into t_food_type (name) values('烘焙');
+insert into t_food_type (name) values('煲汤');
+insert into t_food_type (name) values('甜品');
