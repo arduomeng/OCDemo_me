@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kz0-8m-tlc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Left View Controller-->
+        <scene sceneID="A6f-eH-No6">
+            <objects>
+                <viewController id="kz0-8m-tlc" customClass="LeftViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BGk-cw-DUk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Deq-ER-8c4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HhE-hP-dHp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXE-Vi-cAN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Chy-oC-jj5">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="189"/>
+                                        <color key="backgroundColor" red="0.23819781340000001" green="0.1988845729" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NPU-XX-ycK">
+                                        <rect key="frame" x="20" y="189" width="300" height="339"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="kz0-8m-tlc" id="34c-Y8-lp8"/>
+                                            <outlet property="delegate" destination="kz0-8m-tlc" id="l2s-Wc-aFh"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Chy-oC-jj5" secondAttribute="trailing" id="5Xi-oX-RfI"/>
+                                    <constraint firstItem="Chy-oC-jj5" firstAttribute="height" secondItem="UXE-Vi-cAN" secondAttribute="height" multiplier="1/3" id="AoJ-7l-PYj"/>
+                                    <constraint firstAttribute="trailing" secondItem="NPU-XX-ycK" secondAttribute="trailing" id="GuU-bw-bCi"/>
+                                    <constraint firstItem="Chy-oC-jj5" firstAttribute="top" secondItem="UXE-Vi-cAN" secondAttribute="top" id="IZZ-AA-2mz"/>
+                                    <constraint firstItem="Chy-oC-jj5" firstAttribute="leading" secondItem="UXE-Vi-cAN" secondAttribute="leading" id="JzV-vB-9Kk"/>
+                                    <constraint firstItem="NPU-XX-ycK" firstAttribute="leading" secondItem="UXE-Vi-cAN" secondAttribute="leading" constant="20" id="ONF-MC-DPw"/>
+                                    <constraint firstItem="NPU-XX-ycK" firstAttribute="top" secondItem="Chy-oC-jj5" secondAttribute="bottom" id="TwR-Ea-BWu"/>
+                                    <constraint firstAttribute="bottom" secondItem="NPU-XX-ycK" secondAttribute="bottom" constant="40" id="dEW-MQ-mLf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UXE-Vi-cAN" firstAttribute="top" secondItem="BGk-cw-DUk" secondAttribute="bottom" id="X4c-ga-yRs"/>
+                            <constraint firstItem="UXE-Vi-cAN" firstAttribute="leading" secondItem="HhE-hP-dHp" secondAttribute="leading" id="cg4-PE-sei"/>
+                            <constraint firstAttribute="trailing" secondItem="UXE-Vi-cAN" secondAttribute="trailing" id="dan-Re-enw"/>
+                            <constraint firstItem="Deq-ER-8c4" firstAttribute="top" secondItem="UXE-Vi-cAN" secondAttribute="bottom" id="ig6-pD-zDG"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="NPU-XX-ycK" id="nt7-IR-IGE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DtS-ur-WOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="229" y="182"/>
+        </scene>
+    </scenes>
+</document>

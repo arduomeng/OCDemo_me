@@ -1,0 +1,10 @@
+PODS:
+  - XGPush (2.3)
+
+DEPENDENCIES:
+  - XGPush (~> 2.3)
+
+SPEC CHECKSUMS:
+  XGPush: fa2e9fce1895ea238bcd92dd0a5189a5452e15f2
+
+COCOAPODS: 0.39.0
