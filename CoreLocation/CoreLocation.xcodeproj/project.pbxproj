@@ -208,6 +208,11 @@
 					03034CE51CFFFBB90073834A = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 8RSWW685EX;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					03034CFE1CFFFBB90073834A = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -416,7 +421,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CoreLocation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.lcs.com.CoreLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -427,7 +434,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CoreLocation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.lcs.com.CoreLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -501,6 +510,7 @@
 				03034D151CFFFBB90073834A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03034D161CFFFBB90073834A /* Build configuration list for PBXNativeTarget "CoreLocationTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +519,7 @@
 				03034D181CFFFBB90073834A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03034D191CFFFBB90073834A /* Build configuration list for PBXNativeTarget "CoreLocationUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +528,7 @@
 				03034D1B1CFFFBB90073834A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

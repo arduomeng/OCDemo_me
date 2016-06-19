@@ -151,11 +151,7 @@
     MKCoordinateRegion region = MKCoordinateRegionMake(coordinate, span);
     [self.mapView setRegion:region animated:YES];
 //
-    /*
-     pm.locality, pm.addressDictionary
-     
-     先判断pm.locality若为空则说明是直辖市，pm.addressDictionary字典里的state
-     */
+    
     
     //反地理编码
     [self.geocoder reverseGeocodeLocation:userLocation.location completionHandler:^(NSArray *placemarks, NSError *error) {

@@ -54,6 +54,8 @@
     }
 }
 
+// 开启后台模式，并且接受到的通知有content-available字段，则接收到通知后会调用该方法，在后台进行操作
+
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
     // 执行自定义操作(不需要点击通知，收到通知就调用该方法)
     NSLog(@"执行自定义的操作，收到通知后调用，不需要点击通知");
@@ -61,6 +63,10 @@
     // 2.告诉系统是否有新内容的更新
     completionHandler(UIBackgroundFetchResultNewData);
     // 3.发送的通知有固定的格式
+    /*
+     一般通知格式 {"alert" : "xxx", "badge" : 1, "sound" : "xx"}
+     想要让远程通知能在后台刷新必须添加键值对  "content-available" : "xx"
+     */
 }
 
 @end

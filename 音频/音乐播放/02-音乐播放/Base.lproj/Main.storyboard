@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dmJ-x2-cP9">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="q5Y-Sz-tcw">
+            <objects>
+                <viewController id="dmJ-x2-cP9" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yfk-8V-fQ3"/>
+                        <viewControllerLayoutGuide type="bottom" id="8qN-eE-2gm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NpS-PT-DPO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSq-tj-I32">
+                                <rect key="frame" x="155" y="200" width="30" height="30"/>
+                                <state key="normal" title="播放">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playMusic:" destination="dmJ-x2-cP9" eventType="touchUpInside" id="3CY-Eb-hv7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ez-UM-a6b">
+                                <rect key="frame" x="285" y="200" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AZY-9C-IPF"/>
+                                    <constraint firstAttribute="width" constant="30" id="bdU-tu-70U"/>
+                                </constraints>
+                                <state key="normal" title="暂停">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseMusic:" destination="dmJ-x2-cP9" eventType="touchUpInside" id="hI7-2D-l2g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd1-8h-uLi">
+                                <rect key="frame" x="415" y="200" width="30" height="30"/>
+                                <state key="normal" title="停止">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopMusic:" destination="dmJ-x2-cP9" eventType="touchUpInside" id="qfJ-k0-LGe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wN8-SW-lWl">
+                                <rect key="frame" x="250" y="270" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Ikk-Bc-Ll8"/>
+                                    <constraint firstAttribute="height" constant="30" id="qTj-Wc-7oR"/>
+                                </constraints>
+                                <state key="normal" title="下一首">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextMusic:" destination="dmJ-x2-cP9" eventType="touchUpInside" id="vwn-tD-Ax5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3ez-UM-a6b" firstAttribute="leading" secondItem="SSq-tj-I32" secondAttribute="trailing" constant="100" id="3xn-5A-3hK"/>
+                            <constraint firstAttribute="centerX" secondItem="3ez-UM-a6b" secondAttribute="centerX" id="8qX-KP-uvG"/>
+                            <constraint firstItem="3ez-UM-a6b" firstAttribute="top" secondItem="yfk-8V-fQ3" secondAttribute="bottom" constant="180" id="Adx-RX-Ukk"/>
+                            <constraint firstAttribute="centerX" secondItem="wN8-SW-lWl" secondAttribute="centerX" id="BCd-Ia-0zz"/>
+                            <constraint firstItem="SSq-tj-I32" firstAttribute="bottom" secondItem="zd1-8h-uLi" secondAttribute="bottom" id="CjR-bl-p7P"/>
+                            <constraint firstAttribute="centerX" secondItem="3ez-UM-a6b" secondAttribute="centerX" id="JdN-ke-Bnp"/>
+                            <constraint firstItem="SSq-tj-I32" firstAttribute="top" secondItem="3ez-UM-a6b" secondAttribute="top" id="Lju-it-cEN"/>
+                            <constraint firstItem="SSq-tj-I32" firstAttribute="top" secondItem="zd1-8h-uLi" secondAttribute="top" id="YYL-9j-Y3C"/>
+                            <constraint firstItem="SSq-tj-I32" firstAttribute="bottom" secondItem="3ez-UM-a6b" secondAttribute="bottom" id="aFJ-Lo-DHs"/>
+                            <constraint firstItem="wN8-SW-lWl" firstAttribute="top" secondItem="3ez-UM-a6b" secondAttribute="bottom" constant="40" id="m7Y-fT-IpZ"/>
+                            <constraint firstItem="zd1-8h-uLi" firstAttribute="leading" secondItem="3ez-UM-a6b" secondAttribute="trailing" constant="100" id="mVb-OX-8b1"/>
+                            <constraint firstItem="SSq-tj-I32" firstAttribute="width" secondItem="3ez-UM-a6b" secondAttribute="width" id="uEA-bd-vX1"/>
+                            <constraint firstItem="SSq-tj-I32" firstAttribute="width" secondItem="zd1-8h-uLi" secondAttribute="width" id="ve9-QV-HS2"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wjv-SZ-phZ" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
