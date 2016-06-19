@@ -16,10 +16,6 @@
 
 @implementation CSTabBarController
 
-- (UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
