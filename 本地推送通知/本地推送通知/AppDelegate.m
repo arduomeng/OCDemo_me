@@ -26,6 +26,7 @@
     // 针对点击通知时应用程序被杀死状态，重新启动后的跳转
     if (launchOptions[UIApplicationLaunchOptionsLocalNotificationKey]){
         NSLog(@"执行程序跳转 通知信息在UIApplicationLaunchOptionsLocalNotificationKey对应的值中");
+        application.applicationIconBadgeNumber -= 1;
     }
     
     return YES;
@@ -35,6 +36,7 @@
     
     // 针对点击通知时应用程序在后台的时候进行跳转 UIApplicationStateInactive : 程序从后台进入前台或者从前台进入后台
     if (application.applicationState == UIApplicationStateInactive) {
+        application.applicationIconBadgeNumber -= 1;
         NSLog(@"执行程序跳转 通知信息 %@", notification);
     }
 }

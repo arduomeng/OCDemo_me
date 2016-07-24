@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70FF9F591C254C8000E62C0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FF9F581C254C8000E62C0E /* main.m */; };
+		70FF9F5C1C254C8000E62C0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FF9F5B1C254C8000E62C0E /* AppDelegate.m */; };
+		70FF9F5F1C254C8000E62C0E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FF9F5E1C254C8000E62C0E /* ViewController.m */; };
+		70FF9F621C254C8000E62C0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FF9F601C254C8000E62C0E /* Main.storyboard */; };
+		70FF9F641C254C8000E62C0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70FF9F631C254C8000E62C0E /* Assets.xcassets */; };
+		70FF9F671C254C8000E62C0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FF9F651C254C8000E62C0E /* LaunchScreen.storyboard */; };
+		70FF9F721C254C8000E62C0E /* _5________AVPlayerViewController_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FF9F711C254C8000E62C0E /* _5________AVPlayerViewController_Tests.m */; };
+		70FF9F7D1C254C8000E62C0E /* _5________AVPlayerViewController_UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FF9F7C1C254C8000E62C0E /* _5________AVPlayerViewController_UITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70FF9F6E1C254C8000E62C0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70FF9F4C1C254C8000E62C0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70FF9F531C254C8000E62C0E;
+			remoteInfo = "05-播放远程视频(AVPlayerViewController)";
+		};
+		70FF9F791C254C8000E62C0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70FF9F4C1C254C8000E62C0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70FF9F531C254C8000E62C0E;
+			remoteInfo = "05-播放远程视频(AVPlayerViewController)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		70FF9F541C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "05-播放远程视频(AVPlayerViewController).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70FF9F581C254C8000E62C0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		70FF9F5A1C254C8000E62C0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		70FF9F5B1C254C8000E62C0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		70FF9F5D1C254C8000E62C0E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		70FF9F5E1C254C8000E62C0E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		70FF9F611C254C8000E62C0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		70FF9F631C254C8000E62C0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70FF9F661C254C8000E62C0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		70FF9F681C254C8000E62C0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70FF9F6D1C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "05-播放远程视频(AVPlayerViewController)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70FF9F711C254C8000E62C0E /* _5________AVPlayerViewController_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_5________AVPlayerViewController_Tests.m"; sourceTree = "<group>"; };
+		70FF9F731C254C8000E62C0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70FF9F781C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "05-播放远程视频(AVPlayerViewController)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70FF9F7C1C254C8000E62C0E /* _5________AVPlayerViewController_UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_5________AVPlayerViewController_UITests.m"; sourceTree = "<group>"; };
+		70FF9F7E1C254C8000E62C0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70FF9F511C254C8000E62C0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70FF9F6A1C254C8000E62C0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70FF9F751C254C8000E62C0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70FF9F4B1C254C8000E62C0E = {
+			isa = PBXGroup;
+			children = (
+				70FF9F561C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController) */,
+				70FF9F701C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController)Tests */,
+				70FF9F7B1C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController)UITests */,
+				70FF9F551C254C8000E62C0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		70FF9F551C254C8000E62C0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70FF9F541C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController).app */,
+				70FF9F6D1C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController)Tests.xctest */,
+				70FF9F781C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController)UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70FF9F561C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController) */ = {
+			isa = PBXGroup;
+			children = (
+				70FF9F5A1C254C8000E62C0E /* AppDelegate.h */,
+				70FF9F5B1C254C8000E62C0E /* AppDelegate.m */,
+				70FF9F5D1C254C8000E62C0E /* ViewController.h */,
+				70FF9F5E1C254C8000E62C0E /* ViewController.m */,
+				70FF9F601C254C8000E62C0E /* Main.storyboard */,
+				70FF9F631C254C8000E62C0E /* Assets.xcassets */,
+				70FF9F651C254C8000E62C0E /* LaunchScreen.storyboard */,
+				70FF9F681C254C8000E62C0E /* Info.plist */,
+				70FF9F571C254C8000E62C0E /* Supporting Files */,
+			);
+			path = "05-播放远程视频(AVPlayerViewController)";
+			sourceTree = "<group>";
+		};
+		70FF9F571C254C8000E62C0E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70FF9F581C254C8000E62C0E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70FF9F701C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController)Tests */ = {
+			isa = PBXGroup;
+			children = (
+				70FF9F711C254C8000E62C0E /* _5________AVPlayerViewController_Tests.m */,
+				70FF9F731C254C8000E62C0E /* Info.plist */,
+			);
+			path = "05-播放远程视频(AVPlayerViewController)Tests";
+			sourceTree = "<group>";
+		};
+		70FF9F7B1C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController)UITests */ = {
+			isa = PBXGroup;
+			children = (
+				70FF9F7C1C254C8000E62C0E /* _5________AVPlayerViewController_UITests.m */,
+				70FF9F7E1C254C8000E62C0E /* Info.plist */,
+			);
+			path = "05-播放远程视频(AVPlayerViewController)UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70FF9F531C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70FF9F811C254C8000E62C0E /* Build configuration list for PBXNativeTarget "05-播放远程视频(AVPlayerViewController)" */;
+			buildPhases = (
+				70FF9F501C254C8000E62C0E /* Sources */,
+				70FF9F511C254C8000E62C0E /* Frameworks */,
+				70FF9F521C254C8000E62C0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "05-播放远程视频(AVPlayerViewController)";
+			productName = "05-播放远程视频(AVPlayerViewController)";
+			productReference = 70FF9F541C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController).app */;
+			productType = "com.apple.product-type.application";
+		};
+		70FF9F6C1C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController)Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70FF9F841C254C8000E62C0E /* Build configuration list for PBXNativeTarget "05-播放远程视频(AVPlayerViewController)Tests" */;
+			buildPhases = (
+				70FF9F691C254C8000E62C0E /* Sources */,
+				70FF9F6A1C254C8000E62C0E /* Frameworks */,
+				70FF9F6B1C254C8000E62C0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70FF9F6F1C254C8000E62C0E /* PBXTargetDependency */,
+			);
+			name = "05-播放远程视频(AVPlayerViewController)Tests";
+			productName = "05-播放远程视频(AVPlayerViewController)Tests";
+			productReference = 70FF9F6D1C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController)Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		70FF9F771C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController)UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70FF9F871C254C8000E62C0E /* Build configuration list for PBXNativeTarget "05-播放远程视频(AVPlayerViewController)UITests" */;
+			buildPhases = (
+				70FF9F741C254C8000E62C0E /* Sources */,
+				70FF9F751C254C8000E62C0E /* Frameworks */,
+				70FF9F761C254C8000E62C0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70FF9F7A1C254C8000E62C0E /* PBXTargetDependency */,
+			);
+			name = "05-播放远程视频(AVPlayerViewController)UITests";
+			productName = "05-播放远程视频(AVPlayerViewController)UITests";
+			productReference = 70FF9F781C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController)UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70FF9F4C1C254C8000E62C0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = xiaomage;
+				TargetAttributes = {
+					70FF9F531C254C8000E62C0E = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					70FF9F6C1C254C8000E62C0E = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 70FF9F531C254C8000E62C0E;
+					};
+					70FF9F771C254C8000E62C0E = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 70FF9F531C254C8000E62C0E;
+					};
+				};
+			};
+			buildConfigurationList = 70FF9F4F1C254C8000E62C0E /* Build configuration list for PBXProject "05-播放远程视频(AVPlayerViewController)" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70FF9F4B1C254C8000E62C0E;
+			productRefGroup = 70FF9F551C254C8000E62C0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70FF9F531C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController) */,
+				70FF9F6C1C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController)Tests */,
+				70FF9F771C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController)UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70FF9F521C254C8000E62C0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70FF9F671C254C8000E62C0E /* LaunchScreen.storyboard in Resources */,
+				70FF9F641C254C8000E62C0E /* Assets.xcassets in Resources */,
+				70FF9F621C254C8000E62C0E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70FF9F6B1C254C8000E62C0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70FF9F761C254C8000E62C0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70FF9F501C254C8000E62C0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70FF9F5F1C254C8000E62C0E /* ViewController.m in Sources */,
+				70FF9F5C1C254C8000E62C0E /* AppDelegate.m in Sources */,
+				70FF9F591C254C8000E62C0E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70FF9F691C254C8000E62C0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70FF9F721C254C8000E62C0E /* _5________AVPlayerViewController_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70FF9F741C254C8000E62C0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70FF9F7D1C254C8000E62C0E /* _5________AVPlayerViewController_UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		70FF9F6F1C254C8000E62C0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70FF9F531C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController) */;
+			targetProxy = 70FF9F6E1C254C8000E62C0E /* PBXContainerItemProxy */;
+		};
+		70FF9F7A1C254C8000E62C0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70FF9F531C254C8000E62C0E /* 05-播放远程视频(AVPlayerViewController) */;
+			targetProxy = 70FF9F791C254C8000E62C0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		70FF9F601C254C8000E62C0E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70FF9F611C254C8000E62C0E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		70FF9F651C254C8000E62C0E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70FF9F661C254C8000E62C0E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70FF9F7F1C254C8000E62C0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		70FF9F801C254C8000E62C0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		70FF9F821C254C8000E62C0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "05-播放远程视频(AVPlayerViewController)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it..-5--------AVPlayerViewController-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		70FF9F831C254C8000E62C0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "05-播放远程视频(AVPlayerViewController)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it..-5--------AVPlayerViewController-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		70FF9F851C254C8000E62C0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "05-播放远程视频(AVPlayerViewController)Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it..-5--------AVPlayerViewController-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/05-播放远程视频(AVPlayerViewController).app/05-播放远程视频(AVPlayerViewController)";
+			};
+			name = Debug;
+		};
+		70FF9F861C254C8000E62C0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "05-播放远程视频(AVPlayerViewController)Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it..-5--------AVPlayerViewController-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/05-播放远程视频(AVPlayerViewController).app/05-播放远程视频(AVPlayerViewController)";
+			};
+			name = Release;
+		};
+		70FF9F881C254C8000E62C0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "05-播放远程视频(AVPlayerViewController)UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it..-5--------AVPlayerViewController-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "05-播放远程视频(AVPlayerViewController)";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		70FF9F891C254C8000E62C0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "05-播放远程视频(AVPlayerViewController)UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it..-5--------AVPlayerViewController-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "05-播放远程视频(AVPlayerViewController)";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70FF9F4F1C254C8000E62C0E /* Build configuration list for PBXProject "05-播放远程视频(AVPlayerViewController)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70FF9F7F1C254C8000E62C0E /* Debug */,
+				70FF9F801C254C8000E62C0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70FF9F811C254C8000E62C0E /* Build configuration list for PBXNativeTarget "05-播放远程视频(AVPlayerViewController)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70FF9F821C254C8000E62C0E /* Debug */,
+				70FF9F831C254C8000E62C0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		70FF9F841C254C8000E62C0E /* Build configuration list for PBXNativeTarget "05-播放远程视频(AVPlayerViewController)Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70FF9F851C254C8000E62C0E /* Debug */,
+				70FF9F861C254C8000E62C0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		70FF9F871C254C8000E62C0E /* Build configuration list for PBXNativeTarget "05-播放远程视频(AVPlayerViewController)UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70FF9F881C254C8000E62C0E /* Debug */,
+				70FF9F891C254C8000E62C0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70FF9F4C1C254C8000E62C0E /* Project object */;
+}

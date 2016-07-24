@@ -1,0 +1,411 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>MultipeerConnectivity | iOS中的蓝牙</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.0.3">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="next" href="./exteralaccessory.html" />
+    
+    
+    <link rel="prev" href="./gamekit.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="gitbook/style.css">
+
+
+        
+    <div class="book"  data-level="0.2" data-basepath="." data-revision="1444354472098">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="0.1" data-path="gamekit.html">
+            
+                
+                    <a href="./gamekit.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.1.</b>
+                        
+                         GameKit
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="0.2" data-path="multipeerconnectivity.html">
+            
+                
+                    <a href="./multipeerconnectivity.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.2.</b>
+                        
+                         MultipeerConnectivity
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.3" data-path="exteralaccessory.html">
+            
+                
+                    <a href="./exteralaccessory.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.3.</b>
+                        
+                         ExteralAccessory
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4" data-path="corebluetooth.html">
+            
+                
+                    <a href="./corebluetooth.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.</b>
+                        
+                         CoreBluetooth
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="0.4.1" data-path="basek.html">
+            
+                
+                    <a href="./basek.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.1.</b>
+                        
+                         baseK(相关基础知识)
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.2" data-path="ble-coding.html">
+            
+                
+                    <a href="./ble-coding.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.2.</b>
+                        
+                         BLE中心模式流程-coding
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.3" data-path="ble-periphral.html">
+            
+                
+                    <a href="./ble-periphral.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.3.</b>
+                        
+                         BLE-periphral外设模式流程
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.4" data-path="ibeacon.html">
+            
+                
+                    <a href="./ibeacon.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.4.</b>
+                        
+                         iBeacon简介
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.5" data-path="airdrop.html">
+            
+                
+                    <a href="./airdrop.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.5.</b>
+                        
+                         AirDrop
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >iOS中的蓝牙</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_27">
+                    
+                        <h1 id="multipeerconnectivity">MultipeerConnectivity</h1>
+<ul>
+<li><p>在iOS7中，引入了一个全新的框架——Multipeer Connectivity（多点连接）。</p>
+</li>
+<li><p>利用Multipeer Connectivity框架，即使在<code>没有连接到WiFi（WLAN）或移动网络（xG）</code>的情况下，距离较近的Apple设备（iMac/iPad/iPhone）之间可基于<code>蓝牙和WiFi（P2P WiFi）</code>技术进行发现和连接实现近场通信。</p>
+</li>
+<li><p>Multipeer Connectivity扩充的功能与利用AirDrop传输文件非常类似，可以将其看作AirDrop不能直接使用的补偿，代价是需要自己实现。</p>
+</li>
+<li><p>手机不联网也能跟附近的人聊得火热的<code>FireChat</code>和<code>See You Around</code>等近场聊天App、近距离无网遥控交互拍照神器<code>拍咯App</code>就是基于Multipeer Connectivity框架实现。</p>
+</li>
+<li><p>相比AirDrop，Multipeer Connectivity在进行发现和会话时并不要求同时打开WiFi和蓝牙，也不像AirDrop那样强制打开这两个开关，而是根据条件适时选择使用蓝牙或（和）WiFi。</p>
+</li>
+<li><p>粗略测试情况如下：</p>
+<ul>
+<li>双方WiFi和蓝牙<code>都未打开</code>：无法发现。</li>
+<li>双方都开启<code>蓝牙</code>：通过蓝牙发现和传输。</li>
+<li><p>双方都开启<code>WiFi</code>：通过WiFi Direct发现和传输，速度接近AirDrop（Reliable速率稍低），不知道同一WLAN下是否优先走局域网？</p>
+</li>
+<li><p>双方都<code>同时开启了WiFi和蓝牙</code>：应该是模拟AirDrop，通过低功耗蓝牙技术扫描发现握手，然后通过WiFi Direct传输。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="">常用类</h4>
+<ul>
+<li>MCPeerID</li>
+</ul>
+<p>类似sockaddr，用于标识连接的两端endpoint，通常是<code>昵称或设备名称</code>。</p>
+<p>该对象只开放了displayName属性，私有MCPeerIDInternal对象持有的设备相关的_idString/_pid64字段并<code>未公开</code>。
+在许多情况下，客户端同时广播并发现同一个服务，这将导致一些混乱，尤其是在<code>client/server</code>模式中。所以，每一个服务都应有一个类型标示符——<code>serviceType，它是由ASCII字母、数字和“-”组成的短文本串，最多15个字符</code>。</p>
+<ul>
+<li>MCNearbyServiceAdvertiser</li>
+</ul>
+<p>类似broadcaster,<code>可以接收，并处理用户请求连接的响应。但是，这个类会有回调，告知有用户要与您的设备连接，然后可以自定义提示框，以及自定义连接处理</code>。</p>
+<p>主线程（com.apple.main-thread(serial)）创建MCNearbyServiceAdvertiser并启动startAdvertisingPeer。
+MCNearbyServiceAdvertiserDelegate异步回调（didReceiveInvitationFromPeer）切换回主线程。
+在主线程didReceiveInvitationFromPeer中创建MCSession并invitationHandler(YES, session)接受会话连接请求（accept参数为YES）。</p>
+<ul>
+<li>MCNearbyServiceBrowser</li>
+</ul>
+<p>类似servo listen+client connect,<code>用于搜索附近的用户，并可以对搜索到的用户发出邀请加入某个会话中</code>。
+主线程（com.apple.main-thread(serial)）创建MCNearbyServiceBrowser并启动startBrowsingForPeers。
+MCNearbyServiceBrowserDelegate异步回调（foundPeer/lostPeer）切换回主线程。
+主线程创建MCSession并启动invitePeer。</p>
+<ul>
+<li>MCSession</li>
+</ul>
+<p><code>启用和管理Multipeer连接会话中的所有人之间的沟通。 通过Sesion，给别人发送数据</code>
+注意，peerID并不具备设备识别属性。
+类似TCP链接中的socket。创建MCSession时，需指定自身MCPeerID，类似bind。
+为避免频繁的会话数据通知阻塞主线程，MCSessionDelegate异步回调（didChangeState/didReceiveCertificate/didReceiveData/didReceiveStream）有一个专门的回调线程——com.apple.MCSession.callbackQueue(serial)。为避免阻塞MCSeesion回调线程，最好新建数据读（写）线程！</p>
+<ul>
+<li>MCAdvertiserAssistant/MCBrowserViewController</li>
+</ul>
+<p><code>MCAdvertiserAssistant   //可以接收，并处理用户请求连接的响应。没有回调，会弹出默认的提示框，并处理连接。</code>
+<code>MCBrowserViewController 弹出搜索框,需要手动modal</code></p>
+<p>MCAdvertiserAssistant为针对Advertiser封装的管理助手；MCBrowserViewController继承自UIViewController，提供了基本的UI应用框架。
+MCBrowser/MCAdvertiser的回调线程一般是delegate所在线程Queue：com.apple.main-thread(serial)。</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./gamekit.html" class="navigation navigation-prev " aria-label="Previous page: GameKit"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./exteralaccessory.html" class="navigation navigation-next " aria-label="Next page: ExteralAccessory"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

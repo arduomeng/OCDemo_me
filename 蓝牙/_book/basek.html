@@ -1,0 +1,450 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>baseK(相关基础知识) | iOS中的蓝牙</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.0.3">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="next" href="./ble-coding.html" />
+    
+    
+    <link rel="prev" href="./corebluetooth.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="gitbook/style.css">
+
+
+        
+    <div class="book"  data-level="0.4.1" data-basepath="." data-revision="1444354472098">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="0.1" data-path="gamekit.html">
+            
+                
+                    <a href="./gamekit.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.1.</b>
+                        
+                         GameKit
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.2" data-path="multipeerconnectivity.html">
+            
+                
+                    <a href="./multipeerconnectivity.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.2.</b>
+                        
+                         MultipeerConnectivity
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.3" data-path="exteralaccessory.html">
+            
+                
+                    <a href="./exteralaccessory.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.3.</b>
+                        
+                         ExteralAccessory
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4" data-path="corebluetooth.html">
+            
+                
+                    <a href="./corebluetooth.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.</b>
+                        
+                         CoreBluetooth
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter active" data-level="0.4.1" data-path="basek.html">
+            
+                
+                    <a href="./basek.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.1.</b>
+                        
+                         baseK(相关基础知识)
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.2" data-path="ble-coding.html">
+            
+                
+                    <a href="./ble-coding.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.2.</b>
+                        
+                         BLE中心模式流程-coding
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.3" data-path="ble-periphral.html">
+            
+                
+                    <a href="./ble-periphral.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.3.</b>
+                        
+                         BLE-periphral外设模式流程
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.4" data-path="ibeacon.html">
+            
+                
+                    <a href="./ibeacon.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.4.</b>
+                        
+                         iBeacon简介
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.5" data-path="airdrop.html">
+            
+                
+                    <a href="./airdrop.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.5.</b>
+                        
+                         AirDrop
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >iOS中的蓝牙</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_21">
+                    
+                        <h1 id="basek">baseK(相关基础知识)</h1>
+<h3 id="">蓝牙常见名称和缩写</h3>
+<ul>
+<li>BLE:(Bluetooth low energy)蓝牙4.0设备因为低耗电,也叫BLE</li>
+<li>peripheral,central:外设和中心设备,发起链接的是central(一般是指手机),被链接的设备是peripheral(运动手环)</li>
+<li>service and characteristic:(服务和特征)每个设备会提供服务和特征,类似于服务端的API,但是结构不同.<code>每个设备会有很多服务</code>,每个服务中包含<code>很多字段</code>,这些字段的权限一般分为读(read),写(write),通知(notify)几种,就是我们连接设备后具体需要操作的内容</li>
+<li>Description:每个characteristic可以对应一个或者多个Description用于描述characteristic的信息或属性(eg.范围,计量单位)</li>
+</ul>
+<h3 id="">蓝牙基础知识</h3>
+<ul>
+<li><p>CoreBluetooth框架的核心其实是俩东西:peripheral和central,对应他们分别有一组相关的API和类
+<img src="bleIma/ble_01.png" alt="图4.1.1"></p>
+</li>
+<li><p>这两组api粉笔对应不同的业务常见:左侧叫中心模式,就是以你的app作为中心,连接其他的外设的场景;而右侧称为外设模式,使用<code>手机作为外设</code>连接其他中心设备操作的场景</p>
+</li>
+<li><p>服务和特征(service and characteristic)</p>
+<ul>
+<li>每个设备都会有1个or多个服务</li>
+<li>每个服务里都会有1个or多个特征</li>
+<li>特征就是具体键值对,提供数据的地方</li>
+<li>每个特征属性分为:读,写,通知等等</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-keyword">typedef</span> NS_OPTIONS(NSUInteger, CBCharacteristicProperties) {
+    CBCharacteristicPropertyBroadcast                                                = <span class="hljs-number">0x01</span>,
+    CBCharacteristicPropertyRead                                                    = <span class="hljs-number">0x02</span>,
+    CBCharacteristicPropertyWriteWithoutResponse                                    = <span class="hljs-number">0x04</span>,
+    CBCharacteristicPropertyWrite                                                    = <span class="hljs-number">0x08</span>,
+    CBCharacteristicPropertyNotify                                                    = <span class="hljs-number">0x10</span>,
+    CBCharacteristicPropertyIndicate                                                = <span class="hljs-number">0x20</span>,
+    CBCharacteristicPropertyAuthenticatedSignedWrites                                = <span class="hljs-number">0x40</span>,
+    CBCharacteristicPropertyExtendedProperties                                        = <span class="hljs-number">0x80</span>,
+    CBCharacteristicPropertyNotifyEncryptionRequired NS_ENUM_AVAILABLE(NA, <span class="hljs-number">6</span>_0)        = <span class="hljs-number">0x100</span>,
+    CBCharacteristicPropertyIndicateEncryptionRequired NS_ENUM_AVAILABLE(NA, <span class="hljs-number">6</span>_0)    = <span class="hljs-number">0x200</span>
+};
+</code></pre>
+<ul>
+<li>外设,服务,特征的关系
+<img src="bleIma/ble_02.png" alt="图4.1.2"></li>
+</ul>
+<h2 id="ble">BLE中心模式流程</h2>
+<ul>
+<li>1.建立中心角色</li>
+<li>2.扫描外设(Discover Peripheral)</li>
+<li>3.连接外设(Connect Peripheral)</li>
+<li>4.扫描外设中的服务和特征(Discover Services And Characteristics)<ul>
+<li>4.1 获取外设的services</li>
+<li>4.2 获取外设的Characteristics,获取characteristics的值,,获取Characteristics的Descriptor和Descriptor的值</li>
+</ul>
+</li>
+<li>5.利用特征与外设做数据交互(Explore And Interact)</li>
+<li>6.订阅Characteristic的通知</li>
+<li>7.断开连接(Disconnect)</li>
+</ul>
+<h2 id="ble">BLE外设模式流程</h2>
+<ul>
+<li>1.启动一个Peripheral管理对象</li>
+<li>2.本地peripheral设置服务,特征,描述,权限等等</li>
+<li>3.peripheral发送广告</li>
+<li>4.设置处理订阅,取消订阅,读characteristic,写characteristic的代理方法</li>
+</ul>
+<h2 id="">蓝牙设备的状态</h2>
+<ul>
+<li>1.待机状态(standby):设备没有传输和发送数据,并且没有连接到任何外设</li>
+<li>2.广播状态(Advertiser):周期性广播状态</li>
+<li>3.扫描状态(Scanner):主动搜索正在广播的设备</li>
+<li>4.发起链接状态(Initiator):主动向扫描设备发起连接</li>
+<li>5.主设备(Master):作为主设备连接到其它设备.</li>
+<li>6.从设备(Slave):作为从设备链接到其它设备</li>
+</ul>
+<h2 id="">蓝牙设备的五种工作状态</h2>
+<ul>
+<li>准备(Standby)</li>
+<li>广播(Advertising)</li>
+<li>监听扫描(Scanning)</li>
+<li>发起连接(Initiating)</li>
+<li>已连接(Connected)</li>
+</ul>
+<h2 id="">蓝牙和版本使用限制</h2>
+<ul>
+<li>蓝牙2.0:越狱设备</li>
+<li>BLE:iOS6以上</li>
+<li>MFI认证设备:无限制</li>
+</ul>
+<h2 id="ble">BLE测试</h2>
+<ul>
+<li>两台BLE设备</li>
+<li>如何让iOS模拟器也能测试BLE?<ul>
+<li>买一个CSR蓝牙4.0 USB适配器,插在Mac上</li>
+<li>在终端输入sudo nvram bluetoothHostControllerSwitchBehavior=&quot;never&quot;</li>
+<li>重启Mac</li>
+<li>用Xcode4.6调试代码,将程序跑在iOS6.1模拟器上</li>
+<li>苹果把iOS7.0模拟器对BLE的支持移除了</li>
+</ul>
+</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./corebluetooth.html" class="navigation navigation-prev " aria-label="Previous page: CoreBluetooth"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./ble-coding.html" class="navigation navigation-next " aria-label="Next page: BLE中心模式流程-coding"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

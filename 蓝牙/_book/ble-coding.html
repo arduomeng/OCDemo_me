@@ -1,0 +1,657 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>BLE中心模式流程-coding | iOS中的蓝牙</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.0.3">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="next" href="./ble-periphral.html" />
+    
+    
+    <link rel="prev" href="./basek.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="gitbook/style.css">
+
+
+        
+    <div class="book"  data-level="0.4.2" data-basepath="." data-revision="1444354472098">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="0.1" data-path="gamekit.html">
+            
+                
+                    <a href="./gamekit.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.1.</b>
+                        
+                         GameKit
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.2" data-path="multipeerconnectivity.html">
+            
+                
+                    <a href="./multipeerconnectivity.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.2.</b>
+                        
+                         MultipeerConnectivity
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.3" data-path="exteralaccessory.html">
+            
+                
+                    <a href="./exteralaccessory.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.3.</b>
+                        
+                         ExteralAccessory
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4" data-path="corebluetooth.html">
+            
+                
+                    <a href="./corebluetooth.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.</b>
+                        
+                         CoreBluetooth
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="0.4.1" data-path="basek.html">
+            
+                
+                    <a href="./basek.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.1.</b>
+                        
+                         baseK(相关基础知识)
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="0.4.2" data-path="ble-coding.html">
+            
+                
+                    <a href="./ble-coding.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.2.</b>
+                        
+                         BLE中心模式流程-coding
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.3" data-path="ble-periphral.html">
+            
+                
+                    <a href="./ble-periphral.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.3.</b>
+                        
+                         BLE-periphral外设模式流程
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.4" data-path="ibeacon.html">
+            
+                
+                    <a href="./ibeacon.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.4.</b>
+                        
+                         iBeacon简介
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.5" data-path="airdrop.html">
+            
+                
+                    <a href="./airdrop.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.5.</b>
+                        
+                         AirDrop
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >iOS中的蓝牙</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_22">
+                    
+                        <h1 id="ble-coding">BLE中心模式流程-coding</h1>
+<h2 id="ble">BLE中心模式流程</h2>
+<ul>
+<li>1.建立中心角色</li>
+<li>2.扫描外设(Discover Peripheral)</li>
+<li>3.连接外设(Connect Peripheral)</li>
+<li>4.扫描外设中的服务和特征(Discover Services And Characteristics)<ul>
+<li>4.1 获取外设的services</li>
+<li>4.2 获取外设的Characteristics,获取characteristics的值,,获取Characteristics的Descriptor和Descriptor的值</li>
+</ul>
+</li>
+<li>5.利用特征与外设做数据交互(Explore And Interact)</li>
+<li>6.订阅Characteristic的通知</li>
+<li>7.断开连接(Disconnect)</li>
+</ul>
+<h2 id="">准备环境</h2>
+<ul>
+<li>1.Xcode7.0</li>
+<li>2.手机</li>
+<li>3.外设(手机+LightBlue)</li>
+</ul>
+<h2 id="">实现步骤</h2>
+<h4 id="1cb">1.导入CB头文件,建立主设备管理类,设置主设备代理</h4>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;CoreBluetooth/CoreBluetooth.h&gt;</span></span>
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">XMGBLEController</span> () &lt;<span class="hljs-title">CBCentralManagerDelegate</span>&gt;</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) CBCentralManager *cMgr; <span class="hljs-comment">/**&lt; 中心管理设备 */</span>
+<span class="hljs-keyword">@end</span>
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">XMGBLEController</span></span>
+<span class="hljs-preprocessor">#pragma mark - 懒加载</span>
+<span class="hljs-comment">// 1.建立中心管理者</span>
+- (CBCentralManager *)cMgr
+{
+    <span class="hljs-keyword">if</span> (!_cMgr) {
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d"</span>, __FUNCTION__, __LINE__);
+        <span class="hljs-comment">/*
+         设置主设备的代理,CBCentralManagerDelegate
+         必须实现的：
+         - (void)centralManagerDidUpdateState:(CBCentralManager *)central;//主设备状态改变调用，在初始化CBCentralManager的适合会打开设备，只有当设备正确打开后才能使用
+         其他选择实现的委托中比较重要的：
+         - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI; //找到外设
+         - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral;//连接外设成功
+         - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;//外设连接失败
+         - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;//断开外设
+         */</span>
+        _cMgr = [[CBCentralManager alloc] initWithDelegate:<span class="hljs-keyword">self</span> queue:dispatch_get_main_queue()]; <span class="hljs-comment">// 线程不传默认是主线程</span>
+    }
+    <span class="hljs-keyword">return</span> _cMgr;
+}
+- (<span class="hljs-keyword">void</span>)viewDidLoad {
+    [<span class="hljs-keyword">super</span> viewDidLoad];
+    <span class="hljs-keyword">self</span><span class="hljs-variable">.title</span> = <span class="hljs-string">@"BLE"</span>;
+    <span class="hljs-keyword">self</span><span class="hljs-variable">.view</span><span class="hljs-variable">.backgroundColor</span> = [<span class="hljs-built_in">UIColor</span> orangeColor];
+    <span class="hljs-comment">// 初始化</span>
+    [<span class="hljs-keyword">self</span> cMgr];
+    <span class="hljs-comment">// 不能在此处扫描,因为状态还没变为打开</span>
+    <span class="hljs-comment">//[self.cMgr scanForPeripheralsWithServices:nil options:nil];</span>
+}
+</code></pre>
+<h4 id="2">2.扫描外设</h4>
+<ul>
+<li>扫描的方法防治cMgr成功打开的代理方法中</li>
+<li>只有设备成功打开,才能开始扫描,否则会报错</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#pragma mark - CBCentralManagerDelegate</span>
+<span class="hljs-comment">// 中心管理者状态改变, 在初始化CBCentralManager的时候会打开设备，只有当设备正确打开后才能使用</span>
+- (<span class="hljs-keyword">void</span>)centralManagerDidUpdateState:(CBCentralManager *)central
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d"</span>, __FUNCTION__, __LINE__);
+    <span class="hljs-keyword">switch</span> (central<span class="hljs-variable">.state</span>) {
+        <span class="hljs-keyword">case</span> CBCentralManagerStateUnknown:
+            <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"&gt;&gt;&gt;CBCentralManagerStateUnknown"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> CBCentralManagerStateResetting:
+            <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"&gt;&gt;&gt;CBCentralManagerStateResetting"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> CBCentralManagerStateUnsupported:
+            <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"&gt;&gt;&gt;CBCentralManagerStateUnsupported"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> CBCentralManagerStateUnauthorized:
+            <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"&gt;&gt;&gt;CBCentralManagerStateUnauthorized"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> CBCentralManagerStatePoweredOff:
+            <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"&gt;&gt;&gt;CBCentralManagerStatePoweredOff"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> CBCentralManagerStatePoweredOn:
+            <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"&gt;&gt;&gt;CBCentralManagerStatePoweredOn"</span>);
+            <span class="hljs-comment">// 2.开始扫描周围的外设</span>
+            <span class="hljs-comment">/*
+             第一个参数nil就是扫描周围所有的外设，扫描到外设后会进入
+             - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI;
+             */</span>
+            [<span class="hljs-keyword">self</span><span class="hljs-variable">.cMgr</span> scanForPeripheralsWithServices:<span class="hljs-literal">nil</span> options:<span class="hljs-literal">nil</span>];
+
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">break</span>;
+    }
+}
+<span class="hljs-comment">// 扫描到设备会进入到此代理方法</span>
+- (<span class="hljs-keyword">void</span>)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(<span class="hljs-built_in">NSDictionary</span>&lt;<span class="hljs-built_in">NSString</span> *,<span class="hljs-keyword">id</span>&gt; *)advertisementData RSSI:(<span class="hljs-built_in">NSNumber</span> *)RSSI
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d, per = %@, data = %@, rssi = %@"</span>, __FUNCTION__, __LINE__, peripheral, advertisementData, RSSI);
+    <span class="hljs-comment">// 接下来连接设备</span>
+}
+</code></pre>
+<h4 id="3">3.连接外设</h4>
+<ul>
+<li>扫描手环,打印结果
+<img src="bleIma/Snip20150928_5.png" alt="图4.2.1"></li>
+<li>根据打印结果</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-comment">// 扫描到设备会进入到此代理方法</span>
+- (<span class="hljs-keyword">void</span>)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(<span class="hljs-built_in">NSDictionary</span>&lt;<span class="hljs-built_in">NSString</span> *,<span class="hljs-keyword">id</span>&gt; *)advertisementData RSSI:(<span class="hljs-built_in">NSNumber</span> *)RSSI
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d, per = %@, data = %@, rssi = %@"</span>, __FUNCTION__, __LINE__, peripheral, advertisementData, RSSI);
+
+    <span class="hljs-comment">// 3.接下来可以连接设备</span>
+    <span class="hljs-comment">//如果你没有设备，可以下载一个app叫lightbule的app去模拟一个设备</span>
+    <span class="hljs-comment">//这里自己去设置下连接规则，我设置的是二维码扫描到的运动手环的设备号</span>
+    <span class="hljs-comment">// 判断设备号是否扫描到</span>
+    <span class="hljs-keyword">if</span> ([peripheral<span class="hljs-variable">.name</span> isEqualToString:<span class="hljs-string">@"OBand-75"</span>]) {
+        <span class="hljs-comment">/*
+         一个主设备最多能连7个外设，每个外设最多只能给一个主设备连接,连接成功，失败，断开会进入各自的委托
+         - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral;//连接外设成功的委托
+         - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;//外设连接失败的委托
+         - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;//断开外设的委托
+         */</span>
+        <span class="hljs-comment">// 保存外设,否则方法结束就销毁</span>
+        <span class="hljs-keyword">self</span><span class="hljs-variable">.per</span> = peripheral;
+        [<span class="hljs-keyword">self</span><span class="hljs-variable">.cMgr</span> connectPeripheral:<span class="hljs-keyword">self</span><span class="hljs-variable">.per</span> options:<span class="hljs-literal">nil</span>];
+    }<span class="hljs-keyword">else</span>
+    {
+        <span class="hljs-comment">// 此处Alert提示未扫描到设备,重新扫描</span>
+<span class="hljs-preprocessor">#warning noCode</span>
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"没扫描到 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;  %s, line = %d"</span>, __FUNCTION__, __LINE__);
+    }
+}
+<span class="hljs-comment">// 外设连接成功</span>
+- (<span class="hljs-keyword">void</span>)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d"</span>, __FUNCTION__, __LINE__);
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"&gt;&gt;&gt;连接到名称为（%@）的设备-成功"</span>,peripheral<span class="hljs-variable">.name</span>);
+}
+<span class="hljs-comment">// 外设连接失败</span>
+- (<span class="hljs-keyword">void</span>)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(<span class="hljs-built_in">NSError</span> *)error
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d"</span>, __FUNCTION__, __LINE__);
+}
+<span class="hljs-comment">// 断开连接(丢失连接)</span>
+- (<span class="hljs-keyword">void</span>)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(<span class="hljs-built_in">NSError</span> *)error
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d"</span>, __FUNCTION__, __LINE__);
+}
+</code></pre>
+<h4 id="4">4.扫描外设中的服务和特征</h4>
+<pre><code class="lang-objc">  设备链接成功后,就可以扫描设备的服务(services)了,同样是通过代理,扫描到结果后会触发某代理方法.
+  注意:此时CBCentralManagerDelegate已经不能满足需求,需要新的CBPeripheralDelegate来搞定.
+  该协议中包含了central与peripheral的许多回调方法
+  (eg.:获取services,获取characteristics,获取characteristics的值,获取characteristics的Descriptor以及Descriptor的值,写数据,读RSSI,用通知的方式订阅数据等等).
+</code></pre>
+<ul>
+<li>4.1 获取外设的services<ul>
+<li>首先设置外设的代理,并搜寻services</li>
+<li>然后在代理方法<code>peripheral:didDiscoverServices:</code>中遍历services</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-comment">// 外设连接成功</span>
+- (<span class="hljs-keyword">void</span>)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d"</span>, __FUNCTION__, __LINE__);
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"&gt;&gt;&gt;连接到名称为（%@）的设备-成功"</span>,peripheral<span class="hljs-variable">.name</span>);
+    <span class="hljs-comment">//设置的peripheral代理CBPeripheralDelegate</span>
+    <span class="hljs-comment">//@interface ViewController : UIViewController&lt;CBCentralManagerDelegate,CBPeripheralDelegate&gt;</span>
+    [peripheral setDelegate:<span class="hljs-keyword">self</span>];
+
+    <span class="hljs-comment">//扫描外设Services，成功后会进入方法：-(void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error{</span>
+    [peripheral discoverServices:<span class="hljs-literal">nil</span>];
+    <span class="hljs-comment">/*
+     Discovers the specified services of the peripheral.
+     An array of CBUUID objects that you are interested in. Here, each CBUUID object represents a UUID that identifies the type of service you want to discover.
+     */</span>
+}
+
+<span class="hljs-preprocessor">#pragma mark - CBPeripheralDelegate</span>
+<span class="hljs-comment">// 发现外设的service</span>
+- (<span class="hljs-keyword">void</span>)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(<span class="hljs-built_in">NSError</span> *)error
+{
+    <span class="hljs-keyword">if</span> (error)
+    {
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"&gt;&gt;&gt;Discovered services for %@ with error: %@"</span>, peripheral<span class="hljs-variable">.name</span>, [error localizedDescription]);
+        <span class="hljs-keyword">return</span>;
+    }
+
+    <span class="hljs-keyword">for</span> (CBService *service <span class="hljs-keyword">in</span> peripheral<span class="hljs-variable">.services</span>) {
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"service.UUID = %@"</span>, service<span class="hljs-variable">.UUID</span>);
+        <span class="hljs-comment">//扫描每个service的Characteristics，扫描到后会进入方法： -(void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error</span>
+        [peripheral discoverCharacteristics:<span class="hljs-literal">nil</span> forService:service];
+    }
+}
+</code></pre>
+<ul>
+<li>4.2 获取外设的characteris,获取Characteristics的值,获取Characteristics的Descriptor以及Descriptor的值</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-comment">// 外设发现service的特征</span>
+- (<span class="hljs-keyword">void</span>)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(<span class="hljs-built_in">NSError</span> *)error
+{
+    <span class="hljs-keyword">if</span> (error)
+    {
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"error Discovered characteristics for %@ with error: %@"</span>, service<span class="hljs-variable">.UUID</span>, [error localizedDescription]);
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">for</span> (CBCharacteristic *characteristic <span class="hljs-keyword">in</span> service<span class="hljs-variable">.characteristics</span>)
+    {
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"service:%@ 的 Characteristic: %@"</span>,service<span class="hljs-variable">.UUID</span>,characteristic<span class="hljs-variable">.UUID</span>);
+    }
+
+<span class="hljs-preprocessor">#warning noCodeFor 优化,分开写是为了让大家看注释清晰,并不符合编码规范</span>
+    <span class="hljs-comment">//获取Characteristic的值，读到数据会进入方法：-(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error</span>
+    <span class="hljs-keyword">for</span> (CBCharacteristic *characteristic <span class="hljs-keyword">in</span> service<span class="hljs-variable">.characteristics</span>){
+        [peripheral readValueForCharacteristic:characteristic]; <span class="hljs-comment">// 外设读取特征的值</span>
+    }
+
+    <span class="hljs-comment">//搜索Characteristic的Descriptors，读到数据会进入方法：-(void)peripheral:(CBPeripheral *)peripheral didDiscoverDescriptorsForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error</span>
+    <span class="hljs-keyword">for</span> (CBCharacteristic *characteristic <span class="hljs-keyword">in</span> service<span class="hljs-variable">.characteristics</span>){
+        [peripheral discoverDescriptorsForCharacteristic:characteristic]; <span class="hljs-comment">// 外设发现特征的描述</span>
+    }
+}
+
+<span class="hljs-comment">// 获取characteristic的值</span>
+- (<span class="hljs-keyword">void</span>)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(nonnull CBCharacteristic *)characteristic error:(nullable <span class="hljs-built_in">NSError</span> *)error
+{
+    <span class="hljs-comment">//打印出characteristic的UUID和值</span>
+    <span class="hljs-comment">//!注意，value的类型是NSData，具体开发时，会根据外设协议制定的方式去解析数据</span>
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d, characteristic.UUID:%@  value:%@"</span>, __FUNCTION__, __LINE__, characteristic<span class="hljs-variable">.UUID</span>, characteristic<span class="hljs-variable">.value</span>);
+}
+<span class="hljs-comment">// 获取Characteristics的 descriptor的值</span>
+- (<span class="hljs-keyword">void</span>)peripheral:(CBPeripheral *)peripheral didUpdateValueForDescriptor:(nonnull CBDescriptor *)descriptor error:(nullable <span class="hljs-built_in">NSError</span> *)error
+{
+    <span class="hljs-comment">//打印出DescriptorsUUID 和value</span>
+    <span class="hljs-comment">//这个descriptor都是对于characteristic的描述，一般都是字符串，所以这里我们转换成字符串去解析</span>
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d, descriptor.UUID:%@ value:%@"</span>, __FUNCTION__, __LINE__, descriptor<span class="hljs-variable">.UUID</span>, descriptor<span class="hljs-variable">.value</span>);
+}
+<span class="hljs-comment">// 发现特征Characteristics的描述Descriptor</span>
+- (<span class="hljs-keyword">void</span>)peripheral:(CBPeripheral *)peripheral didDiscoverDescriptorsForCharacteristic:(nonnull CBCharacteristic *)characteristic error:(nullable <span class="hljs-built_in">NSError</span> *)error
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d"</span>, __FUNCTION__, __LINE__);
+    <span class="hljs-keyword">for</span> (CBDescriptor *descriptor <span class="hljs-keyword">in</span> characteristic<span class="hljs-variable">.descriptors</span>) {
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"descriptor.UUID:%@"</span>,descriptor<span class="hljs-variable">.UUID</span>);
+    }
+}
+</code></pre>
+<h4 id="5">5.写数据到特征中</h4>
+<pre><code class="lang-objc"><span class="hljs-comment">// 5.将数据写入特征(自定义方法,为了看的更清楚,没别的意思)</span>
+- (<span class="hljs-keyword">void</span>)yf_peripheral:(CBPeripheral *)peripheral writeData:(<span class="hljs-built_in">NSData</span> *)data forCharacteristic:(CBCharacteristic *)characteristic
+{
+    <span class="hljs-comment">/*
+    typedef NS_OPTIONS(NSUInteger, CBCharacteristicProperties) {
+        CBCharacteristicPropertyBroadcast                                                = 0x01,
+        CBCharacteristicPropertyRead                                                    = 0x02,
+        CBCharacteristicPropertyWriteWithoutResponse                                    = 0x04,
+        CBCharacteristicPropertyWrite                                                    = 0x08,
+        CBCharacteristicPropertyNotify                                                    = 0x10,
+        CBCharacteristicPropertyIndicate                                                = 0x20,
+        CBCharacteristicPropertyAuthenticatedSignedWrites                                = 0x40,
+        CBCharacteristicPropertyExtendedProperties                                        = 0x80,
+        CBCharacteristicPropertyNotifyEncryptionRequired NS_ENUM_AVAILABLE(NA, 6_0)        = 0x100,
+        CBCharacteristicPropertyIndicateEncryptionRequired NS_ENUM_AVAILABLE(NA, 6_0)    = 0x200
+    };
+     打印出特征的权限(characteristic.properties),可以看到有很多种,这是一个NS_OPTIONS的枚举,可以是多个值
+     常见的又read,write,noitfy,indicate.知道这几个基本够用了,前俩是读写权限,后俩都是通知,俩不同的通知方式
+     */</span>
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d, characteristic.properties:%d"</span>, __FUNCTION__, __LINE__, characteristic<span class="hljs-variable">.properties</span>);
+
+    <span class="hljs-comment">// 只有特征的properties中有写的属性时候,才写</span>
+    <span class="hljs-keyword">if</span> (characteristic<span class="hljs-variable">.properties</span> &amp; CBCharacteristicPropertyWrite) {
+        <span class="hljs-comment">// 这句才是正宗的核心代码</span>
+        [peripheral writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
+    }
+}
+</code></pre>
+<h4 id="6">6.订阅特征的通知</h4>
+<pre><code class="lang-objc"><span class="hljs-comment">// 设置通知</span>
+- (<span class="hljs-keyword">void</span>)yf_peripheral:(CBPeripheral *)peripheral setNotifyForCharacteristic:(CBCharacteristic *)characteristic
+{
+    <span class="hljs-comment">// 设置通知, 数据会进入 peripheral:didUpdateValueForCharacteristic:error:方法</span>
+    [peripheral setNotifyValue:<span class="hljs-literal">YES</span> forCharacteristic:characteristic];
+}
+<span class="hljs-comment">// 取消通知</span>
+- (<span class="hljs-keyword">void</span>)yf_peripheral:(CBPeripheral *)peripheral cancelNotifyForCharacteristic:(CBCharacteristic *)characteristic
+{
+    [peripheral setNotifyValue:<span class="hljs-literal">NO</span> forCharacteristic:characteristic];
+}
+</code></pre>
+<h4 id="7">7.断开连接</h4>
+<pre><code class="lang-objc"><span class="hljs-comment">// 7.断开连接</span>
+- (<span class="hljs-keyword">void</span>)yf_cMgr:(CBCentralManager *)cMgr stopScanAndDisConnectWithPeripheral:(CBPeripheral *)peripheral
+{
+    <span class="hljs-comment">// 停止扫描</span>
+    [cMgr stopScan];
+    <span class="hljs-comment">// 断开连接</span>
+    [cMgr cancelPeripheralConnection:peripheral];
+}
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./basek.html" class="navigation navigation-prev " aria-label="Previous page: baseK(相关基础知识)"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./ble-periphral.html" class="navigation navigation-next " aria-label="Next page: BLE-periphral外设模式流程"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

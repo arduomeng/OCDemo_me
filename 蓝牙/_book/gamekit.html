@@ -1,0 +1,510 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>GameKit | iOS中的蓝牙</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.0.3">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="next" href="./multipeerconnectivity.html" />
+    
+    
+    <link rel="prev" href="./index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="gitbook/style.css">
+
+
+        
+    <div class="book"  data-level="0.1" data-basepath="." data-revision="1444354472098">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter active" data-level="0.1" data-path="gamekit.html">
+            
+                
+                    <a href="./gamekit.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.1.</b>
+                        
+                         GameKit
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.2" data-path="multipeerconnectivity.html">
+            
+                
+                    <a href="./multipeerconnectivity.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.2.</b>
+                        
+                         MultipeerConnectivity
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.3" data-path="exteralaccessory.html">
+            
+                
+                    <a href="./exteralaccessory.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.3.</b>
+                        
+                         ExteralAccessory
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4" data-path="corebluetooth.html">
+            
+                
+                    <a href="./corebluetooth.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.</b>
+                        
+                         CoreBluetooth
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="0.4.1" data-path="basek.html">
+            
+                
+                    <a href="./basek.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.1.</b>
+                        
+                         baseK(相关基础知识)
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.2" data-path="ble-coding.html">
+            
+                
+                    <a href="./ble-coding.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.2.</b>
+                        
+                         BLE中心模式流程-coding
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.3" data-path="ble-periphral.html">
+            
+                
+                    <a href="./ble-periphral.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.3.</b>
+                        
+                         BLE-periphral外设模式流程
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.4" data-path="ibeacon.html">
+            
+                
+                    <a href="./ibeacon.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.4.</b>
+                        
+                         iBeacon简介
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.5" data-path="airdrop.html">
+            
+                
+                    <a href="./airdrop.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.5.</b>
+                        
+                         AirDrop
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >iOS中的蓝牙</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_25">
+                    
+                        <h1 id="gamekit">GameKit用法</h1>
+<h2 id="">一.准备工作</h2>
+<ul>
+<li><p>1.搭建UI
+<img src="bleIma/Snip20150928_1.png" alt="图1"></p>
+</li>
+<li><p>2.拖线</p>
+</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-comment">// 图片</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">weak</span>, <span class="hljs-keyword">nonatomic</span>) <span class="hljs-keyword">IBOutlet</span> <span class="hljs-built_in">UIImageView</span> *imageView;
+
+<span class="hljs-comment">// 建立连接</span>
+- (<span class="hljs-keyword">IBAction</span>)buildConnect:(<span class="hljs-keyword">id</span>)sender{}
+
+<span class="hljs-comment">// 发送数据</span>
+- (<span class="hljs-keyword">IBAction</span>)sendData:(<span class="hljs-keyword">id</span>)sender{}
+</code></pre>
+<h2 id="">二.连接蓝牙</h2>
+<ul>
+<li>显示可以连接的蓝牙设备列表</li>
+</ul>
+<pre><code class="lang-objc">- (<span class="hljs-keyword">IBAction</span>)buildConnect:(<span class="hljs-keyword">id</span>)sender {
+    <span class="hljs-comment">// 创建弹窗</span>
+    GKPeerPickerController *ppc = [[GKPeerPickerController alloc] init];
+    <span class="hljs-comment">// 设置代理  @interface ViewController () &lt;GKPeerPickerControllerDelegate&gt;</span>
+    ppc<span class="hljs-variable">.delegate</span> = <span class="hljs-keyword">self</span>;
+    <span class="hljs-comment">// 展示</span>
+    [ppc show];
+}
+</code></pre>
+<ul>
+<li>监听蓝牙的连接</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#pragma mark -GKPeerPickerControllerDelegate</span>
+<span class="hljs-comment">// 连接成功就会调用</span>
+- (<span class="hljs-keyword">void</span>)peerPickerController:(GKPeerPickerController *)picker <span class="hljs-comment">// 弹窗</span>
+              didConnectPeer:(<span class="hljs-built_in">NSString</span> *)peerID <span class="hljs-comment">// 连接到的蓝牙设备号</span>
+                   toSession:(GKSession *)session <span class="hljs-comment">// 连接会话(通过它进行数据交互)</span>
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d"</span>, __FUNCTION__, __LINE__);
+    <span class="hljs-comment">// 弹窗消失</span>
+    [picker dismiss];
+}
+</code></pre>
+<h2 id="">三.利用蓝牙传输数据</h2>
+<ul>
+<li>点击图片从相册中选择一张显示本机<ul>
+<li>可以修改imaV为Btn,也可以为imaV添加手势<ul>
+<li>1.修改imageView的用户交互
+<img src="bleIma/Snip20150928_2.png" alt="图2"></li>
+<li>2.添加手势到图片上
+<img src="bleIma/Snip20150928_3.png" alt="图3"></li>
+<li>3.拖出手势的响应事件
+<img src="bleIma/Snip20150928_4.png" alt="图4"></li>
+<li>4.完善相册选择图片代码</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-objc">    <span class="hljs-comment">// 手势-点击从相册中选一张照片</span>
+- (<span class="hljs-keyword">IBAction</span>)tapImage:(UITapGestureRecognizer *)sender {
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d"</span>, __FUNCTION__, __LINE__);
+    <span class="hljs-comment">// 先判断是否有相册</span>
+    <span class="hljs-keyword">if</span> (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-comment">// 创建弹出的控制器</span>
+    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+    <span class="hljs-comment">// 设置图片来源为相册</span>
+    ipc<span class="hljs-variable">.sourceType</span> = UIImagePickerControllerSourceTypePhotoLibrary;
+    <span class="hljs-comment">// 设置代理 @interface ViewController () &lt;UINavigationControllerDelegate, UIImagePickerControllerDelegate&gt;</span>
+    ipc<span class="hljs-variable">.delegate</span> = <span class="hljs-keyword">self</span>;
+    <span class="hljs-comment">// modal出来</span>
+    [<span class="hljs-keyword">self</span> presentViewController:ipc animated:<span class="hljs-literal">YES</span> completion:<span class="hljs-literal">nil</span>];
+}
+<span class="hljs-preprocessor">#pragma mark - UINavigationControllerDelegate, UIImagePickerControllerDelegate</span>
+<span class="hljs-comment">// 选中某图片后调用</span>
+- (<span class="hljs-keyword">void</span>)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(<span class="hljs-built_in">NSDictionary</span>&lt;<span class="hljs-built_in">NSString</span> *,<span class="hljs-keyword">id</span>&gt; *)info
+{
+    <span class="hljs-comment">// 控制器返回</span>
+    [picker dismissViewControllerAnimated:<span class="hljs-literal">YES</span> completion:<span class="hljs-literal">nil</span>];
+    <span class="hljs-comment">// 设置图片</span>
+    <span class="hljs-keyword">self</span><span class="hljs-variable">.imageView</span><span class="hljs-variable">.image</span> = info[UIImagePickerControllerOriginalImage];
+}
+</code></pre>
+<ul>
+<li>点击发送数据完成图片显示到另一个蓝牙机器上<ul>
+<li>1.分析需要通过GKSession对象来传递数据,所以在<code>peerPickerController:didConnectPeer:didConnectPeer:</code>的方法中保存session会话</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) GKSession *session; <span class="hljs-comment">/**&lt; 蓝牙连接会话 */</span>
+
+<span class="hljs-comment">// 连接成功就会调用</span>
+- (<span class="hljs-keyword">void</span>)peerPickerController:(GKPeerPickerController *)picker <span class="hljs-comment">// 弹窗</span>
+              didConnectPeer:(<span class="hljs-built_in">NSString</span> *)peerID <span class="hljs-comment">// 连接到的蓝牙设备号</span>
+                   toSession:(GKSession *)session <span class="hljs-comment">// 连接会话(通过它进行数据交互)</span>
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d"</span>, __FUNCTION__, __LINE__);
+    <span class="hljs-comment">// 弹窗消失</span>
+    [picker dismiss];
+    <span class="hljs-comment">// 保存会话</span>
+    <span class="hljs-keyword">self</span><span class="hljs-variable">.session</span> = session;
+}
+</code></pre>
+<ul>
+<li>发送</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-comment">// 发送数据</span>
+- (<span class="hljs-keyword">IBAction</span>)sendData:(<span class="hljs-keyword">id</span>)sender {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span><span class="hljs-variable">.imageView</span><span class="hljs-variable">.image</span> == <span class="hljs-literal">nil</span>) <span class="hljs-keyword">return</span>; <span class="hljs-comment">// 有图片才继续执行</span>
+    <span class="hljs-comment">// 通过蓝牙链接会话发送数据到所有设备</span>
+    [<span class="hljs-keyword">self</span><span class="hljs-variable">.session</span> sendDataToAllPeers:UIImagePNGRepresentation(<span class="hljs-keyword">self</span><span class="hljs-variable">.imageView</span><span class="hljs-variable">.image</span>) <span class="hljs-comment">// 数据</span>
+                        withDataMode:GKSendDataReliable <span class="hljs-comment">// 枚举:发完为止</span>
+                               error:<span class="hljs-literal">nil</span>];
+
+}
+</code></pre>
+<ul>
+<li>接收</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-comment">// 连接成功就会调用</span>
+- (<span class="hljs-keyword">void</span>)peerPickerController:(GKPeerPickerController *)picker <span class="hljs-comment">// 弹窗</span>
+              didConnectPeer:(<span class="hljs-built_in">NSString</span> *)peerID <span class="hljs-comment">// 连接到的蓝牙设备号</span>
+                   toSession:(GKSession *)session <span class="hljs-comment">// 连接会话(通过它进行数据交互)</span>
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d"</span>, __FUNCTION__, __LINE__);
+    <span class="hljs-comment">// 弹窗消失</span>
+    [picker dismiss];
+    <span class="hljs-comment">// 保存会话</span>
+    <span class="hljs-keyword">self</span><span class="hljs-variable">.session</span> = session;
+    <span class="hljs-comment">// 处理接收到的数据[蓝牙设备接收到数据时,就会调用 [self receiveData:fromPeer:inSession:context:]]</span>
+    <span class="hljs-comment">// 设置数据接受者为:self</span>
+    [<span class="hljs-keyword">self</span><span class="hljs-variable">.session</span> setDataReceiveHandler:<span class="hljs-keyword">self</span>
+                       withContext:<span class="hljs-literal">nil</span>];
+}
+<span class="hljs-preprocessor">#pragma mark - 蓝牙设备接收到数据时,就会调用</span>
+- (<span class="hljs-keyword">void</span>)receiveData:(<span class="hljs-built_in">NSData</span> *)data <span class="hljs-comment">// 数据</span>
+           fromPeer:(<span class="hljs-built_in">NSString</span> *)peer <span class="hljs-comment">// 来自哪个设备</span>
+          inSession:(GKSession *)session <span class="hljs-comment">// 连接会话</span>
+            context:(<span class="hljs-keyword">void</span> *)context
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d"</span>, __FUNCTION__, __LINE__);
+    <span class="hljs-comment">// 显示</span>
+    <span class="hljs-keyword">self</span><span class="hljs-variable">.imageView</span><span class="hljs-variable">.image</span> = [<span class="hljs-built_in">UIImage</span> imageWithData:data];
+    <span class="hljs-comment">// 写入相册</span>
+    UIImageWriteToSavedPhotosAlbum(<span class="hljs-keyword">self</span><span class="hljs-variable">.imageView</span><span class="hljs-variable">.image</span>, <span class="hljs-literal">nil</span>, <span class="hljs-literal">nil</span>, <span class="hljs-literal">nil</span>);
+}
+</code></pre>
+<h2 id="">四.注意</h2>
+<ul>
+<li>只能用于iOS设备之间的链接</li>
+<li>只能用于同一个应用程序之间的连接</li>
+<li>最好别利用蓝牙发送比较大的数据</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./multipeerconnectivity.html" class="navigation navigation-next " aria-label="Next page: MultipeerConnectivity"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

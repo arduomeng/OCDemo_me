@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVa-dj-Xce">
-                                <rect key="frame" x="58" y="28" width="46" height="30"/>
-                                <state key="normal" title="开始"/>
-                                <connections>
-                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MlG-TV-a3h"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BN0-0H-8cf">
                                 <rect key="frame" x="58" y="112" width="46" height="30"/>
                                 <state key="normal" title="暂停"/>
@@ -31,9 +25,27 @@
                                     <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Jm-PQ-Wat"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RZS-I5-VaJ">
+                                <rect key="frame" x="20" y="20" width="560" height="2"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVa-dj-Xce">
+                                <rect key="frame" x="58" y="74" width="46" height="30"/>
+                                <state key="normal" title="开始"/>
+                                <connections>
+                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MlG-TV-a3h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RZS-I5-VaJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Bzn-hn-u4U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RZS-I5-VaJ" secondAttribute="trailing" id="c3M-V2-Zhz"/>
+                            <constraint firstItem="RZS-I5-VaJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="f0U-Gd-2eB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="progressView" destination="RZS-I5-VaJ" id="eV2-ot-4n7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

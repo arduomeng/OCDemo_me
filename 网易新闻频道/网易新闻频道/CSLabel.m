@@ -9,7 +9,7 @@
 #import "CSLabel.h"
 
 //初始颜色
-#define CSRedS 0
+#define CSRedS 1
 #define CSGreenS 1
 #define CSBlueS 0
 //变化颜色

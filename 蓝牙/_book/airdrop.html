@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>AirDrop | iOS中的蓝牙</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.0.3">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    
+    <link rel="prev" href="./ibeacon.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="gitbook/style.css">
+
+
+        
+    <div class="book"  data-level="0.5" data-basepath="." data-revision="1444354472098">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="0.1" data-path="gamekit.html">
+            
+                
+                    <a href="./gamekit.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.1.</b>
+                        
+                         GameKit
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.2" data-path="multipeerconnectivity.html">
+            
+                
+                    <a href="./multipeerconnectivity.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.2.</b>
+                        
+                         MultipeerConnectivity
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.3" data-path="exteralaccessory.html">
+            
+                
+                    <a href="./exteralaccessory.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.3.</b>
+                        
+                         ExteralAccessory
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4" data-path="corebluetooth.html">
+            
+                
+                    <a href="./corebluetooth.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.</b>
+                        
+                         CoreBluetooth
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="0.4.1" data-path="basek.html">
+            
+                
+                    <a href="./basek.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.1.</b>
+                        
+                         baseK(相关基础知识)
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.2" data-path="ble-coding.html">
+            
+                
+                    <a href="./ble-coding.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.2.</b>
+                        
+                         BLE中心模式流程-coding
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.3" data-path="ble-periphral.html">
+            
+                
+                    <a href="./ble-periphral.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.3.</b>
+                        
+                         BLE-periphral外设模式流程
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.4" data-path="ibeacon.html">
+            
+                
+                    <a href="./ibeacon.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.4.</b>
+                        
+                         iBeacon简介
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="0.5" data-path="airdrop.html">
+            
+                
+                    <a href="./airdrop.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.5.</b>
+                        
+                         AirDrop
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >iOS中的蓝牙</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_20">
+                    
+                        <h1 id="airdrop">AirDrop</h1>
+<ul>
+<li><p>苹果在<code>2010</code>推出的<code>OS X 10.7 Lion系统</code>中加入了全新的AirDrop功能，该功能<code>允许两台Mac机之间无线传输文件</code>。
+区别于传统的局域网文件共享方式，AirDrop不要求两台机器在同一个网络内。
+用户无需设置，只需要打开AirDrop文件夹即可查看到其他用户，分享文件变得非常便捷。</p>
+</li>
+<li><p>AirDrop不需要基于（无线）路由器或者手动建立热点组网，它是利用Mac与Mac之间的点对点网络来进行会话传输。
+这一切由系统在后台完成，无需断开当前WiFi网络，也不影响当前连接WiFi网络的通信，就可以与其他Mac通过内置特定信道通信。</p>
+</li>
+<li><p>WWDC13上推出的iOS7也开始支持iOS设备之间使用AirDrop实现共享传输。
+关于AirDrop的条件要求及内部机制，可参考<a href="http://www.zhihu.com/question/21681429" target="_blank">《为什么iOS 7 和 OS X 之间的AirDrop 不能互传？》</a>。
+WWDC14推出的OS X 10.10 Yosemite操作系统，终于打通了与iOS移动设备之间的<a href="https://support.apple.com/zh-cn/HT204144" target="_blank">跨平台AirDrop传输</a>。
+运行Mac OS X Yosemite 10.10版本的Mac设备（型号≥2012）和运行iOS 7及以上的iOS设备（≥iPhone5，≥iPad 4，iPad mini，≥iPod touch）之间才能实现跨平台文件传输。</p>
+</li>
+<li><p>根据官方资料显示，AirDrop基于蓝牙和WiFi实现（AirDrop does the rest using Wi-Fi and Bluetooth）。
+具体来说，通过低功耗蓝牙技术（<a href="http://www.warski.org/blog/2014/01/how-ibeacons-work/" target="_blank">BLE</a>）进行发现（Advertising/Browsing），使用<a href="http://www.xuebuyuan.com/539020.html" target="_blank">WiFi Direct（P2P WiFi）</a>技术进行数据传输。
+可参考《<a href="http://www.zhihu.com/question/21189545" target="_blank">iOS 7的AirDrop是利用什么信号来传输的？</a>》《<a href="http://ipad.about.com/od/iPad_Guide/ss/What-Is-Airdrop-How-Does-It-Work.htm" target="_blank">What Is AirDrop? How Does It Work?</a>》。</p>
+</li>
+<li><p>因此，开启AirDrop不要求双方必须联网或连接到同一局域网，但必须<code>同时打开WiFi和蓝牙</code>，且进行传输的两台设备必须保持在<code>9米</code>的范围之内。</p>
+</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./ibeacon.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: iBeacon简介"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

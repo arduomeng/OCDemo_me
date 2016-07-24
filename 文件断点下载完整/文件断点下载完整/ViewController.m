@@ -25,6 +25,8 @@
 
 @property (nonatomic, strong) NSOutputStream *outputStream;
 @property (nonatomic, strong) NSURLSessionDataTask *task;
+
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 @end
 
 @implementation ViewController
@@ -100,13 +102,17 @@
     
     [fileDic writeToFile:fileDicFullPath atomically:YES];
     
-#warning 如何实现的
     completionHandler(NSURLSessionResponseAllow);
 }
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
 {
     [self.outputStream write:[data bytes] maxLength:data.length];
+    
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        
+        _progressView.progress = 1.0 * fileLength / _fileTotalLength;
+    }];
     
     NSLog(@"%f", 1.0 * fileLength / _fileTotalLength);
 }

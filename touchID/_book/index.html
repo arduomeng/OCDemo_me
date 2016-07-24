@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>Introduction | Touch ID 简易开发教程</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="iOS系统的指纹识别功能最低支持的机型为iPhone 5s，最低支持系统为iOS 8，虽然安装iOS 7系统的5s机型可以使用系统提供的指纹解锁功能，但由于API并未开放，所以理论上第三方软件不可使用。">
+        <meta name="generator" content="GitBook 1.0.3">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="gitbook/style.css">
+
+
+        
+    <div class="book"  data-level="0" data-basepath="." data-revision="1444361987932">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter active" data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Touch ID 简易开发教程</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_29">
+                    
+                        <h1 id="touch-id-">Touch ID 简易开发教程</h1>
+<h2 id="">基础知识</h2>
+<h4 id="">支持系统和机型</h4>
+<p>iOS系统的指纹识别功能最低支持的机型为<code>iPhone 5s</code>，最低支持系统为<code>iOS 8</code>，虽然安装<code>iOS 7系统的5s</code>机型可以使用系统提供的指纹解锁功能，但由于<code>API</code>并未开放，所以理论上第三方软件不可使用。</p>
+<h4 id="">依赖框架</h4>
+<pre><code class="lang-objc">LocalAuthentication<span class="hljs-variable">.framework</span>
+<span class="hljs-preprocessor">#import <span class="hljs-title">&lt;LocalAuthentication/LocalAuthentication.h&gt;</span></span>
+</code></pre>
+<h4 id="">注意事项</h4>
+<p>做<code>iOS 8以下</code>版本适配时，务必进行<code>API验证</code>，避免调用相关API引起崩溃。</p>
+<pre><code class="lang-objc"><span class="hljs-keyword">if</span>(iOS8){xxx} <span class="hljs-comment">// 系统版本验证</span>
+
+<span class="hljs-keyword">if</span> ([myContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&amp;authError])
+</code></pre>
+<h4 id="">使用类</h4>
+<p><code>LAContext</code> 指纹验证操作对象</p>
+<h4 id="">操作流程</h4>
+<ul>
+<li>判断系统版本，iOS 8及以上版本执行-(void)authenticateUser方法，</li>
+<li>方法自动判断设备是否支持和开启Touch ID。</li>
+</ul>
+<h4 id="">代码示例</h4>
+<pre><code class="lang-objc">- (<span class="hljs-keyword">IBAction</span>)showTouchIDAlert:(<span class="hljs-keyword">id</span>)sender {
+    <span class="hljs-comment">// 1.判断是否是iOS8之后</span>
+    <span class="hljs-keyword">if</span> (!iOS8later) {
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"版本不对不能使用TouchID"</span>);
+        <span class="hljs-keyword">return</span>;
+    }
+
+    <span class="hljs-comment">// 2.调用touchID的相关方法</span>
+    [<span class="hljs-keyword">self</span> authenticateUser];
+}
+
+<span class="hljs-comment">// 鉴定用户</span>
+- (<span class="hljs-keyword">void</span>)authenticateUser
+{
+    <span class="hljs-comment">// 创建指纹验证对象</span>
+    LAContext *context = [[LAContext alloc] init];
+    <span class="hljs-built_in">NSError</span> *yfError = <span class="hljs-literal">nil</span>;
+
+    <span class="hljs-comment">// 验证设备是否支持touchID</span>
+    <span class="hljs-comment">// LAPolicyDeviceOwnerAuthenticationWithBiometrics 14年时候枚举只有这一个属性</span>
+    <span class="hljs-comment">// LAPolicyDeviceOwnerAuthentication 后来加的枚举属性</span>
+    <span class="hljs-keyword">if</span> ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&amp;yfError]) {
+        <span class="hljs-comment">// 支持touchID</span>
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
+                localizedReason:<span class="hljs-string">@"XMGlocalizedReason"</span>
+                          reply:^(<span class="hljs-built_in">BOOL</span> success, <span class="hljs-built_in">NSError</span> * _Nullable error) {
+                              <span class="hljs-keyword">if</span> (success) {
+                                  <span class="hljs-comment">// touchID验证成功</span>
+
+                                  <span class="hljs-comment">// 继续处理相关业务(注意线程)</span>
+                              }<span class="hljs-keyword">else</span>
+                              {
+                                  <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%@"</span>,error<span class="hljs-variable">.localizedDescription</span>);
+                                  <span class="hljs-keyword">switch</span> (error<span class="hljs-variable">.code</span>) {
+                                      <span class="hljs-keyword">case</span> LAErrorSystemCancel:
+                                      {
+                                          <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Authentication was cancelled by the system"</span>);
+                                          <span class="hljs-comment">//切换到其他APP，系统取消验证Touch ID</span>
+                                          <span class="hljs-keyword">break</span>;
+                                      }
+                                      <span class="hljs-keyword">case</span> LAErrorUserCancel:
+                                      {
+                                          <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Authentication was cancelled by the user"</span>);
+                                          <span class="hljs-comment">//用户取消验证Touch ID</span>
+                                          <span class="hljs-keyword">break</span>;
+                                      }
+                                      <span class="hljs-keyword">case</span> LAErrorUserFallback:
+                                      {
+                                          <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"User selected to enter custom password"</span>);
+                                          [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                              <span class="hljs-comment">//用户选择输入密码，切换主线程处理</span>
+                                          }];
+                                          <span class="hljs-keyword">break</span>;
+                                      }
+                                      <span class="hljs-keyword">default</span>:
+                                      {
+                                          [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                              <span class="hljs-comment">//其他情况，切换主线程处理</span>
+                                          }];
+                                          <span class="hljs-keyword">break</span>;
+                                      }
+                                  }
+                              }
+                }];
+
+    }<span class="hljs-keyword">else</span>
+    {
+        <span class="hljs-keyword">switch</span> (yfError<span class="hljs-variable">.code</span>) {
+            <span class="hljs-keyword">case</span> LAErrorTouchIDNotEnrolled:
+                <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"LAErrorTouchIDNotEnrolled"</span>);
+                <span class="hljs-keyword">break</span>;
+
+
+            <span class="hljs-keyword">case</span> LAErrorPasscodeNotSet:
+                <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"LAErrorPasscodeNotSet"</span>); <span class="hljs-comment">// 此处触发showPasscodeResetAlert方法</span>
+                <span class="hljs-keyword">break</span>;
+
+            <span class="hljs-keyword">default</span>:
+                <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Touch ID is unaviliable"</span>);
+                <span class="hljs-keyword">break</span>;
+        }
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%@"</span>, yfError<span class="hljs-variable">.localizedDescription</span>);
+    }
+}
+
+<span class="hljs-comment">/*
+ typedef NS_ENUM(NSInteger, LAError)
+ {
+ //授权失败
+ LAErrorAuthenticationFailed = kLAErrorAuthenticationFailed,
+
+ //用户取消Touch ID授权
+ LAErrorUserCancel           = kLAErrorUserCancel,
+
+ //用户选择输入密码
+ LAErrorUserFallback         = kLAErrorUserFallback,
+
+ //系统取消授权(例如其他APP切入)
+ LAErrorSystemCancel         = kLAErrorSystemCancel,
+
+ //系统未设置密码
+ LAErrorPasscodeNotSet       = kLAErrorPasscodeNotSet,
+
+ //设备Touch ID不可用，例如未打开
+ LAErrorTouchIDNotAvailable  = kLAErrorTouchIDNotAvailable,
+
+ //设备Touch ID不可用，用户未录入
+ LAErrorTouchIDNotEnrolled   = kLAErrorTouchIDNotEnrolled,
+ } NS_ENUM_AVAILABLE(10_10, 8_0);
+
+ */</span>
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

@@ -37,6 +37,9 @@
     local.soundName = UILocalNotificationDefaultSoundName;
     
     
+    local.applicationIconBadgeNumber = 1;
+    
+    
     // 设置userinfo传递信息
     local.userInfo = @{
                        @"type" : @1

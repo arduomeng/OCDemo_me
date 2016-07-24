@@ -1,0 +1,625 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>BLE-periphral外设模式流程 | iOS中的蓝牙</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.0.3">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="next" href="./ibeacon.html" />
+    
+    
+    <link rel="prev" href="./ble-coding.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="gitbook/style.css">
+
+
+        
+    <div class="book"  data-level="0.4.3" data-basepath="." data-revision="1444354472098">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="0.1" data-path="gamekit.html">
+            
+                
+                    <a href="./gamekit.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.1.</b>
+                        
+                         GameKit
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.2" data-path="multipeerconnectivity.html">
+            
+                
+                    <a href="./multipeerconnectivity.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.2.</b>
+                        
+                         MultipeerConnectivity
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.3" data-path="exteralaccessory.html">
+            
+                
+                    <a href="./exteralaccessory.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.3.</b>
+                        
+                         ExteralAccessory
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4" data-path="corebluetooth.html">
+            
+                
+                    <a href="./corebluetooth.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.</b>
+                        
+                         CoreBluetooth
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="0.4.1" data-path="basek.html">
+            
+                
+                    <a href="./basek.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.1.</b>
+                        
+                         baseK(相关基础知识)
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.2" data-path="ble-coding.html">
+            
+                
+                    <a href="./ble-coding.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.2.</b>
+                        
+                         BLE中心模式流程-coding
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="0.4.3" data-path="ble-periphral.html">
+            
+                
+                    <a href="./ble-periphral.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.3.</b>
+                        
+                         BLE-periphral外设模式流程
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.4.4" data-path="ibeacon.html">
+            
+                
+                    <a href="./ibeacon.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.4.</b>
+                        
+                         iBeacon简介
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="0.5" data-path="airdrop.html">
+            
+                
+                    <a href="./airdrop.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.5.</b>
+                        
+                         AirDrop
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >iOS中的蓝牙</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_18">
+                    
+                        <h1 id="ble-periphral">BLE-periphral外设模式流程</h1>
+<h4 id="ble">之前在基础知识介绍过BLE应用的两种流程,如图:</h4>
+<p><img src="bleIma/ble_01.png" alt="图4.1.1"></p>
+<ul>
+<li>central模式用的都是左边的类，而peripheral模式用的是右边的类</li>
+</ul>
+<h2 id="peripheral">peripheral模式的流程</h2>
+<ul>
+<li>1.引入CoreBluetooth框架,初始化peripheralManager</li>
+<li>2.设置peripheralManager中的内容</li>
+<li>3.开启广播advertising</li>
+<li>4.对central的操作进行响应<ul>
+<li>4.1 读characteristics请求</li>
+<li>4.2 写characteristics请求</li>
+<li>4.4 订阅和取消订阅characteristics</li>
+</ul>
+</li>
+</ul>
+<h2 id="">准备环境</h2>
+<ul>
+<li>Xcode</li>
+<li>真机(4s以上)</li>
+</ul>
+<h2 id="">具体操作步骤</h2>
+<h4 id="1corebluetoothperipheralmanager">1.引入CoreBluetooth框架,初始化peripheralManager</h4>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;CoreBluetooth/CoreBluetooth.h&gt;</span></span>
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">XMGBLEPeripheralViewController</span> () &lt;<span class="hljs-title">CBPeripheralManagerDelegate</span>&gt;</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) CBPeripheralManager *pMgr; <span class="hljs-comment">/**&lt; 外设管理者 */</span>
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">XMGBLEPeripheralViewController</span></span>
+<span class="hljs-comment">// 懒加载</span>
+- (CBPeripheralManager *)pMgr
+{
+    <span class="hljs-keyword">if</span> (!_pMgr) {
+        _pMgr = [[CBPeripheralManager alloc] initWithDelegate:<span class="hljs-keyword">self</span> queue:dispatch_get_main_queue()];
+    }
+    <span class="hljs-keyword">return</span> _pMgr;
+}
+
+- (<span class="hljs-keyword">void</span>)viewDidLoad {
+    [<span class="hljs-keyword">super</span> viewDidLoad];
+    <span class="hljs-comment">// 调用get方法初始化,初始化后CBPeripheralManager状态改变会调用代理方法peripheralManagerDidUpdateState:</span>
+    <span class="hljs-comment">// 模拟器永远也不会是CBPeripheralManagerStatePoweredOn状态</span>
+    [<span class="hljs-keyword">self</span> pMgr];
+}
+</code></pre>
+<h4 id="2peripheralmanager">2.设置peripheralManager中的内容</h4>
+<ul>
+<li>创建characteristics及其description,</li>
+<li>创建service,把characteristics添加到service中,</li>
+<li>再把service添加到peripheralManager中</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#pragma mark - CBPeripheralManagerDelegate</span>
+<span class="hljs-comment">// CBPeripheralManager初始化后会触发的方法</span>
+- (<span class="hljs-keyword">void</span>)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral
+{
+    <span class="hljs-keyword">if</span> (peripheral<span class="hljs-variable">.state</span> == CBPeripheralManagerStatePoweredOn) {
+        <span class="hljs-comment">// 提示设备成功打开</span>
+        [SVProgressHUD showSuccessWithStatus:<span class="hljs-string">@"xmg设备打开成功~"</span>];
+        <span class="hljs-comment">// 配置各种服务入CBPeripheralManager</span>
+        [<span class="hljs-keyword">self</span> yf_setupPMgr];
+    }<span class="hljs-keyword">else</span>
+    {
+        <span class="hljs-comment">// 提示设备打开失败</span>
+        [SVProgressHUD showErrorWithStatus:<span class="hljs-string">@"失败!"</span>];
+    }
+}
+
+<span class="hljs-preprocessor">#pragma mark - 私有方法</span>
+- (<span class="hljs-keyword">void</span>)yf_setupPMgr
+{
+    <span class="hljs-comment">// 特征描述的UUID</span>
+    CBUUID *characteristicUserDescriptionUUID = [CBUUID UUIDWithString:CBUUIDCharacteristicUserDescriptionString];
+    <span class="hljs-comment">// 特征的通知UUID</span>
+    CBUUID *notifyCharacteristicUUID = [CBUUID UUIDWithString:notiyCharacteristicStrUUID];
+    <span class="hljs-comment">// 特征的读写UUID</span>
+    CBUUID *readwriteCharacteristicUUID = [CBUUID UUIDWithString:readwriteCharacteristicStrUUID];
+    <span class="hljs-comment">// 特征的只读UUID</span>
+    CBUUID *readCharacteristicUUID = [CBUUID UUIDWithString:readwriteCharacteristicStrUUID];
+    CBUUID *ser1UUID = [CBUUID UUIDWithString:Service1StrUUID];
+    CBUUID *ser2UUID = [CBUUID UUIDWithString:Service2StrUUID];
+
+
+    <span class="hljs-comment">// 初始化一个特征的描述</span>
+    CBMutableDescriptor *des1 = [[CBMutableDescriptor alloc] initWithType:characteristicUserDescriptionUUID value:<span class="hljs-string">@"xmgDes1"</span>];
+
+    <span class="hljs-comment">// 可通知的特征</span>
+    CBMutableCharacteristic *notifyCharacteristic = [[CBMutableCharacteristic alloc] initWithType:notifyCharacteristicUUID <span class="hljs-comment">// UUID</span>
+                                                                                       properties:CBCharacteristicPropertyNotify <span class="hljs-comment">// 枚举:通知</span>
+                                                                                            value:<span class="hljs-literal">nil</span> <span class="hljs-comment">// 数据先不传</span>
+                                                                                      permissions:CBAttributePermissionsReadable]; <span class="hljs-comment">// 枚举:可读</span>
+    <span class="hljs-comment">// 可读写的特征</span>
+    CBMutableCharacteristic *readwriteChar = [[CBMutableCharacteristic alloc] initWithType:readwriteCharacteristicUUID
+                                                                                properties:CBCharacteristicPropertyRead | CBCharacteristicPropertyWrite
+                                                                                     value:<span class="hljs-literal">nil</span>
+                                                                               permissions:CBAttributePermissionsReadable | CBAttributePermissionsWriteable];
+    [readwriteChar setDescriptors:@[des1]]; <span class="hljs-comment">// 设置特征的描述</span>
+
+    <span class="hljs-comment">// 只读特征</span>
+    CBMutableCharacteristic *readChar = [[CBMutableCharacteristic alloc] initWithType:readCharacteristicUUID
+                                                                           properties:CBCharacteristicPropertyRead
+                                                                                value:<span class="hljs-literal">nil</span>
+                                                                          permissions:CBAttributePermissionsReadable];
+
+    <span class="hljs-comment">// 初始化服务1</span>
+    CBMutableService *ser1 = [[CBMutableService alloc] initWithType:ser1UUID primary:<span class="hljs-literal">YES</span>];
+    <span class="hljs-comment">// 为服务设置俩特征(通知, 带描述的读写)</span>
+    [ser1 setCharacteristics:@[notifyCharacteristic, readwriteChar]];
+
+    <span class="hljs-comment">// 初始化服务2,并且添加一个只读特征</span>
+    CBMutableService *ser2 = [[CBMutableService alloc] initWithType:ser2UUID primary:<span class="hljs-literal">YES</span>];
+    ser2<span class="hljs-variable">.characteristics</span> = @[readChar];
+
+    <span class="hljs-comment">// 添加服务进外设管理者</span>
+    <span class="hljs-comment">// 添加操作会触发代理方法peripheralManager:didAddService:error:</span>
+    [<span class="hljs-keyword">self</span><span class="hljs-variable">.pMgr</span> addService:ser1];
+    [<span class="hljs-keyword">self</span><span class="hljs-variable">.pMgr</span> addService:ser2];
+}
+</code></pre>
+<h4 id="3">3.开启广播</h4>
+<pre><code class="lang-objc"><span class="hljs-comment">// 添加服务进CBPeripheralManager时会触发的方法</span>
+- (<span class="hljs-keyword">void</span>)peripheralManager:(CBPeripheralManager *)peripheral didAddService:(CBService *)service error:(<span class="hljs-built_in">NSError</span> *)error
+{
+    <span class="hljs-comment">// 由于添加了两次ser,所以方法会调用两次</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">if</span> (!error) {
+        i++;
+    }
+
+    <span class="hljs-comment">// 当第二次进入方法时候,代表两个服务添加完毕,此时要用到2,由于没有扩展性,所以新增了可变数组,记录添加的服务数量</span>
+    <span class="hljs-keyword">if</span> (i == <span class="hljs-keyword">self</span><span class="hljs-variable">.servieces</span><span class="hljs-variable">.count</span>) {
+        <span class="hljs-comment">// 广播内容</span>
+        <span class="hljs-built_in">NSDictionary</span> *advertDict = @{CBAdvertisementDataServiceUUIDsKey: [<span class="hljs-keyword">self</span><span class="hljs-variable">.servieces</span> valueForKeyPath:<span class="hljs-string">@"UUID"</span>],
+                                     CBAdvertisementDataLocalNameKey:LocalNameKey};
+        <span class="hljs-comment">// 发出广播,会触发peripheralManagerDidStartAdvertising:error:</span>
+        [peripheral startAdvertising:advertDict];
+    }
+}
+<span class="hljs-comment">// 开始广播触发的代理</span>
+- (<span class="hljs-keyword">void</span>)peripheralManagerDidStartAdvertising:(CBPeripheralManager *)peripheral error:(<span class="hljs-built_in">NSError</span> *)error
+{
+
+}
+
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;分割线&gt;&gt;&gt;&gt;下面是修改的地方
+
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) <span class="hljs-built_in">NSMutableArray</span> *servieces; <span class="hljs-comment">/**&lt; 服务可变数组 */</span>
+<span class="hljs-comment">// 自定义服务</span>
+- (<span class="hljs-built_in">NSMutableArray</span> *)servieces
+{
+    <span class="hljs-keyword">if</span> (!_servieces) {
+        _servieces = [<span class="hljs-built_in">NSMutableArray</span> array];
+    }
+    <span class="hljs-keyword">return</span> _servieces;
+}
+<span class="hljs-preprocessor">#pragma mark - 私有方法</span>
+- (<span class="hljs-keyword">void</span>)yf_setupPMgr
+{
+    ...
+
+    <span class="hljs-comment">// 初始化服务1</span>
+    CBMutableService *ser1 = [[CBMutableService alloc] initWithType:ser1UUID primary:<span class="hljs-literal">YES</span>];
+    <span class="hljs-comment">// 为服务设置俩特征(通知, 带描述的读写)</span>
+    [ser1 setCharacteristics:@[notifyCharacteristic, readwriteChar]];
+    [<span class="hljs-keyword">self</span><span class="hljs-variable">.servieces</span> addObject:ser1];
+
+    <span class="hljs-comment">// 初始化服务2,并且添加一个只读特征</span>
+    CBMutableService *ser2 = [[CBMutableService alloc] initWithType:ser2UUID primary:<span class="hljs-literal">YES</span>];
+    ser2<span class="hljs-variable">.characteristics</span> = @[readChar];
+    [<span class="hljs-keyword">self</span><span class="hljs-variable">.servieces</span> addObject:ser2];
+
+    <span class="hljs-comment">// 添加服务进外设管理者</span>
+    <span class="hljs-comment">// 添加操作会触发代理方法peripheralManager:didAddService:error:</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span><span class="hljs-variable">.servieces</span><span class="hljs-variable">.count</span>) {
+        <span class="hljs-keyword">for</span> (CBMutableService *ser <span class="hljs-keyword">in</span> <span class="hljs-keyword">self</span><span class="hljs-variable">.servieces</span>) {
+            [<span class="hljs-keyword">self</span><span class="hljs-variable">.pMgr</span> addService:ser];
+        }
+    }
+}
+</code></pre>
+<h4 id="4central">4.对central的操作做出响应</h4>
+<ul>
+<li>4.1 读characteristics请求</li>
+<li>4.2 写characteristics请求</li>
+<li>4.3 订阅和取消订阅characteristics</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-comment">// 外设收到读的请求,然后读特征的值赋值给request</span>
+- (<span class="hljs-keyword">void</span>)peripheralManager:(CBPeripheralManager *)peripheral didReceiveReadRequest:(CBATTRequest *)request
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d"</span>, __FUNCTION__, __LINE__);
+    <span class="hljs-comment">// 判断是否可读</span>
+    <span class="hljs-keyword">if</span> (request<span class="hljs-variable">.characteristic</span><span class="hljs-variable">.properties</span> &amp; CBCharacteristicPropertyRead) {
+        <span class="hljs-built_in">NSData</span> *data = request<span class="hljs-variable">.characteristic</span><span class="hljs-variable">.value</span>;
+
+        request<span class="hljs-variable">.value</span> = data;
+        <span class="hljs-comment">// 对请求成功做出响应</span>
+        [<span class="hljs-keyword">self</span><span class="hljs-variable">.pMgr</span> respondToRequest:request withResult:CBATTErrorSuccess];
+    }<span class="hljs-keyword">else</span>
+    {
+        [<span class="hljs-keyword">self</span><span class="hljs-variable">.pMgr</span> respondToRequest:request withResult:CBATTErrorWriteNotPermitted];
+    }
+}
+<span class="hljs-comment">// 外设收到写的请求,然后读request的值,写给特征</span>
+- (<span class="hljs-keyword">void</span>)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(<span class="hljs-built_in">NSArray</span>&lt;CBATTRequest *&gt; *)requests
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d, requests = %@"</span>, __FUNCTION__, __LINE__, requests);
+    CBATTRequest *request = requests<span class="hljs-variable">.firstObject</span>;
+    <span class="hljs-keyword">if</span> (request<span class="hljs-variable">.characteristic</span><span class="hljs-variable">.properties</span> &amp; CBCharacteristicPropertyWrite) {
+        <span class="hljs-built_in">NSData</span> *data = request<span class="hljs-variable">.value</span>;
+        <span class="hljs-comment">// 此处赋值要转类型,否则报错</span>
+        CBMutableCharacteristic *mChar = (CBMutableCharacteristic *)request<span class="hljs-variable">.characteristic</span>;
+        mChar<span class="hljs-variable">.value</span> = data;
+        <span class="hljs-comment">// 对请求成功做出响应</span>
+        [<span class="hljs-keyword">self</span><span class="hljs-variable">.pMgr</span> respondToRequest:request withResult:CBATTErrorSuccess];
+    }<span class="hljs-keyword">else</span>
+    {
+        [<span class="hljs-keyword">self</span><span class="hljs-variable">.pMgr</span> respondToRequest:request withResult:CBATTErrorWriteNotPermitted];
+    }
+}
+
+
+<span class="hljs-comment">// 与CBCentral的交互</span>
+<span class="hljs-comment">// 订阅特征</span>
+- (<span class="hljs-keyword">void</span>)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didSubscribeToCharacteristic:(CBCharacteristic *)characteristic
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d, 订阅了%@的数据"</span>, __FUNCTION__, __LINE__, characteristic<span class="hljs-variable">.UUID</span>);
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:<span class="hljs-number">2.0</span>
+                                                      target:<span class="hljs-keyword">self</span>
+                                                    selector:<span class="hljs-keyword">@selector</span>(yf_sendData:)
+                                                    userInfo:characteristic
+                                                     repeats:<span class="hljs-literal">YES</span>];
+
+    <span class="hljs-keyword">self</span><span class="hljs-variable">.timer</span> = timer;
+
+    <span class="hljs-comment">/* 另一种方法 */</span>
+<span class="hljs-comment">//    NSTimer *testTimer = [NSTimer timerWithTimeInterval:2.0</span>
+<span class="hljs-comment">//                                                 target:self</span>
+<span class="hljs-comment">//                                               selector:@selector(yf_sendData:)</span>
+<span class="hljs-comment">//                                               userInfo:characteristic</span>
+<span class="hljs-comment">//                                                repeats:YES];</span>
+<span class="hljs-comment">//    [[NSRunLoop currentRunLoop] addTimer:testTimer forMode:NSDefaultRunLoopMode];</span>
+
+}
+<span class="hljs-comment">// 取消订阅特征</span>
+- (<span class="hljs-keyword">void</span>)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didUnsubscribeFromCharacteristic:(CBCharacteristic *)characteristic
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d, 取消订阅了%@的数据"</span>, __FUNCTION__, __LINE__, characteristic<span class="hljs-variable">.UUID</span>);
+    [<span class="hljs-keyword">self</span><span class="hljs-variable">.timer</span> invalidate];
+    <span class="hljs-keyword">self</span><span class="hljs-variable">.timer</span> = <span class="hljs-literal">nil</span>;
+}
+
+- (<span class="hljs-keyword">void</span>)peripheralManagerIsReadyToUpdateSubscribers:(CBPeripheralManager *)peripheral
+{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%s, line = %d"</span>, __FUNCTION__, __LINE__);
+}
+
+<span class="hljs-comment">// 计时器每隔两秒调用的方法</span>
+- (<span class="hljs-built_in">BOOL</span>)yf_sendData:(NSTimer *)timer
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter<span class="hljs-variable">.dateFormat</span> = <span class="hljs-string">@"yy:MM:dd:HH:mm:ss"</span>;
+
+    <span class="hljs-built_in">NSString</span> *now = [dateFormatter stringFromDate:[<span class="hljs-built_in">NSDate</span> date]];
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"now = %@"</span>, now);
+
+    <span class="hljs-comment">// 执行回应central通知数据</span>
+    <span class="hljs-keyword">return</span>  [<span class="hljs-keyword">self</span><span class="hljs-variable">.pMgr</span> updateValue:[now dataUsingEncoding:NSUTF8StringEncoding]
+         forCharacteristic:timer<span class="hljs-variable">.userInfo</span>
+      onSubscribedCentrals:<span class="hljs-literal">nil</span>];
+}
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./ble-coding.html" class="navigation navigation-prev " aria-label="Previous page: BLE中心模式流程-coding"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./ibeacon.html" class="navigation navigation-next " aria-label="Next page: iBeacon简介"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
