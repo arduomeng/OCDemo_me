@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCf-aO-OC2">
+                                <rect key="frame" x="20" y="20" width="560" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r3P-gn-LwG">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="200"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="r3P-gn-LwG" secondAttribute="trailing" id="O1v-M6-t4o"/>
+                                    <constraint firstAttribute="height" constant="200" id="O2V-mc-9mN"/>
+                                    <constraint firstAttribute="bottom" secondItem="r3P-gn-LwG" secondAttribute="bottom" id="WRs-5R-mOc"/>
+                                    <constraint firstItem="r3P-gn-LwG" firstAttribute="leading" secondItem="oCf-aO-OC2" secondAttribute="leading" id="cr7-BH-iuc"/>
+                                    <constraint firstItem="r3P-gn-LwG" firstAttribute="top" secondItem="oCf-aO-OC2" secondAttribute="top" id="i5h-8o-4jD"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_gift" translatesAutoresizingMaskIntoConstraints="NO" id="slx-NN-Pcq">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="KtL-cJ-Mad"/>
+                                    <constraint firstAttribute="width" constant="20" id="QId-4I-A3V"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oCf-aO-OC2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Vml-tB-dUS"/>
+                            <constraint firstItem="slx-NN-Pcq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZLI-Cz-MKR"/>
+                            <constraint firstItem="oCf-aO-OC2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="c4I-dl-Wa1"/>
+                            <constraint firstItem="slx-NN-Pcq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nLC-1d-ikt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oCf-aO-OC2" secondAttribute="trailing" id="tFj-Nj-yoF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="adImageView" destination="r3P-gn-LwG" id="Eqm-O1-8X4"/>
+                        <outlet property="adView" destination="oCf-aO-OC2" id="iV1-gE-Lbq"/>
+                        <outlet property="giftImageView" destination="slx-NN-Pcq" id="i3H-S6-gWy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_home_gift" width="24" height="24"/>
+    </resources>
+</document>
