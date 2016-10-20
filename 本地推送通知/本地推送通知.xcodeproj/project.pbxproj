@@ -207,6 +207,7 @@
 				TargetAttributes = {
 					0B1415D11CF57AD500D55074 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = NS277JF24U;
 					};
 					0B1415EA1CF57AD600D55074 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -406,8 +407,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = "本地推送通知/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lcs.www.------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -419,8 +421,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = "本地推送通知/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lcs.www.------";
 				PRODUCT_NAME = "$(TARGET_NAME)";

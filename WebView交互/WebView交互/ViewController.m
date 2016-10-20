@@ -26,8 +26,8 @@
 //    _webView loadHTMLString:<#(nonnull NSString *)#> baseURL:<#(nullable NSURL *)#>
 //    _webView loadData:<#(nonnull NSData *)#> MIMEType:<#(nonnull NSString *)#> textEncodingName:<#(nonnull NSString *)#> baseURL:<#(nonnull NSURL *)#>
     
-//    NSURL *url = [[NSBundle mainBundle] URLForResource:@"synthesize" withExtension:@"html"];
-    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"synthesize" withExtension:@"html"];
+//    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
     [_webView loadRequest:[NSURLRequest requestWithURL:url]];
     
     //自适应
