@@ -9,9 +9,6 @@
 /*
  AVMutableComposition 可以用来操作音频和视频的组合，AVMutableVideoComposition 可以用来对视频进行操作，AVMutableAudioMix 类是给视频添加音频的，AVMutableVideoCompositionInstruction和AVMutableVideoCompositionLayerInstruction 一般都是配合使用，用来给视频添加水印或者旋转视频方向，AVAssetExportSession 是用来进行视频导出操作的。需要值得注意的是当App进入后台之后，会对使用到GPU的代码操作进行限制，会造成崩溃，而视频处理这些功能多数会使用到GPU,所以需要做对应的防错处理。
  
- 文／junbinchencn（简书作者）
- 原文链接：http://www.jianshu.com/p/5433143cccd8
- 著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。
  */
 
 #import "ViewController.h"
