@@ -17,6 +17,7 @@
 		B33DA2371DEEFD4400D0C55C /* CSVideoPlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B33DA2361DEEFD4400D0C55C /* CSVideoPlayView.xib */; };
 		B33DA2401DEFF18E00D0C55C /* Movie.m4v in Resources */ = {isa = PBXBuildFile; fileRef = B33DA23F1DEFF18E00D0C55C /* Movie.m4v */; };
 		B33DA2431DF016B700D0C55C /* CSFullVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33DA2421DF016B700D0C55C /* CSFullVideoPlayViewController.m */; };
+		B33DA2801DF16DF200D0C55C /* audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B33DA27F1DF16DF200D0C55C /* audio.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B33DA23F1DEFF18E00D0C55C /* Movie.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Movie.m4v; sourceTree = "<group>"; };
 		B33DA2411DF016B700D0C55C /* CSFullVideoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFullVideoPlayViewController.h; sourceTree = "<group>"; };
 		B33DA2421DF016B700D0C55C /* CSFullVideoPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFullVideoPlayViewController.m; sourceTree = "<group>"; };
+		B33DA27F1DF16DF200D0C55C /* audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				B33DA21B1DEEF90600D0C55C /* main.m */,
 				B33DA23F1DEFF18E00D0C55C /* Movie.m4v */,
+				B33DA27F1DF16DF200D0C55C /* audio.mp3 */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B33DA22A1DEEF90600D0C55C /* LaunchScreen.storyboard in Resources */,
+				B33DA2801DF16DF200D0C55C /* audio.mp3 in Resources */,
 				B33DA2271DEEF90600D0C55C /* Assets.xcassets in Resources */,
 				B33DA2371DEEFD4400D0C55C /* CSVideoPlayView.xib in Resources */,
 				B33DA2251DEEF90600D0C55C /* Main.storyboard in Resources */,
@@ -329,6 +333,7 @@
 				B33DA2301DEEF90600D0C55C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
