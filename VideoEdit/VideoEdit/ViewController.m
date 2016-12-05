@@ -27,6 +27,11 @@ int degree = 0;
 @property (nonatomic, strong) AVMutableVideoComposition *mutableVideoComposition;
 @property (nonatomic, strong) AVMutableAudioMix *mutableAudioMix;
 
+@property (nonatomic, strong) CALayer *watermarkLayer;
+
+@property (nonatomic, strong) AVAssetExportSession *exportSession;
+@property (nonatomic, strong) NSTimer *exportTimer;
+
 
 @end
 
@@ -108,6 +113,8 @@ int degree = 0;
             NSLog(@"compositionAudioTrack %@", error);
         }
     }
+    
+    _inputAsset = _mutableComposition;
 }
 
 - (void)rotateToDegree{
@@ -147,7 +154,9 @@ int degree = 0;
     // Step 3
     // Set the appropriate render sizes and rotational transforms
     // Create a new video composition
-    self.mutableVideoComposition = [AVMutableVideoComposition videoComposition];
+    if (!self.mutableVideoComposition) {
+        self.mutableVideoComposition = [AVMutableVideoComposition videoComposition];
+    }
     // 每一帧的时间
     self.mutableVideoComposition.frameDuration = CMTimeMake(1, _inputAsset.duration.timescale);
     
@@ -239,24 +248,203 @@ int degree = 0;
     AVAssetTrack *newAudioTrack = [audioAsset tracksWithMediaType:AVMediaTypeAudio][0];
     
     AVMutableCompositionTrack *customAudioTrack = [self.mutableComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
-    [customAudioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, [self.mutableComposition duration]) ofTrack:newAudioTrack atTime:kCMTimeZero error:nil];
+    // 从音频15秒 处插入
+    [customAudioTrack insertTimeRange:CMTimeRangeMake(CMTimeMakeWithSeconds(15, audioAsset.duration.timescale), [self.mutableComposition duration]) ofTrack:newAudioTrack atTime:kCMTimeZero error:nil];
     
     // Step 4
     // Mix parameters sets a volume ramp for the audio track to be mixed with existing audio track for the duration of the composition
     AVMutableAudioMixInputParameters *inputParameter = [AVMutableAudioMixInputParameters audioMixInputParametersWithTrack:customAudioTrack];
+    CMTime fadeDuration = CMTimeMakeWithSeconds(1, self.mutableComposition.duration.timescale);
+    CMTime fadeInTime = kCMTimeZero;
+    CMTime fadeOutTime = CMTimeMakeWithSeconds(CMTimeGetSeconds(self.mutableComposition.duration) - 1, self.mutableComposition.duration.timescale);
     // fade in
-    [inputParameter setVolumeRampFromStartVolume:0 toEndVolume:1 timeRange:CMTimeRangeMake(kCMTimeZero, CMTimeMakeWithSeconds(1, 1))];
+    [inputParameter setVolumeRampFromStartVolume:0 toEndVolume:1 timeRange:CMTimeRangeMake(fadeInTime, fadeDuration)];
     // fade out
-    [inputParameter setVolumeRampFromStartVolume:1 toEndVolume:0 timeRange:CMTimeRangeMake(, kCMTimeZero)];
-    
+    [inputParameter setVolumeRampFromStartVolume:1 toEndVolume:0 timeRange:CMTimeRangeMake(fadeOutTime, fadeDuration)];
+
     self.mutableAudioMix = [AVMutableAudioMix audioMix];
     self.mutableAudioMix.inputParameters = @[inputParameter];
     
     [self reloadPlayerView];
 }
 - (IBAction)AddWater:(id)sender {
+    /*
+    拿到视频和音频资源
+    创建AVMutableComposition对象
+    往AVMutableComposition对象添加视频资源，同时设置视频资源的时间段和插入点
+    往AVMutableComposition对象添加音频资源，同时设置音频资源的时间段和插入点
+    创建视频组合器对象 AVMutableVideoComposition 并设置frame和渲染宽高
+    创建视频组合器指令对象，设置指令的作用范围
+    创建视频组合器图层指令对象，设置指令的作用范围
+    视频组合器图层指令对象 放入 视频组合器指令对象中
+    视频组合器指令对象放入视频组合器对象
+    创建水印图层Layer并设置frame和水印的位置，并将水印加入视频组合器中
+     */
+    
+    // Step 1
+    // Create a composition with the given asset and insert audio and video tracks into it from the asset
+    float duration = CMTimeGetSeconds(self.inputAsset.duration);
+    CMTimeRange timeRange = CMTimeRangeMake(kCMTimeZero, CMTimeMakeWithSeconds(duration, _inputAsset.duration.timescale));
+    CMTime startTime = kCMTimeZero;
+    
+    [self createMutableCompositionWithTimeRange:timeRange startTime:startTime];
+    
+    if (!self.mutableVideoComposition) {
+        // build a pass through video composition
+        self.mutableVideoComposition = [AVMutableVideoComposition videoComposition];
+        self.mutableVideoComposition.frameDuration = CMTimeMake(1, self.mutableComposition.duration.timescale);
+        
+        AVAssetTrack *videoTrack = [[self.inputAsset tracksWithMediaType:AVMediaTypeVideo] firstObject];
+        self.mutableVideoComposition.renderSize = videoTrack.naturalSize;
+        
+        AVMutableVideoCompositionInstruction *passThroughInstruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
+        passThroughInstruction.timeRange = CMTimeRangeMake(kCMTimeZero, [self.mutableComposition duration]);
+        
+        AVMutableVideoCompositionLayerInstruction *passThroughLayer = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
+        
+        passThroughInstruction.layerInstructions = @[passThroughLayer];
+        self.mutableVideoComposition.instructions = @[passThroughInstruction];
+    }
+    
+    // Step 2
+    // Create a water mark layer of the same size as that of a video frame from the asset
+    _watermarkLayer = [CALayer layer];
+    _watermarkLayer.bounds = CGRectMake(0, 0, 200, 100);
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
+    imageView.image = [UIImage imageNamed:@"trim_btn_fastsetting"];
+    [_watermarkLayer addSublayer:imageView.layer];
+    
+    [self reloadPlayerView];
 }
 - (IBAction)Reverse:(id)sender {
+}
+- (IBAction)RemoveAudio:(id)sender {
+    
+    float duration = CMTimeGetSeconds(self.inputAsset.duration);
+    CMTimeRange timeRange = CMTimeRangeMake(kCMTimeZero, CMTimeMakeWithSeconds(duration, _inputAsset.duration.timescale));
+    CMTime startTime = kCMTimeZero;
+    
+    // 获取VideoTrack AudioTrack 拿到视频和音频资源
+    AVAssetTrack *videoTrack = nil;
+    NSError *error = nil;
+    
+    if ([self.inputAsset tracksWithMediaType:AVMediaTypeVideo].count) {
+        videoTrack = [[self.inputAsset tracksWithMediaType:AVMediaTypeVideo] firstObject];
+    }
+    //创建AVMutableComposition对象
+    _mutableComposition = [AVMutableComposition composition];
+    
+    //往AVMutableComposition对象添加视频资源，同时设置视频资源的时间段和插入点
+    if (videoTrack) {
+        // 原视频时长
+        AVMutableCompositionTrack *compositionVideoTrack = [_mutableComposition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+        [compositionVideoTrack insertTimeRange:timeRange ofTrack:videoTrack atTime:startTime error:&error];
+        if (error) {
+            NSLog(@"compositionVideoTrack %@", error);
+        }
+    }
+    
+    _inputAsset = _mutableComposition;
+    
+    [self reloadPlayerView];
+}
+- (IBAction)export:(id)sender {
+//    创建输出路径
+//    根据AVMutableComposition对象创建AVAssetExportSession视频导出对象
+//    设置AVAssetExportSession的AVMutableVideoComposition对象，AVMutableAudioMix对象，视频导出路径，视频导出格式
+//    异步导出视频，根据导出结果做对应处理。
+    
+    // Step 1
+    // Create an outputURL to which the exported movie will be saved
+    NSString *exportDir = [self createExportDirectory];
+    NSString *exportFile = [exportDir stringByAppendingPathComponent:@"output.mp4"];
+    [[NSFileManager defaultManager] removeItemAtPath:exportFile error:nil];
+    
+    // Step 2
+    // Create an export session with the composition and write the exported movie to the photo library
+    // 含有水印处理
+    if (self.watermarkLayer) {
+        CALayer *exportWatermarkLayer = [self copyWatermarkLayer:self.watermarkLayer];
+        CALayer *parentLayer = [CALayer layer];
+        CALayer *videoLayer = [CALayer layer];
+        parentLayer.frame = CGRectMake(0, 0, self.mutableVideoComposition.renderSize.width, self.mutableVideoComposition.renderSize.height);
+        videoLayer.frame = CGRectMake(0, 0, self.mutableVideoComposition.renderSize.width, self.mutableVideoComposition.renderSize.height);
+        [parentLayer addSublayer:videoLayer];
+        exportWatermarkLayer.position = CGPointMake(self.mutableVideoComposition.renderSize.width/2, self.mutableVideoComposition.renderSize.height/4);
+        [parentLayer addSublayer:exportWatermarkLayer];
+        self.mutableVideoComposition.animationTool = [AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
+    }
+    
+    // 定时器监控导出进度
+    _exportTimer = [NSTimer scheduledTimerWithTimeInterval:0.05
+                                                    target:self
+                                                  selector:@selector(updateExportProgress)
+                                                  userInfo:nil
+                                                   repeats:YES];
+
+    // 导出
+    _exportSession = [[AVAssetExportSession alloc] initWithAsset:self.mutableComposition presetName:AVAssetExportPreset1280x720];
+    _exportSession.videoComposition = self.mutableVideoComposition;
+    _exportSession.audioMix = self.mutableAudioMix;
+    _exportSession.outputURL = [NSURL fileURLWithPath:exportFile];
+    _exportSession.outputFileType = AVFileTypeMPEG4;
+
+    // 异步开始导出
+    [_exportSession exportAsynchronouslyWithCompletionHandler:^{
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            switch (_exportSession.status) {
+                    
+                case AVAssetExportSessionStatusWaiting:
+                    NSLog(@"waiting");
+                    break;
+                case AVAssetExportSessionStatusUnknown:
+                    
+                    NSLog(@"Unknown:%@",self.exportSession.error);
+                    break;
+                case AVAssetExportSessionStatusExporting:
+                    break;
+                case AVAssetExportSessionStatusCompleted:
+                    // 写入相册
+                    NSLog(@"export success");
+                    [_exportTimer invalidate];
+                    _exportTimer = nil;
+                    break;
+                case AVAssetExportSessionStatusFailed:
+                case AVAssetExportSessionStatusCancelled:
+                    NSLog(@"Failed:%@",self.exportSession.error);
+                    [_exportTimer invalidate];
+                    _exportTimer = nil;
+                    break;
+                    
+                default:
+                    break;
+            }
+
+        });
+    }];
+}
+
+- (void)updateExportProgress{
+    NSLog(@"progress %.2f", _exportSession.progress);
+}
+
+- (CALayer*)copyWatermarkLayer:(CALayer*)inputLayer{
+    CALayer *exportLayer = [CALayer layer];
+    exportLayer.bounds = inputLayer.bounds;
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
+    imageView.image = [UIImage imageNamed:@"trim_btn_fastsetting"];
+    [exportLayer addSublayer:imageView.layer];
+    return exportLayer;
+}
+
+- (NSString *)createExportDirectory{
+    NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *path = [documentPath stringByAppendingPathComponent:@"Export"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    return path;
 }
 
 - (void)reloadPlayerView{
@@ -264,6 +452,11 @@ int degree = 0;
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:self.mutableComposition];
     playerItem.videoComposition = self.mutableVideoComposition;
     playerItem.audioMix = self.mutableAudioMix;
+    
+    if (self.watermarkLayer) {
+        self.watermarkLayer.position = CGPointMake(self.videoPlayView.bounds.size.width * 0.5, self.videoPlayView.bounds.size.height * 0.5);
+        [self.videoPlayView.layer addSublayer:self.watermarkLayer];
+    }
     
     _videoPlayView.outerPlayerItem = playerItem;
 }

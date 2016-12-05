@@ -103,14 +103,43 @@
                                         </constraints>
                                         <state key="normal" title="Reverse"/>
                                         <connections>
-                                            <action selector="AddWater:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qdM-9B-Nq6"/>
                                             <action selector="Reverse:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jSy-nI-bD6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yc6-9A-0kA">
+                                        <rect key="frame" x="100" y="30" width="100" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="123" id="1uR-Py-YNd"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Anb-Lx-Ffb"/>
+                                            <constraint firstAttribute="width" constant="100" id="OEE-5x-oCS"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="35" id="Pli-gk-Som"/>
+                                            <constraint firstAttribute="height" constant="30" id="Y3z-KE-hfJ"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="n44-qB-a7c"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="upw-xL-edg"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="zlW-H2-3WU"/>
+                                        </constraints>
+                                        <state key="normal" title="RemoveAudio"/>
+                                        <connections>
+                                            <action selector="RemoveAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IIn-YB-3yK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJp-Fj-QOo">
+                                        <rect key="frame" x="200" y="30" width="103" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="b4N-jx-HXf"/>
+                                            <constraint firstAttribute="width" constant="103" id="sTa-kJ-7Mf"/>
+                                        </constraints>
+                                        <state key="normal" title="Export"/>
+                                        <connections>
+                                            <action selector="export:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gB3-fh-0z0"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="yc6-9A-0kA" firstAttribute="top" secondItem="DS6-ab-RTk" secondAttribute="bottom" id="3ZV-ci-EfX"/>
                                     <constraint firstItem="0Rc-IZ-aNu" firstAttribute="leading" secondItem="GG9-uf-0Vh" secondAttribute="trailing" id="8l6-TS-9Sc"/>
+                                    <constraint firstItem="yc6-9A-0kA" firstAttribute="leading" secondItem="NPx-kf-7P3" secondAttribute="trailing" id="C3m-tP-Nju"/>
                                     <constraint firstItem="0Rc-IZ-aNu" firstAttribute="top" secondItem="aF3-vW-CHo" secondAttribute="top" id="CVD-Kq-Cv5"/>
                                     <constraint firstItem="GG9-uf-0Vh" firstAttribute="top" secondItem="aF3-vW-CHo" secondAttribute="top" id="Ia1-DE-hUk"/>
                                     <constraint firstItem="NPx-kf-7P3" firstAttribute="top" secondItem="7aO-iT-hvD" secondAttribute="bottom" id="Mmf-pS-N0w"/>
@@ -120,8 +149,10 @@
                                     <constraint firstItem="G6W-Oa-14g" firstAttribute="leading" secondItem="DS6-ab-RTk" secondAttribute="trailing" id="Tfw-gW-8Fx"/>
                                     <constraint firstItem="NPx-kf-7P3" firstAttribute="leading" secondItem="aF3-vW-CHo" secondAttribute="leading" id="Ycy-bh-4ID"/>
                                     <constraint firstAttribute="height" constant="100" id="YfK-Kg-OCS"/>
+                                    <constraint firstItem="AJp-Fj-QOo" firstAttribute="leading" secondItem="yc6-9A-0kA" secondAttribute="trailing" id="dcy-Yf-kjv"/>
                                     <constraint firstItem="DS6-ab-RTk" firstAttribute="top" secondItem="aF3-vW-CHo" secondAttribute="top" id="f48-yF-7fH"/>
                                     <constraint firstItem="7aO-iT-hvD" firstAttribute="top" secondItem="aF3-vW-CHo" secondAttribute="top" id="rgL-hh-kGC"/>
+                                    <constraint firstItem="AJp-Fj-QOo" firstAttribute="top" secondItem="G6W-Oa-14g" secondAttribute="bottom" id="tSl-e0-7pN"/>
                                     <constraint firstItem="7aO-iT-hvD" firstAttribute="leading" secondItem="0Rc-IZ-aNu" secondAttribute="trailing" id="wPR-SN-ASZ"/>
                                 </constraints>
                             </view>
