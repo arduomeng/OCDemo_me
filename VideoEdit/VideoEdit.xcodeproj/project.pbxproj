@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B330F76F1DF662E90084849E /* AVUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B330F76E1DF662E90084849E /* AVUtilities.m */; };
 		B33DA21C1DEEF90600D0C55C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B33DA21B1DEEF90600D0C55C /* main.m */; };
 		B33DA21F1DEEF90600D0C55C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B33DA21E1DEEF90600D0C55C /* AppDelegate.m */; };
 		B33DA2221DEEF90600D0C55C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33DA2211DEEF90600D0C55C /* ViewController.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B330F76D1DF662E90084849E /* AVUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVUtilities.h; sourceTree = "<group>"; };
+		B330F76E1DF662E90084849E /* AVUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVUtilities.m; sourceTree = "<group>"; };
 		B33DA2171DEEF90600D0C55C /* VideoEdit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoEdit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33DA21B1DEEF90600D0C55C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B33DA21D1DEEF90600D0C55C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 				B33DA2361DEEFD4400D0C55C /* CSVideoPlayView.xib */,
 				B33DA2411DF016B700D0C55C /* CSFullVideoPlayViewController.h */,
 				B33DA2421DF016B700D0C55C /* CSFullVideoPlayViewController.m */,
+				B330F76D1DF662E90084849E /* AVUtilities.h */,
+				B330F76E1DF662E90084849E /* AVUtilities.m */,
 			);
 			path = VideoEdit;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B33DA2221DEEF90600D0C55C /* ViewController.m in Sources */,
+				B330F76F1DF662E90084849E /* AVUtilities.m in Sources */,
 				B33DA21F1DEEF90600D0C55C /* AppDelegate.m in Sources */,
 				B33DA2331DEEF9DF00D0C55C /* CSVideoPlayView.m in Sources */,
 				B33DA21C1DEEF90600D0C55C /* main.m in Sources */,

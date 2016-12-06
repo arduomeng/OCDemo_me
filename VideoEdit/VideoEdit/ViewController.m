@@ -12,6 +12,7 @@
 
 #import "ViewController.h"
 #import "CSVideoPlayView.h"
+#import "AVUtilities.h"
 #import <AVFoundation/AVFoundation.h>
 
 #define degreesToRadians( degrees ) ( ( degrees ) / 180.0 * M_PI )
@@ -227,7 +228,7 @@ int degree = 0;
     [self rotateToDegree];
     
 }
-- (IBAction)Crop:(id)sender {
+- (IBAction)Rate:(id)sender {
 }
 - (IBAction)AddMusic:(id)sender {
 //    拿到视频和音频资源
@@ -317,6 +318,16 @@ int degree = 0;
     [self reloadPlayerView];
 }
 - (IBAction)Reverse:(id)sender {
+    
+    float duration = CMTimeGetSeconds(self.inputAsset.duration);
+    CMTimeRange timeRange = CMTimeRangeMake(kCMTimeZero, CMTimeMakeWithSeconds(duration, _inputAsset.duration.timescale));
+    CMTime startTime = kCMTimeZero;
+    [self createMutableCompositionWithTimeRange:timeRange startTime:startTime];
+    
+    NSString *path = [self createReverseDirectory];
+    NSString *reverseFile = [path stringByAppendingPathComponent:@"reverse.mp4"];
+    [[NSFileManager defaultManager] removeItemAtPath:reverseFile error:nil];
+    _inputAsset = [AVUtilities assetByReversingAsset:_inputAsset outputURL:[NSURL fileURLWithPath:reverseFile]];
 }
 - (IBAction)RemoveAudio:(id)sender {
     
@@ -441,6 +452,14 @@ int degree = 0;
 - (NSString *)createExportDirectory{
     NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
     NSString *path = [documentPath stringByAppendingPathComponent:@"Export"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    return path;
+}
+- (NSString *)createReverseDirectory{
+    NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *path = [documentPath stringByAppendingPathComponent:@"Reverse"];
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
     }

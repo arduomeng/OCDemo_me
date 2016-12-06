@@ -55,15 +55,15 @@
                                             <action selector="Rotate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YVD-lc-Ar5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aO-iT-hvD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aO-iT-hvD" userLabel="Rate">
                                         <rect key="frame" x="120" y="0.0" width="60" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="1E9-zb-0ho"/>
                                             <constraint firstAttribute="width" constant="60" id="gA3-Iw-pOp"/>
                                         </constraints>
-                                        <state key="normal" title="Crop"/>
+                                        <state key="normal" title="Rate"/>
                                         <connections>
-                                            <action selector="Crop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I4o-ur-M6B"/>
+                                            <action selector="Rate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lad-7q-q6e"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DS6-ab-RTk">
