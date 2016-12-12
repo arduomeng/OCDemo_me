@@ -229,6 +229,20 @@ int degree = 0;
     
 }
 - (IBAction)Rate:(id)sender {
+    float duration = CMTimeGetSeconds(self.inputAsset.duration);
+    CMTimeRange timeRange = CMTimeRangeMake(kCMTimeZero, CMTimeMakeWithSeconds(duration, _inputAsset.duration.timescale));
+    CMTime startTime = kCMTimeZero;
+    [self createMutableCompositionWithTimeRange:timeRange startTime:startTime];
+    
+    CMTime rateTime = CMTimeMakeWithSeconds(CMTimeGetSeconds(_mutableComposition.duration) * 0.5, _mutableComposition.duration.timescale);
+    
+    // timeRange : The time range of the composition to be scaled.  rateTime : The new duration of timeRange.
+    // 两倍速率播放
+    [_mutableComposition scaleTimeRange:timeRange toDuration:rateTime];
+    
+    _inputAsset = _mutableComposition;
+    
+     [self reloadPlayerView];
 }
 - (IBAction)AddMusic:(id)sender {
 //    拿到视频和音频资源
