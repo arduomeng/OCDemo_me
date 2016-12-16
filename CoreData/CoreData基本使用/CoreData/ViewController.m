@@ -24,7 +24,7 @@
     _ctx = [[NSManagedObjectContext alloc] init];
     
     // 模型管理器
-    // 添加某一个.xcdatamodeld模型到模型管理器中
+    // 添加某一个.xcdatamodeld模型到模型管理器中   一个上下文对应一个数据库
     // NSLog(@"mainBundle %@", [NSBundle mainBundle]);
     // NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:name withExtension:@"momd"]];
     // 添加所有的模型到模型管理器中
