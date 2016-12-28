@@ -13,6 +13,8 @@
 #import "CSUIImageAssetCollectionViewCell.h"
 #import <AVKit/AVPlayerViewController.h>
 #import <Photos/Photos.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+
 @interface CSUIImageAssetViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *mainCollectionView;
 
@@ -36,10 +38,9 @@
     [super viewDidLoad];
     [self configCollectionView];
     [self.navigationItem setLeftBarButtonItem:[UIBarButtonItem barButtonItemWithImage:@"material_back" highLightImage:@"material_back" target:self action:@selector(pop)]];
-    UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
-    UIBarButtonItem *confirmItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(confirm)];
-    [self.navigationItem setRightBarButtonItems:@[cancelItem, confirmItem]];
-    
+//    UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
+    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"URL" style:UIBarButtonItemStylePlain target:self action:@selector(getPHAssetFromURL)];
+    [self.navigationItem setRightBarButtonItems:@[item1]];
     
 }
 
@@ -68,8 +69,6 @@
         CSAssetModel *model = [[CSAssetModel alloc] init];
         model.asset = asset;
         
-        
-        
         [self.assetArr addObject:model];
     }
     
@@ -80,8 +79,8 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)confirm{
-    NSLog(@"confirm");
+- (void)getPHAssetFromURL{
+    
 }
 
 - (void)pop{
@@ -105,14 +104,38 @@
     CSAssetModel *model = _assetArr[indexPath.row];
     
     if (model.asset.mediaType == PHAssetMediaTypeVideo) {
-        [[PHImageManager defaultManager] requestPlayerItemForVideo:model.asset options:nil resultHandler:^(AVPlayerItem * _Nullable playerItem, NSDictionary * _Nullable info) {
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                AVPlayerViewController *playvc = [[AVPlayerViewController alloc] init];
-                playvc.player = [[AVPlayer alloc] initWithPlayerItem:playerItem];
-                [self presentViewController:playvc animated:YES completion:nil];
-            });
-            
+        
+//        [[PHImageManager defaultManager] requestPlayerItemForVideo:model.asset options:nil resultHandler:^(AVPlayerItem * _Nullable playerItem, NSDictionary * _Nullable info) {
+//            dispatch_sync(dispatch_get_main_queue(), ^{
+//                AVPlayerViewController *playvc = [[AVPlayerViewController alloc] init];
+//                playvc.player = [[AVPlayer alloc] initWithPlayerItem:playerItem];
+//                [self presentViewController:playvc animated:YES completion:nil];
+//            });
+//            
+//        }];
+        
+        
+        // 获取视频URL
+        __block NSURL *url = nil;
+        
+        PHVideoRequestOptions *option = [[PHVideoRequestOptions alloc] init];
+        option.version = PHVideoRequestOptionsVersionOriginal;
+        [[PHImageManager defaultManager] requestAVAssetForVideo:model.asset options:option resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
+            AVURLAsset *urlAsset = (AVURLAsset *)asset;
+            if (urlAsset) {
+                url = urlAsset.URL;
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    AVPlayerViewController *playvc = [[AVPlayerViewController alloc] init];
+                    AVPlayerItem *item = [AVPlayerItem playerItemWithURL:url];
+                    playvc.player = [[AVPlayer alloc] initWithPlayerItem:item];
+                    [self presentViewController:playvc animated:YES completion:nil];
+                });
+            }
         }];
+        
+        
+        
     }else if (model.asset.mediaType == PHAssetMediaTypeImage){
         
         self.navigationController.navigationBar.hidden = YES;
@@ -124,22 +147,27 @@
         UITapGestureRecognizer *reconginzer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
         [_previewView addGestureRecognizer:reconginzer];
         
-        // 根据image原始宽高比，计算所需要的targetSize
-//        CGSize imageSize;
+//        PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+//        options.resizeMode = PHImageRequestOptionsResizeModeExact; // 图像尺寸精确
 //        
-//        PHAsset *phAsset = model.asset;
-//        CGFloat aspectRatio = phAsset.pixelWidth / (CGFloat)phAsset.pixelHeight;
-//        CGFloat pixelWidth = [UIScreen mainScreen].bounds.size.width;
-//        CGFloat pixelHeight = pixelWidth / aspectRatio;
-//        imageSize = CGSizeMake(pixelWidth, pixelHeight);
+//        [[PHImageManager defaultManager] requestImageForAsset:model.asset targetSize:CGSizeMake(model.asset.pixelWidth, model.asset.pixelHeight) contentMode:PHImageContentModeAspectFit options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+//            _previewView.image = result;
+//            NSLog(@"original image size %@", NSStringFromCGSize(result.size));
+//        }];
         
-        PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
-        options.resizeMode = PHImageRequestOptionsResizeModeExact; // 图像尺寸精确
-        
-        [[PHImageManager defaultManager] requestImageForAsset:model.asset targetSize:CGSizeMake(model.asset.pixelWidth, model.asset.pixelHeight) contentMode:PHImageContentModeAspectFit options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-            _previewView.image = result;
-            NSLog(@"original image size %@", NSStringFromCGSize(result.size));
+        // 获取图片url
+        __block NSURL *url = nil;
+        PHContentEditingInputRequestOptions *options = [[PHContentEditingInputRequestOptions alloc] init];
+        options.canHandleAdjustmentData = ^(PHAdjustmentData *adjustmentData){
+            return  YES;
+        };
+        [model.asset requestContentEditingInputWithOptions:options completionHandler:^(PHContentEditingInput * _Nullable contentEditingInput, NSDictionary * _Nonnull info) {
+           url = contentEditingInput.fullSizeImageURL;
+            UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:url]];
+            _previewView.image = image;
+            
         }];
+        
     }
     
     

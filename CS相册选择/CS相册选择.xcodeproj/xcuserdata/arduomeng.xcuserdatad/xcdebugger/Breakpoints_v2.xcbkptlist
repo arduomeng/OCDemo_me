@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CS&#x76f8;&#x518c;&#x9009;&#x62e9;/CSUIImagePickerController/CSUIImageAssetViewController.m"
+            timestampString = "504603386.125467"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CSUIImageAssetViewController collectionView:didSelectItemAtIndexPath:]"
+                  moduleName = "CS&#x76f8;&#x518c;&#x9009;&#x62e9;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/temp/OCDemo_me/CS%E7%9B%B8%E5%86%8C%E9%80%89%E6%8B%A9/CS%E7%9B%B8%E5%86%8C%E9%80%89%E6%8B%A9/CSUIImagePickerController/CSUIImageAssetViewController.m"
+                  timestampString = "504603395.978451"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "1508">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__72-[CSUIImageAssetViewController collectionView:didSelectItemAtIndexPath:]_block_invoke_2.146"
+                  moduleName = "CS&#x76f8;&#x518c;&#x9009;&#x62e9;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/temp/OCDemo_me/CS%E7%9B%B8%E5%86%8C%E9%80%89%E6%8B%A9/CS%E7%9B%B8%E5%86%8C%E9%80%89%E6%8B%A9/CSUIImagePickerController/CSUIImageAssetViewController.m"
+                  timestampString = "504603395.980769"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
