@@ -10,11 +10,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CS&#x76f8;&#x518c;&#x9009;&#x62e9;/CSUIImagePickerController/CSUIImageAssetViewController.m"
-            timestampString = "504603386.125467"
+            timestampString = "506422621.609799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
             endingLineNumber = "164"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CS&#x76f8;&#x518c;&#x9009;&#x62e9;/CSUIImagePickerController/CSUIImageAssetViewController.m"
+            timestampString = "506422621.609799"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CS&#x76f8;&#x518c;&#x9009;&#x62e9;/CSUIImagePickerController/CSUIImageAssetViewController.m"
+            timestampString = "506417411.884156"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "7">
             <Locations>
@@ -26,27 +58,27 @@
                   moduleName = "CS&#x76f8;&#x518c;&#x9009;&#x62e9;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/temp/OCDemo_me/CS%E7%9B%B8%E5%86%8C%E9%80%89%E6%8B%A9/CS%E7%9B%B8%E5%86%8C%E9%80%89%E6%8B%A9/CSUIImagePickerController/CSUIImageAssetViewController.m"
-                  timestampString = "504603395.978451"
+                  timestampString = "506421742.106008"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "164"
-                  endingLineNumber = "164"
-                  offsetFromSymbolStart = "1508">
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "1075">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__72-[CSUIImageAssetViewController collectionView:didSelectItemAtIndexPath:]_block_invoke_2.146"
+                  symbolName = "__72-[CSUIImageAssetViewController collectionView:didSelectItemAtIndexPath:]_block_invoke"
                   moduleName = "CS&#x76f8;&#x518c;&#x9009;&#x62e9;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/temp/OCDemo_me/CS%E7%9B%B8%E5%86%8C%E9%80%89%E6%8B%A9/CS%E7%9B%B8%E5%86%8C%E9%80%89%E6%8B%A9/CSUIImagePickerController/CSUIImageAssetViewController.m"
-                  timestampString = "504603395.980769"
+                  timestampString = "506421742.113065"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "164"
-                  endingLineNumber = "164"
-                  offsetFromSymbolStart = "24">
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>

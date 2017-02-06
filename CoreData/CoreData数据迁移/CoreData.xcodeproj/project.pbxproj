@@ -222,7 +222,7 @@
 				TargetAttributes = {
 					03D7EA581D37E39700E81972 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 8RSWW685EX;
+						DevelopmentTeam = NS277JF24U;
 					};
 					03D7EA741D37E39700E81972 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -434,6 +434,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = CoreData/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -446,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = CoreData/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -551,7 +553,7 @@
 				B3D6BE5B1E03FF8A009D95FB /* CoreData1.1.xcdatamodel */,
 				B3D6BE591E03FF04009D95FB /* CoreData.xcdatamodel */,
 			);
-			currentVersion = B3D6BE5C1E04045F009D95FB /* CoreData1.2.xcdatamodel */;
+			currentVersion = B3D6BE591E03FF04009D95FB /* CoreData.xcdatamodel */;
 			path = CoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

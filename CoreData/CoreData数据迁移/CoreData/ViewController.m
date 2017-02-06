@@ -9,9 +9,9 @@
 #import "ViewController.h"
 #import <CoreData/CoreData.h>
 #import "Student+CoreDataProperties.h"
+#import "AppDelegate.h"
 @interface ViewController ()
 
-@property (nonatomic, strong) NSManagedObjectContext *ctx;
 
 @end
 
@@ -20,45 +20,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // 1. 上下文
-    _ctx = [[NSManagedObjectContext alloc] init];
-    
-    // 模型管理器
-    // 添加某一个.xcdatamodeld模型到模型管理器中   一个上下文对应一个数据库
-     NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"CoreData" withExtension:@"momd"]];
-    // 2. 创建持久存储器
-    // 2.1 给存储器添加模型管理器
-    NSPersistentStoreCoordinator *persistentStroe = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
-    // 2.2 设置存储器存储类型和路径
-    NSString *document = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
-    NSString *path = [document stringByAppendingPathComponent:@"CoreData.sqlite"];
-    NSLog(@"%@", path);
-    NSError *error = nil;
-    
-    // 设置option参数 CoreData 自动进行数据迁移
-    NSDictionary *optionsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES],NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES],NSInferMappingModelAutomaticallyOption, nil];
-    [persistentStroe addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[NSURL fileURLWithPath:path] options:optionsDictionary error:&error];
-    
-    if (error) {
-        NSLog(@"持久存储器创建失败");
-    }
-    
-    // 3. 设置上下文的持久存储器
-    _ctx.persistentStoreCoordinator = persistentStroe;
-    
 }
 
 - (IBAction)add:(id)sender {
     
     for (int i = 0; i < 10 ; i ++) {
-        Student *student = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:_ctx];
+        Student *student = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:[AppDelegate shareInstance].managedObjectContext];
         student.name = @"lcs";
         //student.age = [NSDate date];
         student.height = @(100 + i);
         
         NSError *error = nil;
         
-        [_ctx save:&error];
+        [[AppDelegate shareInstance].managedObjectContext save:&error];
         
         if (!error) {
             NSLog(@"添加数据成功");
@@ -78,15 +52,15 @@
     request.sortDescriptors = @[sortDesc];
     
     NSError *error =nil;
-    NSArray *resultArr = [_ctx executeFetchRequest:request error:&error];
+    NSArray *resultArr = [[AppDelegate shareInstance].managedObjectContext executeFetchRequest:request error:&error];
     
     if (!error) {
         for (Student *student in resultArr) {
             
-            [_ctx deleteObject:student];
+            [[AppDelegate shareInstance].managedObjectContext deleteObject:student];
             
             // 保存修改
-            [_ctx save:nil];
+            [[AppDelegate shareInstance].managedObjectContext save:nil];
         }
     }
     
@@ -103,14 +77,14 @@
     request.sortDescriptors = @[sortDesc];
     
     NSError *error =nil;
-    NSArray *resultArr = [_ctx executeFetchRequest:request error:&error];
+    NSArray *resultArr = [[AppDelegate shareInstance].managedObjectContext executeFetchRequest:request error:&error];
     
     if (!error) {
         for (Student *student in resultArr) {
             student.height = @(student.height.floatValue + 1);
             
             // 保存修改
-            [_ctx save:nil];
+            [[AppDelegate shareInstance].managedObjectContext save:nil];
         }
     }
 }
@@ -135,12 +109,16 @@
     request.sortDescriptors = @[sortDesc];
     
     NSError *error =nil;
-    NSArray *resultArr = [_ctx executeFetchRequest:request error:&error];
+    NSArray *resultArr = [[AppDelegate shareInstance].managedObjectContext executeFetchRequest:request error:&error];
     
     if (!error) {
         for (Student *student in resultArr) {
-//            NSLog(@"name : %@, age : %@, height : %@", student.name, student.age, student.height);
-            NSLog(@"name : %@, height : %@, address : %@", student.name, student.height, student.address);
+            // CoreData
+            NSLog(@"name : %@, age : %@, height : %@", student.name, student.age, student.height);
+            // CoreData 1.2
+            //NSLog(@"name : %@, height : %@, address : %@", student.name, student.height, student.address);
+            // CoreData 1.1
+            //NSLog(@"name : %@, height : %@", student.name, student.height);
         }
     }
 }

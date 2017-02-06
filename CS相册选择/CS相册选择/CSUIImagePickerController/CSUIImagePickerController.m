@@ -12,6 +12,7 @@
 #import <Photos/Photos.h>
 #import "CSAlbumsModel.h"
 #import "UIViewController+Util.h"
+#import "PHPhotoUtil.h"
 @interface CSUIImagePickerController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
@@ -158,25 +159,11 @@
     [cell.detailTextLabel setText:[NSString stringWithFormat:@"%ld", model.count]];
     
     PHAsset *asset = (PHAsset *)model.results.lastObject;
-    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
-    options.resizeMode = PHImageRequestOptionsResizeModeExact; // 图像尺寸精确
     
-    /*
-        若需要返回精确尺寸的image 需要设置两个条件
-        1.contentMode = PHImageContentModeAspectFill
-        2.options.resizeMode = PHImageRequestOptionsResizeModeExact
-     
-     targetSize :  需要注意在 PHImageManager 中，所有的尺寸都是用 Pixel 作为单位（Note that all sizes are in pixels），因此这里想要获得正确大小的图像，需要把输入的尺寸转换为 Pixel。如果需要返回原图尺寸，可以传入 PhotoKit 中预先定义好的常量 PHImageManagerMaximumSize，表示返回可选范围内的最大的尺寸，即原图尺寸
-     contentMode : 图像的剪裁方式，与 UIView 的 contentMode 参数相似，控制照片应该以按比例缩放还是按比例填充的方式放到最终展示的容器内。注意如果 targetSize 传入 PHImageManagerMaximumSize，则 contentMode 无论传入什么值都会被视为 PHImageContentModeDefault。
-     
-   
-     */
-    [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:CGSizeMake(200, 200) contentMode:PHImageContentModeAspectFill options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-        // 该block会回调多次，苹果会先返回较小尺寸的image，作为暂时的显示
+    [PHPhotoUtil requestExactImageAsync:asset size:CGSizeMake(200, 200) resultHandler:^(UIImage *result, NSDictionary *info) {
         cell.imageView.image = result;
-        NSLog(@"imageSize : %@", NSStringFromCGSize(result.size));
     }];
-
+    
     
     return cell;
 }

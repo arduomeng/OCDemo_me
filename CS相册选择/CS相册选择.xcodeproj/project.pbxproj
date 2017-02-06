@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B30495EE1E2F2A21006A4380 /* PHPhotoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B30495ED1E2F2A21006A4380 /* PHPhotoUtil.m */; };
 		B307F00D1DCC315500A1F9E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B307F00C1DCC315500A1F9E7 /* main.m */; };
 		B307F0101DCC315500A1F9E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B307F00F1DCC315500A1F9E7 /* AppDelegate.m */; };
 		B307F0131DCC315500A1F9E7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B307F0121DCC315500A1F9E7 /* ViewController.m */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B30495EC1E2F2A21006A4380 /* PHPhotoUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHPhotoUtil.h; sourceTree = "<group>"; };
+		B30495ED1E2F2A21006A4380 /* PHPhotoUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHPhotoUtil.m; sourceTree = "<group>"; };
 		B307F0081DCC315500A1F9E7 /* CS相册选择.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS相册选择.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B307F00C1DCC315500A1F9E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B307F00E1DCC315500A1F9E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 				B307F0171DCC315500A1F9E7 /* Assets.xcassets */,
 				B307F0191DCC315500A1F9E7 /* LaunchScreen.storyboard */,
 				B307F01C1DCC315500A1F9E7 /* Info.plist */,
+				B30495EC1E2F2A21006A4380 /* PHPhotoUtil.h */,
+				B30495ED1E2F2A21006A4380 /* PHPhotoUtil.m */,
 				B307F00B1DCC315500A1F9E7 /* Supporting Files */,
 			);
 			path = "CS相册选择";
@@ -210,6 +215,7 @@
 				B335AA4F1DD061BF008FA179 /* CSUIImageAssetViewController.m in Sources */,
 				B307F0101DCC315500A1F9E7 /* AppDelegate.m in Sources */,
 				B34575CC1DD46A0900443B69 /* CSUIImageAssetCollectionViewCell.m in Sources */,
+				B30495EE1E2F2A21006A4380 /* PHPhotoUtil.m in Sources */,
 				B335AA4C1DD049BA008FA179 /* UIBarButtonItem+Extensions.m in Sources */,
 				B335AA491DD03E70008FA179 /* UIViewController+Util.m in Sources */,
 				B34575C51DD32A4D00443B69 /* CSAlbumsModel.m in Sources */,

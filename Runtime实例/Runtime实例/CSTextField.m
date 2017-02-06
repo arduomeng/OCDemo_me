@@ -17,6 +17,7 @@
 //    class_copyIvarList(<#__unsafe_unretained Class cls#>, <#unsigned int *outCount#>)
 //    class_copyMethodList(<#__unsafe_unretained Class cls#>, <#unsigned int *outCount#>)
 //    class_copyProtocolList(<#__unsafe_unretained Class cls#>, <#unsigned int *outCount#>)
+    
 }
 
 - (void)getProperty{
@@ -52,6 +53,8 @@
     self.tintColor = [UIColor blackColor];
     
     [self resignFirstResponder];
+    
+    [self getIvars];
 }
 
 - (BOOL)becomeFirstResponder{

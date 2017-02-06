@@ -13,6 +13,14 @@
 @end
 
 @implementation ViewController
+- (IBAction)saveOnclick:(id)sender {
+    [self saveImage];
+}
+- (IBAction)deleteOnclick:(id)sender {
+    
+    // 正确逻辑需要判断相册权限，再进行删除
+    [self deletePHAsset];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,8 +45,27 @@
     // [self saveImage];
     
     // 获取
-    [self getOriginalImage];
+    //[self getOriginalImage];
     
+    
+}
+
+- (void)deletePHAsset{
+    
+    PHAssetCollection *collection = [self getAssetCollect];
+    PHFetchResult *results =  [PHAsset fetchAssetsInAssetCollection:collection options:nil];
+    if (results.count) {
+        
+        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+            
+            [PHAssetChangeRequest deleteAssets:@[results.lastObject]];
+        } completionHandler:^(BOOL success, NSError * _Nullable error) {
+            NSLog(@"删除成功");
+        }];
+        
+    }
+    
+
 }
 
 - (void)getThumbnailImage{
