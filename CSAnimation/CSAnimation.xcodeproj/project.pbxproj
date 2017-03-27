@@ -501,6 +501,7 @@
 				03ACCC3F1C9C390A00268B04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03ACCC401C9C390A00268B04 /* Build configuration list for PBXNativeTarget "CSAnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +510,7 @@
 				03ACCC421C9C390A00268B04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03ACCC431C9C390A00268B04 /* Build configuration list for PBXNativeTarget "CSAnimationUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +519,7 @@
 				03ACCC451C9C390A00268B04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

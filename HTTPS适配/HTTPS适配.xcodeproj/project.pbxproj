@@ -137,6 +137,7 @@
 				TargetAttributes = {
 					B3A0AA211E4897480059B72D = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = NS277JF24U;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -348,6 +349,7 @@
 			baseConfigurationReference = B1BE978CFA1F348004230CCB /* Pods-HTTPS适配.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = "HTTPS适配/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -361,6 +363,7 @@
 			baseConfigurationReference = 6BCBE78BB10E55EBDF4C3FFD /* Pods-HTTPS适配.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = "HTTPS适配/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

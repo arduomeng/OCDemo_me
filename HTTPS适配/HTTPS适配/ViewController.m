@@ -6,15 +6,24 @@
 //  Copyright © 2017年 arduomeng. All rights reserved.
 //
 
+/*  如果你用的是付费的公信机构颁发的证书，标准的https，那么无论你用的是AF还是NSUrlSession,什么都不用做，代理方法也不用实现。你的网络请求就能正常完成。
+    如果你用的是自签名的证书:
+    1首先你需要在plist文件中，设置可以返回不安全的请求（关闭该域名的ATS）。
+    2其次，如果是NSUrlSesion，那么需要在代理方法didReceiveChallenge
+    3如果是AF，你则需要设置policy 当然还可以根据需求，你可以去验证证书或者公钥，前提是，你把自签的服务端证书，或者自签的CA根证书导入到项目中：
+ 
+
+ */
+
 #import "ViewController.h"
 #import <AFNetworking.h>
-@interface ViewController () <NSURLSessionDelegate, NSURLSessionDataDelegate>
+@interface ViewController () <NSURLSessionDelegate, NSURLSessionDataDelegate, NSURLSessionTaskDelegate>
 
 @end
 
 @implementation ViewController
 //NSString *urlString = @"https://www.12306.cn/mormhweb/";
-//NSString *urlString = @"https://www.baidu.com";
+//NSString *urlString = @"https://www.github.com";
 NSString *urlString = @"https://kyfw.12306.cn/otn/";
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,7 +32,8 @@ NSString *urlString = @"https://kyfw.12306.cn/otn/";
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self afnRequest];
+//    [self afnRequest];
+    [self sessionRequest];
 }
 
 - (void)sessionRequest{
@@ -45,9 +55,10 @@ NSString *urlString = @"https://kyfw.12306.cn/otn/";
 //只要请求的地址是HTTPS的, 就会调用这个代理方法
 //challenge:质询
 //NSURLAuthenticationMethodServerTrust:服务器信任
+
 -(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler
 {
-    NSLog(@"%@",challenge.protectionSpace);
+    NSLog(@"challenge %@",challenge.protectionSpace);
     
     // 判断是否是受信任的证书
     if (![challenge.protectionSpace.authenticationMethod isEqualToString:@"NSURLAuthenticationMethodServerTrust"]){
@@ -75,8 +86,9 @@ NSString *urlString = @"https://kyfw.12306.cn/otn/";
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data{
     //5.解析数据
-    NSLog(@"%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+    NSLog(@"解析数据 %@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
 }
+
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error{
     NSLog(@"---------------------------------------------------------------- error : %@", error);
@@ -103,7 +115,7 @@ NSString *urlString = @"https://kyfw.12306.cn/otn/";
 //
 //    // 如果是需要验证自建证书，需要设置为YES
 //    securityPolicy.allowInvalidCertificates = YES;
-//    // 如果需要验证域名，设置为YES
+//    // 如果需要验证域名，不是必须的，但是如果写YES，则必须导入证书。
 //    securityPolicy.validatesDomainName = YES;
     // 添加证书
     //    [securityPolicy setPinnedCertificates:cerSet];
