@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let notificationHandler = NotificationHandler()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // 注册simpleNotificationCategory
+        // 注册NotificationCategory 用于NotificationAction和自定义通知UI
         registerNotificationCategory()
         UNUserNotificationCenter.current().delegate = notificationHandler
         
@@ -41,7 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             title: "Input",
             options: [.foreground],
             textInputButtonTitle: "Send",
-            textInputPlaceholder: "What do you want to say...")
+            textInputPlaceholder: "What do you want to say..."
+        )
         
         // 2
         let goodbyeAction = UNNotificationAction(

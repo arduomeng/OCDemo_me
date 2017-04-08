@@ -56,7 +56,7 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     NSString *url = request.URL.absoluteString;
-    NSString *urlProtocol = @"lcs://";
+    NSString *urlProtocol = @"lcs://"; //location.href = 'lcs://callParam1:param2:?param1&param2'
     if ([url hasPrefix:urlProtocol]) {
         NSString *methodStr = [url substringFromIndex:urlProtocol.length];
         NSString *method = [[methodStr componentsSeparatedByString:@"?"] firstObject];

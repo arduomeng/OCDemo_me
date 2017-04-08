@@ -48,9 +48,11 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    // 执行自定义操作(点击通知，程序从后台到前台)
+    // 执行自定义操作
     if (application.applicationState == UIApplicationStateInactive) {
-        
+        // (点击通知，程序从后台到前台)
+    }else if(application.applicationState == UIApplicationStateActive){
+        // 应用在前台
     }
 }
 

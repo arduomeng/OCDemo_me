@@ -416,6 +416,7 @@
 		03FA8DC61BBD147F00F36CB4 /* MTCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCityViewController.m; sourceTree = "<group>"; };
 		03FA8DCA1BBD155900F36CB4 /* MTCityGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCityGroup.h; sourceTree = "<group>"; };
 		03FA8DCB1BBD155900F36CB4 /* MTCityGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCityGroup.m; sourceTree = "<group>"; };
+		B392CE851E8F863A002BE756 /* MTDetailDealHtml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTDetailDealHtml.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -709,6 +710,7 @@
 				03BDD01E1BC0CEFC00E79217 /* MTDetailViewController.h */,
 				03BDD01F1BC0CEFC00E79217 /* MTDetailViewController.m */,
 				03BDD0201BC0CEFC00E79217 /* MTDetailViewController.xib */,
+				B392CE851E8F863A002BE756 /* MTDetailDealHtml.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

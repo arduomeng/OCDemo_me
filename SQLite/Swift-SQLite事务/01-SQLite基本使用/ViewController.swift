@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         
         for i in 0..<10000
         {
-            let p = Person(dict: ["name": "zs + \(i)", "age": 3 + i])
+            let = Person(dict: ["name": "zs + \(i)", "age": 3 + i])
             p.insertPerson()
             
             if i == 1000

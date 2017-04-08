@@ -153,6 +153,14 @@ CSSingletonM
     [self removeDownloadWithFileURL:task.originalRequest.URL];
     
 }
+/*
+ 如果你不再需要一个session了, 一定要调用它的invalidateAndCancel或finishTasksAndInvalidate方法. 
+ (前者是取消所有未完成的任务然后使session失效, 后者是等待正在执行的任务完成之后再使session失效). 
+ 否则的话, 有可能造成内存泄漏. 另外, session失效后会调用URLSession:didBecomeInvalidWithError:方法, 之后session释放对代理的强引用.
+ */
+- (void)invalidateAndCancel{
+    [self.session invalidateAndCancel];
+}
 
 #pragma mark Lazy
 - (NSURLSession *)session{

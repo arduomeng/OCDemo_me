@@ -100,18 +100,14 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     if ([webView.request.URL.absoluteString isEqualToString:self.deal.deal_h5_url]) {
-        // 旧的HTML5页面加载完毕
-        NSString *ID = [self.deal.deal_id substringFromIndex:[self.deal.deal_id rangeOfString:@"-"].location + 1];
-        NSString *urlStr = [NSString stringWithFormat:@"http://lite.m.dianping.com/group/deal/moreinfo/%@", ID];
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]]];
-    } else { // 详情页面加载完毕
+         // 详情页面加载完毕
         // 用来拼接所有的JS
         NSMutableString *js = [NSMutableString string];
         // 删除header
         [js appendString:@"var header = document.getElementsByTagName('header')[0];"];
         [js appendString:@"header.parentNode.removeChild(header);"];
         // 删除顶部的购买
-        [js appendString:@"var box = document.getElementsByClassName('cost-box')[0];"];
+        [js appendString:@"var box = document.getElementsByClassName('buy-box')[0];"];
         [js appendString:@"box.parentNode.removeChild(box);"];
         // 删除底部的购买
         [js appendString:@"var buyNow = document.getElementsByClassName('buy-now')[0];"];

@@ -482,7 +482,7 @@
 				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = CSUserNotificationiOS10/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.enjoy.VdeoShow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enjoy.VdeoShoww;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -497,7 +497,7 @@
 				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = CSUserNotificationiOS10/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.enjoy.VdeoShow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enjoy.VdeoShoww;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
