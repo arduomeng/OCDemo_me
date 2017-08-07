@@ -1,0 +1,144 @@
+<root version="0.2">
+  <textures>
+    <texture id="0" file="0.jpg" />
+    <texture id="1" file="1.jpg" />
+    <texture id="2" file="2.jpg" />
+    <texture id="3" file="3.jpg" />
+  </textures>
+  <materials>
+    <material id="0" shader="matte" texture_id="-100" mask_id="0" color="1,1,1,1" />
+    <material id="1" shader="texture" texture_id="1" mask_id="2" offset="0,0" scale="1,1" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="2" shader="matte" texture_id="-100" mask_id="0" color="1,1,1,1" />
+    <material id="3" shader="texture" texture_id="1" mask_id="3" offset="0,0" scale="1,1" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="4" shader="texture" texture_id="1" mask_id="2" offset="0,0" scale="1,1" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="5" shader="texture" texture_id="-100" mask_id="-1" offset="0.02562,0.0262" scale="0.94875,0.94738" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="6" shader="texture" texture_id="-101" mask_id="-1" offset="0.08414,0.08417" scale="0.831716,0.83203" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="7" shader="texture" texture_id="-100" mask_id="3" offset="0.18137,0.18137" scale="0.63726,0.63726" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="8" shader="texture" texture_id="-101" mask_id="-1" offset="0.04268,0.04324" scale="0.91463,0.91331" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="9" shader="texture" texture_id="-100" mask_id="3" offset="0.1718724,-0.08332109" scale="0.6562552,1.166438" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="10" shader="texture" texture_id="1" mask_id="3" offset="0,0" scale="1,1" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="11" shader="texture" texture_id="-100" mask_id="3" offset="0.17187,-0.08332" scale="0.65625,1.16643" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="12" shader="texture" texture_id="-101" mask_id="-1" offset="0.08414,0.08417" scale="0.831716,0.83203" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="13" shader="texture" texture_id="-100" mask_id="-1" offset="0.025621,0.02620785" scale="0.948758,0.9473804" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="14" shader="texture" texture_id="-100" mask_id="-1" offset="0.02562,0.0262" scale="0.94875,0.94738" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="15" shader="texture" texture_id="1" mask_id="2" offset="0,0" scale="1,1" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="16" shader="matte" texture_id="-100" mask_id="0" color="1,1,1,1" />
+    <material id="17" shader="texture" texture_id="1" mask_id="2" offset="0,0" scale="1,1" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="18" shader="texture" texture_id="1" mask_id="3" offset="0,0" scale="1,1" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="19" shader="texture" texture_id="1" mask_id="2" offset="0,0" scale="1,1" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="20" shader="matte" texture_id="-100" mask_id="0" color="1,1,1,1" />
+    <material id="21" shader="matte" texture_id="-100" mask_id="0" color="1,1,1,1" />
+    <material id="22" shader="texture" texture_id="1" mask_id="2" offset="0,0" scale="1,1" color="1,1,1,1" mask_offset="0,0" mask_scale="1,1" />
+    <material id="23" shader="matte" texture_id="-100" mask_id="0" color="1,1,1,1" />
+  </materials>
+  <scene duration="1" frame_rate="30" play_mode="0">
+    <screens>
+      <screen name="" aspect="1.78">
+        <projection_matrix>0.1125,0,0,0,0,0.2,0,0,0,0,-0.01,0,0,0,0,1</projection_matrix>
+        <view_matrix>1,0,0,0,0,1,0,0,0,0,-1,-10,0,0,0,1</view_matrix>
+        <object name="Quad" type="mesh" mesh_id="0" id="0" material_id="8">
+          <transform position="0,0,-12.53" scale="17.8,10,1" rotation="0,0,0,1" />
+          <animations>
+            <curve name="position.x">15.6887,15.6887,15.6887,14.30202,12.91263,11.56128,10.28873,9.135732,8.143054,7.323212,6.581806,5.903522,5.284403,4.720491,4.207832,3.742468,3.320442,2.937797,2.590578,2.274828,1.986589,1.721907,1.476824,1.247381,1.029627,0.8195992,0.6133461,0.4069099,0.196331,0,0,0</curve>
+            <curve name="position.y">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</curve>
+            <curve name="position.z">-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53</curve>
+          </animations>
+        </object>
+        <object name="Quad (4)" type="mesh" mesh_id="0" id="1" material_id="9">
+          <transform position="0,0,-6.710001" scale="9.842,9.842,1" rotation="0,0,0,1" />
+        </object>
+        <object name="Quad (3)" type="mesh" mesh_id="0" id="2" material_id="10">
+          <transform position="0,0,-5.82" scale="9.88,9.88,1" rotation="0,0,0,1" />
+        </object>
+        <object name="Quad (1)" type="mesh" mesh_id="0" id="3" material_id="13">
+          <transform position="0,0,-3.01" scale="17.8,10,1" rotation="0,0,0,1" />
+        </object>
+        <object name="Quad (2)" type="mesh" mesh_id="0" id="4" material_id="15">
+          <transform position="0,0,-4.08" scale="17,17,1" rotation="0,0,0.1181257,0.9929987" />
+        </object>
+        <object name="Quad (3)" type="mesh" mesh_id="0" id="5" material_id="16">
+          <transform position="0,0,-4.64" scale="16.95,16.95,1" rotation="0,0,0.1181257,0.9929987" />
+        </object>
+        <object name="Quad (2)" type="mesh" mesh_id="0" id="6" material_id="19">
+          <transform position="0,0,-8.065001" scale="6.8,6.8,1" rotation="0,0,0,1" />
+        </object>
+        <object name="Quad (3)" type="mesh" mesh_id="0" id="7" material_id="20">
+          <transform position="0,0,-9.235001" scale="6.74,6.74,1" rotation="0,0,0,1" />
+        </object>
+      </screen>
+      <screen name="" aspect="1.33">
+        <projection_matrix>0.15,0,0,0,0,0.2,0,0,0,0,-0.01,0,0,0,0,1</projection_matrix>
+        <view_matrix>1,0,0,0,0,1,0,0,0,0,-1,-10,0,0,0,1</view_matrix>
+        <object name="Quad (4)" type="mesh" mesh_id="0" id="8" material_id="11">
+          <transform position="0,0,-6.710001" scale="7.8736,7.8736,1" rotation="0,0,0,1" />
+        </object>
+        <object name="Quad" type="mesh" mesh_id="0" id="9" material_id="12">
+          <transform position="0,0,-12.53" scale="13.33334,10,1" rotation="0,0,0,1" />
+          <animations>
+            <curve name="position.x">15.6887,15.6887,15.6887,14.30202,12.91263,11.56128,10.28873,9.135732,8.143054,7.323212,6.581806,5.903522,5.284403,4.720491,4.207832,3.742468,3.320442,2.937797,2.590578,2.274828,1.986589,1.721907,1.476824,1.247381,1.029627,0.8195992,0.6133461,0.4069099,0.196331,0,0,0</curve>
+            <curve name="position.y">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</curve>
+            <curve name="position.z">-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53</curve>
+          </animations>
+        </object>
+        <object name="Quad (1)" type="mesh" mesh_id="0" id="10" material_id="14">
+          <transform position="0,0,-3.01" scale="13.33334,10,1" rotation="0,0,0,1" />
+        </object>
+        <object name="Quad (2)" type="mesh" mesh_id="0" id="11" material_id="17">
+          <transform position="0,0,-4.08" scale="13.6,13.6,1" rotation="0,0,0.1181257,0.9929987" />
+        </object>
+        <object name="Quad (3)" type="mesh" mesh_id="0" id="12" material_id="18">
+          <transform position="0,0,-5.82" scale="7.904,7.904,1" rotation="0,0,0,1" />
+        </object>
+        <object name="Quad (3)" type="mesh" mesh_id="0" id="13" material_id="21">
+          <transform position="0,0,-9.235001" scale="5.392,5.392,1" rotation="0,0,0,1" />
+        </object>
+        <object name="Quad (2)" type="mesh" mesh_id="0" id="14" material_id="22">
+          <transform position="0,0,-8.065001" scale="5.44,5.44,1" rotation="0,0,0,1" />
+        </object>
+        <object name="Quad (3)" type="mesh" mesh_id="0" id="15" material_id="23">
+          <transform position="0,0,-4.64" scale="13.56,13.56,1" rotation="0,0,0.1181257,0.9929987" />
+        </object>
+      </screen>
+      <screen name="" aspect="1.00">
+        <projection_matrix>0.2,0,0,0,0,0.2,0,0,0,0,-0.01,0,0,0,0,1</projection_matrix>
+        <view_matrix>1,0,0,0,0,1,0,0,0,0,-1,-10,0,0,0,1</view_matrix>
+        <object name="Quad (3)" type="mesh" mesh_id="0" id="16" material_id="0">
+          <transform position="0,0,-4.64" scale="11.0175,11.0175,1" rotation="0,0,0.1181257,0.9929987" />
+        </object>
+        <object name="Quad (2)" type="mesh" mesh_id="0" id="17" material_id="1">
+          <transform position="0,0,-8.065001" scale="4.42,4.42,1" rotation="0,0,0,1" />
+        </object>
+        <object name="Quad (3)" type="mesh" mesh_id="0" id="18" material_id="2">
+          <transform position="0,0,-9.235001" scale="4.381,4.381,1" rotation="0,0,0,1" />
+        </object>
+        <object name="Quad (3)" type="mesh" mesh_id="0" id="19" material_id="3">
+          <transform position="0,0,-5.82" scale="6.422,6.422,1" rotation="0,0,0,1" />
+        </object>
+        <object name="Quad (2)" type="mesh" mesh_id="0" id="20" material_id="4">
+          <transform position="0,0,-4.08" scale="11.05,11.05,1" rotation="0,0,0.1181257,0.9929987" />
+        </object>
+        <object name="Quad (1)" type="mesh" mesh_id="0" id="21" material_id="5">
+          <transform position="0,0,-3.01" scale="10,10,1" rotation="0,0,0,1" />
+        </object>
+        <object name="Quad" type="mesh" mesh_id="0" id="22" material_id="6">
+          <transform position="0,0,-12.53" scale="10,10,1" rotation="0,0,0,1" />
+          <animations>
+            <curve name="position.x">15.6887,15.6887,15.6887,14.30202,12.91263,11.56128,10.28873,9.135732,8.143054,7.323212,6.581806,5.903522,5.284403,4.720491,4.207832,3.742468,3.320442,2.937797,2.590578,2.274828,1.986589,1.721907,1.476824,1.247381,1.029627,0.8195992,0.6133461,0.4069099,0.196331,0,0,0</curve>
+            <curve name="position.y">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</curve>
+            <curve name="position.z">-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53,-12.53</curve>
+          </animations>
+        </object>
+        <object name="Quad (4)" type="mesh" mesh_id="0" id="23" material_id="7">
+          <transform position="0,0,-6.710001" scale="6.3973,6.3973,1" rotation="0,0,0,1" />
+        </object>
+      </screen>
+    </screens>
+  </scene>
+  <meshes>
+    <mesh id="0" vertex_count="4" triangle_count="2">
+      <vertices>-0.5,-0.5,-3.061617E-17,0.5,0.5,3.061617E-17,0.5,-0.5,-3.061617E-17,-0.5,0.5,3.061617E-17</vertices>
+      <uv>0,0,1,1,1,0,0,1</uv>
+      <triangles>0,1,2,1,0,3</triangles>
+    </mesh>
+  </meshes>
+</root>

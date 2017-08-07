@@ -1,0 +1,20 @@
+{
+	"duration":5000,
+	"sounds":[
+		{
+			"file":"aixinbaozha(1).aac",
+			"start":0,
+			"mode":1,
+		"start_time":0,
+		"end_time":0,
+			"volume":1
+		}
+	],
+		"type":1,
+		"scale":1,
+		"width":1,
+		"height":1,
+		"editorTime":0,
+		"gravity":5,
+		"isGravity":1
+}

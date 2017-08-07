@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>advertlist</key>
+	<array>
+		<dict>
+			<key>advert_activity</key>
+			<string></string>
+			<key>advert_url</key>
+			<string>ThemeVC</string>
+			<key>id</key>
+			<integer>75</integer>
+			<key>name</key>
+			<string>新主题111</string>
+			<key>pic_url</key>
+			<string>https://test.videoshowapp.com:8094/homeTopAdvert/75/advertPic/3429238354089271picUrl.jpg</string>
+			<key>type</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>advert_activity</key>
+			<string></string>
+			<key>advert_url</key>
+			<string>ThemeVC</string>
+			<key>id</key>
+			<integer>62</integer>
+			<key>name</key>
+			<string>改版</string>
+			<key>pic_url</key>
+			<string>https://test.videoshowapp.com:8094/homeTopAdvert/62/advertPic/3254845161179045picUrl.jpg</string>
+			<key>type</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>err_info</key>
+	<string>success</string>
+	<key>ret</key>
+	<integer>1</integer>
+	<key>totalPageNum</key>
+	<integer>1</integer>
+</dict>
+</plist>

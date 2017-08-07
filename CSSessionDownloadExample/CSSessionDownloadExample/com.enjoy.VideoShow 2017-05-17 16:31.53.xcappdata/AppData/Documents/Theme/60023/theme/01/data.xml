@@ -1,0 +1,42 @@
+<root version="0.2">
+  <textures>
+    <texture id="0" file="0.png" />
+  </textures>
+  <materials>
+    <material id="0" shader="texture" texture_id="0" mask_id="-1" offset="0,0" scale="1,1" color="0.728,0.4471094,0.5584791,0.716" mask_offset="0,0" mask_scale="1,1" />
+    <material id="1" shader="texture" texture_id="0" mask_id="-1" offset="0,0" scale="1,1" color="0.728,0.4471094,0.5584791,0.716" mask_offset="0,0" mask_scale="1,1" />
+    <material id="2" shader="texture" texture_id="0" mask_id="-1" offset="0,0" scale="1,1" color="0.728,0.4471094,0.5584791,0.716" mask_offset="0,0" mask_scale="1,1" />
+  </materials>
+  <scene duration="4" frame_rate="10" play_mode="0">
+    <screens>
+      <screen name="" aspect="1.78">
+        <projection_matrix>0.1125714,0,0,0,0,0.2,0,0,0,0,-0.01,0,0,0,0,1</projection_matrix>
+        <view_matrix>1,0,0,0,0,1,0,0,0,0,-1,-10,0,0,0,1</view_matrix>
+        <object name="Quad" type="mesh" mesh_id="0" id="0" material_id="2">
+          <transform position="0,0,0" scale="18.2784,10.2816,1.1424" rotation="0,0,0,1" />
+        </object>
+      </screen>
+      <screen name="" aspect="1.33">
+        <projection_matrix>0.15,0,0,0,0,0.2,0,0,0,0,-0.01,0,0,0,0,1</projection_matrix>
+        <view_matrix>1,0,0,0,0,1,0,0,0,0,-1,-10,0,0,0,1</view_matrix>
+        <object name="Quad" type="mesh" mesh_id="0" id="1" material_id="1">
+          <transform position="0,0,0" scale="15.07483,11.49775,1.277528" rotation="0,0,0,1" />
+        </object>
+      </screen>
+      <screen name="" aspect="1.00">
+        <projection_matrix>0.2,0,0,0,0,0.2,0,0,0,0,-0.01,0,0,0,0,1</projection_matrix>
+        <view_matrix>1,0,0,0,0,1,0,0,0,0,-1,-10,0,0,0,1</view_matrix>
+        <object name="Quad" type="mesh" mesh_id="0" id="2" material_id="0">
+          <transform position="0,0,0" scale="12.26713,12.07264,1.341404" rotation="0,0,0,1" />
+        </object>
+      </screen>
+    </screens>
+  </scene>
+  <meshes>
+    <mesh id="0" vertex_count="4" triangle_count="2">
+      <vertices>-0.5,-0.5,-3.061617E-17,0.5,0.5,3.061617E-17,0.5,-0.5,-3.061617E-17,-0.5,0.5,3.061617E-17</vertices>
+      <uv>0,0,1,1,1,0,0,1</uv>
+      <triangles>0,1,2,1,0,3</triangles>
+    </mesh>
+  </meshes>
+</root>

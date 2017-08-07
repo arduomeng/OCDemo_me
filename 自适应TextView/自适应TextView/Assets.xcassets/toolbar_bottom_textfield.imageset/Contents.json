@@ -1,0 +1,35 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 53,
+          "height" : 5
+        },
+        "cap-insets" : {
+          "bottom" : 25,
+          "top" : 26,
+          "right" : 107,
+          "left" : 112
+        }
+      },
+      "idiom" : "universal",
+      "filename" : "toolbar_bottom_textfield@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

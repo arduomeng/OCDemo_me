@@ -1,0 +1,66 @@
+<root version="0.2">
+  <textures />
+  <materials>
+    <material id="0" shader="matte" texture_id="-100" mask_id="-1" color="1,1,1,1" />
+    <material id="1" shader="matte" texture_id="-101" mask_id="-1" color="1,1,1,1" />
+  </materials>
+  <scene duration="1" frame_rate="30" play_mode="0">
+    <screens>
+      <screen name="" aspect="1.78">
+        <projection_matrix>0.1125581,0,0,0,0,0.2,0,0,0,0,-0.0020006,-1.0006,0,0,0,1</projection_matrix>
+        <view_matrix>1,0,0,0,0,1,0,0,0,0,-1,-10,0,0,0,1</view_matrix>
+        <object name="shiping-16-9-1" type="mesh" mesh_id="0" id="0" material_id="0">
+          <transform position="0,0,-0.45" scale="17.7914,10.06655,1" rotation="0,0,0,1" />
+          <animations>
+            <curve name="color.r">1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</curve>
+            <curve name="color.g">1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</curve>
+            <curve name="color.b">1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</curve>
+            <curve name="color.a">0.93863,0.93863,0.93863,0.8973608,0.8541971,0.8094274,0.7633402,0.716224,0.6683673,0.6200586,0.5715864,0.5232393,0.4753056,0.428074,0.3818329,0.3368709,0.2934764,0.2519379,0.2125439,0.1755831,0.1413438,0.1101146,0.08218396,0.05784035,0.03737241,0.02106839,0.009217203,0.002107024,0,0,0,0.9777158</curve>
+          </animations>
+        </object>
+        <object name="shiping-16-9-2" type="mesh" mesh_id="0" id="1" material_id="1">
+          <transform position="0,0,0" scale="17.7914,10.06655,1" rotation="0,0,0,1" />
+        </object>
+      </screen>
+      <screen name="" aspect="1.33">
+        <projection_matrix>0.15,0,0,0,0,0.2,0,0,0,0,-0.0020006,-1.0006,0,0,0,1</projection_matrix>
+        <view_matrix>1,0,0,0,0,1,0,0,0,0,-1,-10,0,0,0,1</view_matrix>
+        <object name="shiping-16-9-1" type="mesh" mesh_id="0" id="2" material_id="0">
+          <transform position="0,0,-0.45" scale="17.7914,10.06655,1" rotation="0,0,0,1" />
+          <animations>
+            <curve name="color.r">1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</curve>
+            <curve name="color.g">1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</curve>
+            <curve name="color.b">1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</curve>
+            <curve name="color.a">0.93863,0.93863,0.93863,0.8973608,0.8541971,0.8094274,0.7633402,0.716224,0.6683673,0.6200586,0.5715864,0.5232393,0.4753056,0.428074,0.3818329,0.3368709,0.2934764,0.2519379,0.2125439,0.1755831,0.1413438,0.1101146,0.08218396,0.05784035,0.03737241,0.02106839,0.009217203,0.002107024,0,0,0,0.9777158</curve>
+          </animations>
+        </object>
+        <object name="shiping-16-9-2" type="mesh" mesh_id="0" id="3" material_id="1">
+          <transform position="0,0,0" scale="17.7914,10.06655,1" rotation="0,0,0,1" />
+        </object>
+      </screen>
+      <screen name="" aspect="1.00">
+        <projection_matrix>0.2,0,0,0,0,0.2,0,0,0,0,-0.0020006,-1.0006,0,0,0,1</projection_matrix>
+        <view_matrix>1,0,0,0,0,1,0,0,0,0,-1,-10,0,0,0,1</view_matrix>
+        <object name="shiping-16-9-1" type="mesh" mesh_id="0" id="4" material_id="0">
+          <transform position="0,0,-0.45" scale="17.7914,10.06655,1" rotation="0,0,0,1" />
+          <animations>
+            <curve name="color.r">1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</curve>
+            <curve name="color.g">1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</curve>
+            <curve name="color.b">1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</curve>
+            <curve name="color.a">0.93863,0.93863,0.93863,0.8973608,0.8541971,0.8094274,0.7633402,0.716224,0.6683673,0.6200586,0.5715864,0.5232393,0.4753056,0.428074,0.3818329,0.3368709,0.2934764,0.2519379,0.2125439,0.1755831,0.1413438,0.1101146,0.08218396,0.05784035,0.03737241,0.02106839,0.009217203,0.002107024,0,0,0,0.9777158</curve>
+          </animations>
+        </object>
+        <object name="shiping-16-9-2" type="mesh" mesh_id="0" id="5" material_id="1">
+          <transform position="0,0,0" scale="17.7914,10.06655,1" rotation="0,0,0,1" />
+        </object>
+      </screen>
+    </screens>
+  </scene>
+  <meshes>
+    <mesh id="0" vertex_count="4" triangle_count="2">
+      <vertices>-0.5,-0.5,-3.061617E-17,0.5,0.5,3.061617E-17,0.5,-0.5,-3.061617E-17,-0.5,0.5,3.061617E-17</vertices>
+      <uv>0,0,1,1,1,0,0,1</uv>
+      <triangles>0,1,2,1,0,3</triangles>
+    </mesh>
+  </meshes>
+</root>

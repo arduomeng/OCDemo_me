@@ -1,0 +1,13 @@
+{
+	"duration":2000,
+	"sounds":[
+		{
+			"file":"sandian.aac",
+			"start":0,
+			"mode":1,
+		"start_time":0,
+		"end_time":0,
+			"volume":1
+		}
+	]
+}

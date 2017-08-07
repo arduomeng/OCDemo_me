@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="InputTextView">
+            <rect key="frame" x="0.0" y="0.0" width="549" height="114"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toolbar_bottom_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Ylg-92-uOC">
+                    <rect key="frame" x="0.0" y="0.0" width="549" height="114"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJU-mC-AMy">
+                    <rect key="frame" x="0.0" y="35" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="eZ0-zo-T1J"/>
+                        <constraint firstAttribute="width" constant="44" id="yKs-Hi-upO"/>
+                    </constraints>
+                    <state key="normal" image="bt_clip_delete"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giC-mo-LBe">
+                    <rect key="frame" x="505" y="35" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="4he-l5-klp"/>
+                        <constraint firstAttribute="width" constant="44" id="EeQ-0r-TPM"/>
+                    </constraints>
+                    <state key="normal" image="btn_dialog_ok_selected"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toolbar_bottom_textfield" translatesAutoresizingMaskIntoConstraints="NO" id="Wip-EU-MMj">
+                    <rect key="frame" x="44" y="5" width="461" height="104"/>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mu2-Rz-Y20">
+                    <rect key="frame" x="44" y="5" width="461" height="104"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="giC-mo-LBe" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="92d-Rk-Y3M"/>
+                <constraint firstAttribute="bottom" secondItem="Wip-EU-MMj" secondAttribute="bottom" constant="5" id="A1v-n1-AwZ"/>
+                <constraint firstAttribute="trailing" secondItem="giC-mo-LBe" secondAttribute="trailing" id="B7X-KK-FfS"/>
+                <constraint firstItem="Wip-EU-MMj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="BMw-p1-5Hq"/>
+                <constraint firstItem="giC-mo-LBe" firstAttribute="leading" secondItem="mu2-Rz-Y20" secondAttribute="trailing" id="MFx-i9-4y6"/>
+                <constraint firstItem="giC-mo-LBe" firstAttribute="leading" secondItem="Wip-EU-MMj" secondAttribute="trailing" id="Nnm-bJ-Ug3"/>
+                <constraint firstAttribute="trailing" secondItem="Ylg-92-uOC" secondAttribute="trailing" id="Oe2-hA-zdP"/>
+                <constraint firstItem="Ylg-92-uOC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OxR-Rx-ziM"/>
+                <constraint firstItem="mu2-Rz-Y20" firstAttribute="leading" secondItem="cJU-mC-AMy" secondAttribute="trailing" id="Q21-9A-SHF"/>
+                <constraint firstItem="Ylg-92-uOC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Qvo-kV-SVm"/>
+                <constraint firstItem="mu2-Rz-Y20" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="VCz-DN-gIp"/>
+                <constraint firstItem="cJU-mC-AMy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mdY-ON-0Pl"/>
+                <constraint firstItem="Wip-EU-MMj" firstAttribute="leading" secondItem="cJU-mC-AMy" secondAttribute="trailing" id="ohg-p1-vI6"/>
+                <constraint firstItem="cJU-mC-AMy" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="oit-cl-6N1"/>
+                <constraint firstAttribute="bottom" secondItem="mu2-Rz-Y20" secondAttribute="bottom" constant="5" id="pjV-nw-z3Q"/>
+                <constraint firstAttribute="bottom" secondItem="Ylg-92-uOC" secondAttribute="bottom" id="s72-Gf-jMQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btDismiss" destination="cJU-mC-AMy" id="8ur-SB-YXB"/>
+                <outlet property="btOk" destination="giC-mo-LBe" id="yoF-o7-ATW"/>
+                <outlet property="textView" destination="mu2-Rz-Y20" id="NlI-g3-aaW"/>
+            </connections>
+            <point key="canvasLocation" x="92.5" y="73"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bt_clip_delete" width="17" height="17"/>
+        <image name="btn_dialog_ok_selected" width="25" height="25"/>
+        <image name="toolbar_bottom_bg" width="10" height="42"/>
+        <image name="toolbar_bottom_textfield" width="136" height="28"/>
+    </resources>
+</document>

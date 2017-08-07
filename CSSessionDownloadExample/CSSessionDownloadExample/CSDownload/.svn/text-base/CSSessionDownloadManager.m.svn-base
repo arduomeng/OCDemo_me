@@ -1,0 +1,280 @@
+                //
+//  CSDownloadManager.m
+//  多任务断点下载
+//
+//  Created by arduomeng on 17/2/28.
+//  Copyright © 2017年 arduomeng. All rights reserved.
+//
+
+/*
+ 
+下载管理类：现了NSUrlSession相关的代理，并在代理方法中判断对应的dataTask执行相应操作
+ 
+ */
+
+#import "AFNetworking.h"
+#import "CSSessionDownloadManager.h"
+#import "CSSessionDownload.h"
+
+// 最大任务数量
+static NSInteger maxConcurrentOperationCount = 3;
+
+@interface CSSessionDownloadManager () <NSURLSessionDataDelegate>
+
+@property (nonatomic, strong) AFHTTPSessionManager *mgr;
+
+@end
+
+@implementation CSSessionDownloadManager
+
+CSSingletonM
+
+#pragma mark Framework Function
+- (CSSessionDownload *)downloadDataWithURL:(NSURL *)URL desPath:(NSString *)desPath resume:(BOOL)resume progress:(progressBlock)progressBlock status:(statusBlock)statusBlock{
+    
+    
+    // 开启下载
+    NSURLSessionDownloadTask *downloadTask;
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
+    
+    request.timeoutInterval = 60;
+    
+    downloadTask = [self.mgr downloadTaskWithRequest:request progress:nil destination:nil completionHandler:nil];
+    
+    // 添加任务对象到字典 参考AFN将一个task对应一个CSDownload对象管理
+    CSSessionDownload *download = [[CSSessionDownload alloc] init];
+    download.downloadTask = downloadTask;
+    download.progressBlock = progressBlock;
+    download.statusBlock = statusBlock;
+    download.desPath = desPath;
+    download.currentURL = URL;
+    download.tag = self.tag;
+    download.materialInf = self.materialInf;
+    download.materialStoreType = self.materialStoreType;
+    download.isUpdate = self.isUpdate;
+    
+    self.downloadDic[URL] = download;
+    
+    if (resume) {
+        [self resumeTask:downloadTask];
+    }else{
+        [self pauseTask:downloadTask];
+    }
+    
+    return download;
+}
+
+
+- (CSSessionDownload *)getDownloadWithTask:(NSURLSessionTask *)dataTask{
+    
+    if (self.downloadDic[dataTask.originalRequest.URL]) {
+        return self.downloadDic[dataTask.originalRequest.URL];
+    }else{
+        return nil;
+    }
+}
+
+ 
+- (void)removeDownloadWithFileURL:(NSURL *)fileURL{
+    [self.downloadDic removeObjectForKey:fileURL];
+}
+
+- (void)removeFileWith:(NSString *)fileStr{
+//    NSError *error;
+//    [[NSFileManager defaultManager] removeItemAtPath:[self getFileFullPath:fileStr] error:&error];
+//    
+//    if (!error) {
+//        NSLog(@"remove success %@", fileStr);
+//        
+//        [self removeDownloadWithFileURL:[NSURL URLWithString:fileStr]];
+//    }else{
+//        NSLog(@"remove error %@", error);
+//    }
+}
+
+#pragma mark 任务并发
+
+- (void)resumeTask:(NSURLSessionDownloadTask *)downloadTask{
+    
+    if (self.taskArr.count < maxConcurrentOperationCount) {
+        [self.taskArr addObject:downloadTask];
+        [downloadTask resume];
+    }else{
+        [self.taskWaitArr addObject:downloadTask];
+    }
+}
+
+- (void)pauseTask:(NSURLSessionDownloadTask *)downloadTask{
+    
+    [self.taskArr removeObject:downloadTask];
+    
+    if (self.taskWaitArr.count) {
+        NSURLSessionDownloadTask *downloadTask = self.taskWaitArr.firstObject;
+        
+        [self.taskArr addObject:downloadTask];
+        [downloadTask resume];
+        
+        [self.taskWaitArr removeObject:downloadTask];
+    }
+}
+
+- (void)cancelTask:(NSURLSessionDownloadTask *)downloadTask{
+    
+    [self.taskArr removeObject:downloadTask];
+    
+    if (self.taskWaitArr.count) {
+        NSURLSessionDownloadTask *downloadTask = self.taskWaitArr.firstObject;
+        
+        [self.taskArr addObject:downloadTask];
+        [downloadTask resume];
+        
+        [self.taskWaitArr removeObject:downloadTask];
+    }
+}
+
+#pragma mark Lazy
+
+- (AFHTTPSessionManager *)mgr{
+    if (!_mgr) {
+        _mgr = [AFHTTPSessionManager manager];
+        _mgr.securityPolicy.allowInvalidCertificates = YES;
+        _mgr.securityPolicy.validatesDomainName = NO;
+        
+        __weak typeof(self) weakSelf = self;
+        
+        [_mgr setDownloadTaskDidFinishDownloadingBlock:^NSURL * _Nullable(NSURLSession * _Nonnull session, NSURLSessionDownloadTask * _Nonnull downloadTask, NSURL * _Nonnull location) {
+            
+            // 1.事件传递
+            CSSessionDownload *download = [weakSelf getDownloadWithTask:downloadTask];
+            
+            if (download && download.desPath) {
+                // 2.公共处理部分
+                NSURL *fileURL = [NSURL fileURLWithPath:download.desPath];
+                if (fileURL) {
+                    NSError *error = nil;
+                    
+                    [[NSFileManager defaultManager] removeItemAtURL:fileURL error:nil];
+                    
+                    if (![[NSFileManager defaultManager] moveItemAtURL:location toURL:fileURL error:&error]) {
+                        [[NSNotificationCenter defaultCenter] postNotificationName:AFURLSessionDownloadTaskDidFailToMoveFileNotification object:downloadTask userInfo:error.userInfo];
+                    }
+                }
+            }
+            
+            return nil;
+        }];
+        
+        [_mgr setDownloadTaskDidWriteDataBlock:^(NSURLSession * _Nonnull session, NSURLSessionDownloadTask * _Nonnull downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite) {
+            // 1.事件传递
+            CSSessionDownload *download = [weakSelf getDownloadWithTask:downloadTask];
+            
+            // 2.公共处理部分
+            // 3.代理
+            if (download && download.tag) {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    if (!download.isRequestStart) {
+                        download.isRequestStart = YES;
+                        
+                        if ([weakSelf.delegate respondsToSelector:@selector(CSSessionDownloadManagerDidReceiveResponse:download:)]) {
+                            [weakSelf.delegate CSSessionDownloadManagerDidReceiveResponse:(NSHTTPURLResponse *)downloadTask.response download:download];
+                        }
+                        
+                        if ([weakSelf.delegate respondsToSelector:@selector(CSSessionDownloadManagerDidRequestStart:)]) {
+                            [weakSelf.delegate CSSessionDownloadManagerDidRequestStart:download];
+                        }
+                    }
+                    if ([weakSelf.delegate respondsToSelector:@selector(CSSessionDownloadManagerDidReceiveProgress:download:)]) {
+                        float progress = 1.0 * totalBytesWritten / totalBytesExpectedToWrite;
+                        [weakSelf.delegate CSSessionDownloadManagerDidReceiveProgress:progress download:download];
+                    }
+                }];
+            }
+            
+        }];
+        
+        [_mgr setTaskDidCompleteBlock:^(NSURLSession * _Nonnull session, NSURLSessionTask * _Nonnull task, NSError * _Nullable error) {
+            
+            // 1.事件传递
+            CSSessionDownload *download = [weakSelf getDownloadWithTask:task];
+            
+            // 2.代理
+            if (download && download.tag) {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    if (!error) {
+                        if ([weakSelf.delegate respondsToSelector:@selector(CSSessionDownloadManagerDidRequestFinish:)]) {
+                            [weakSelf.delegate CSSessionDownloadManagerDidRequestFinish:download];
+                        }
+                    }else{
+                        if ([weakSelf.delegate respondsToSelector:@selector(CSSessionDownloadManagerDidRequestFail:)]) {
+                            [weakSelf.delegate CSSessionDownloadManagerDidRequestFail:download];
+                        }
+                    }
+                    // 3.公共处理部分
+                    // 移除下载任务
+                    [weakSelf cancelTask:(NSURLSessionDownloadTask *)task];
+                    // 移除任务字典
+                    [weakSelf removeDownloadWithFileURL:task.originalRequest.URL];
+                    
+                }];
+            }else{
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    // 3.公共处理部分
+                    // 移除下载任务
+                    [weakSelf cancelTask:(NSURLSessionDownloadTask *)task];
+                    // 移除任务字典
+                    [weakSelf removeDownloadWithFileURL:task.originalRequest.URL];
+                    
+                }];
+            }
+            
+        }];
+        
+    }
+    return _mgr;
+}
+
+
+- (NSURLSession *)session{
+    if (!_session) {
+        _session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[[NSOperationQueue alloc] init]];
+    }
+    return _session;
+}
+
+
+- (NSMutableDictionary *)downloadDic{
+    if (!_downloadDic) {
+        _downloadDic = [NSMutableDictionary dictionary];
+    }
+    return _downloadDic;
+}
+
+- (NSMutableArray *)taskArr{
+    if (!_taskArr) {
+        _taskArr = [NSMutableArray array];
+    }
+    return _taskArr;
+}
+
+- (NSMutableArray *)taskWaitArr{
+    if (!_taskWaitArr) {
+        _taskWaitArr = [NSMutableArray array];
+    }
+    
+    return _taskWaitArr;
+    
+}
+
+/*
+ 如果你不再需要一个session了, 一定要调用它的invalidateAndCancel或finishTasksAndInvalidate方法. 
+ (前者是取消所有未完成的任务然后使session失效, 后者是等待正在执行的任务完成之后再使session失效). 
+ 否则的话, 有可能造成内存泄漏. 另外, session失效后会调用URLSession:didBecomeInvalidWithError:方法, 之后session释放对代理的强引用.
+ */
+- (void)invalidateAndCancel{
+    [self.session invalidateAndCancel];
+}
+
+
+
+
+@end
