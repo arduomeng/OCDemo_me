@@ -9,6 +9,37 @@
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
 #import "CSSingleton.h"
+
+typedef NS_ENUM(NSInteger, IAPFiledCode) {
+    /**
+     *  苹果返回错误信息
+     */
+    IAP_FILEDCOED_APPLECODE = 0,
+    
+    /**
+     *  用户禁止应用内付费购买
+     */
+    IAP_FILEDCOED_NORIGHT = 1,
+    
+    /**
+     *  商品为空
+     */
+    IAP_FILEDCOED_EMPTYGOODS = 2,
+    /**
+     *  无法获取产品信息，请重试
+     */
+    IAP_FILEDCOED_CANNOTGETINFORMATION = 3,
+    /**
+     *  购买失败，请重试
+     */
+    IAP_FILEDCOED_BUYFILED = 4,
+    /**
+     *  用户取消交易
+     */
+    IAP_FILEDCOED_USERCANCEL = 5
+    
+};
+
 @protocol CSAPManagerDelegate <NSObject>
 
 @required
@@ -17,6 +48,10 @@
 - (void)CSAPManagerRestorePurchaseWithProductid:(NSString *)productIdent;
 - (void)CSAPManagerFailurePurchase;
 
+
+- (void)filedWithErrorCode:(NSInteger)errorCode andError:(NSString *)error; //失败
+- (void)successRestoredPurchaseOfId : (SKPaymentQueue *)queue;
+- (void)failedRestoredPurchaseOfId : (NSString *)errorDescripiton;
 
 @end
 
@@ -31,5 +66,6 @@ CSSingletonH
 - (void)purchaseProduct:(SKProduct *)skProduct;
 
 - (void)restorePurchase;
+
 
 @end

@@ -49,8 +49,21 @@ CSSingletonM
 
 // SKProductsRequestDelegate
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response{
-    [self.delegate CSAPManagerDidReceiveProduct:response.products];
+    
+    NSArray *myProductArray = response.products;
+    if (myProductArray && myProductArray.count > 0) {
+        [self.delegate CSAPManagerDidReceiveProduct:response.products];
+    } else {
+        NSLog(@"无法获取产品信息，购买失败。");
+        [self filedWithErrorCode:IAP_FILEDCOED_APPLECODE error:NSLocalizedString(@"Request Failed And Data Error" ,nil)];
+    }
+    
+    
+    
 }
+
+
+// SKProductsRequestDelegate <SKRequestDelegate>
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error{
     NSLog(@"------------------错误-----------------:%@", error);
 }
@@ -59,6 +72,7 @@ CSSingletonM
     NSLog(@"------------商品列表请求结束-----------------");
 }
 
+
 /** TODO:购买商品*/
 - (void)purchaseProduct:(SKProduct *)skProduct {
     
@@ -66,6 +80,16 @@ CSSingletonM
     self.currentProduct = skProduct;
     [[SKPaymentQueue defaultQueue] addPayment:payment];
     
+}
+
+// 非消耗品恢复操作
+- (void)restorePurchase {
+    
+    if ([SKPaymentQueue canMakePayments]) {
+        [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+    }else {
+        NSLog(@"恢复失败,用户禁止应用内付费购买.");
+    }
 }
 
 #pragma mark - 实现SKPaymentQueue的回调方法
@@ -108,18 +132,34 @@ CSSingletonM
     }
 }
 
+// 恢复出现出错
+- (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error
+{
+    if (error.code != SKErrorPaymentCancelled  && error.code != SKErrorUnknown)
+    {
+        [_delegate failedRestoredPurchaseOfId :error.localizedDescription];
+    }
+}
+
+// 所有商品恢复完成
+- (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
+{
+    NSLog(@"All restorable transactions have been processed by the payment queue.");
+    [_delegate successRestoredPurchaseOfId :queue];
+}
+
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
     
     NSString* productIdent = transaction.payment.productIdentifier;
     
-    // 验证交易
+    // 验证交易 videoShow中没有进行验证
     if ([self verifyPurchaseWithPaymentTransaction]) {
         
         NSLog(@"购买成功 %@", self.currentProduct.localizedTitle);
         
         [self.delegate CSAPManagerCompletePurchaseWithProductid:productIdent];
     }else{
-        
+        // 提示用户
     }
     
     // 移除交易对列
@@ -146,15 +186,7 @@ CSSingletonM
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
 }
 
-// 非消耗品恢复操作
-- (void)restorePurchase {
-    
-    if ([SKPaymentQueue canMakePayments]) {
-        [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
-    }else {
-        NSLog(@"恢复失败,用户禁止应用内付费购买.");
-    }
-}
+
 
 //沙盒测试环境验证
 #define SANDBOX @"https://sandbox.itunes.apple.com/verifyReceipt"
@@ -170,6 +202,20 @@ CSSingletonM
     NSData *receiptData=[NSData dataWithContentsOfURL:receiptUrl];
     
     NSString *receiptString=[receiptData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];//转化为base64字符串
+    
+    /*
+    if (receiptString.length > 0) {
+        // 向自己的服务器验证购买凭证（此处应该考虑将凭证本地保存,对服务器有失败重发机制）
+     
+         服务器要做的事情:
+         接收ios端发过来的购买凭证。
+         判断凭证是否已经存在或验证过，然后存储该凭证。
+         将该凭证发送到苹果的服务器验证，并将验证结果返回给客户端。
+         如果需要，修改用户相应的会员权限
+     
+    }*/
+    
+    // 这里直接由客户端进行验证
     NSString *bodyString = [NSString stringWithFormat:@"{\"receipt-data\" : \"%@\"}", receiptString];
     NSData *bodyData = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -205,5 +251,41 @@ CSSingletonM
     }
     
 }
+
+#pragma mark 错误信息反馈
+- (void)filedWithErrorCode:(NSInteger)code error:(NSString *)error {
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(filedWithErrorCode:andError:)]) {
+        switch (code) {
+            case IAP_FILEDCOED_APPLECODE:
+                [self.delegate filedWithErrorCode:IAP_FILEDCOED_APPLECODE andError:error];
+                break;
+                
+            case IAP_FILEDCOED_NORIGHT:
+                [self.delegate filedWithErrorCode:IAP_FILEDCOED_NORIGHT andError:nil];
+                break;
+                
+            case IAP_FILEDCOED_EMPTYGOODS:
+                [self.delegate filedWithErrorCode:IAP_FILEDCOED_EMPTYGOODS andError:nil];
+                break;
+                
+            case IAP_FILEDCOED_CANNOTGETINFORMATION:
+                [self.delegate filedWithErrorCode:IAP_FILEDCOED_CANNOTGETINFORMATION andError:nil];
+                break;
+                
+            case IAP_FILEDCOED_BUYFILED:
+                [self.delegate filedWithErrorCode:IAP_FILEDCOED_BUYFILED andError:nil];
+                break;
+                
+            case IAP_FILEDCOED_USERCANCEL:
+                [self.delegate filedWithErrorCode:IAP_FILEDCOED_USERCANCEL andError:nil];
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
+
 
 @end

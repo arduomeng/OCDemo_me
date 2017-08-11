@@ -83,6 +83,14 @@
     SKProduct *product = self.dataArr[indexPath.row];
     
     // 2.给cell设置数据
+    /*
+     价格格式化
+     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+     [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+     [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+     [numberFormatter setLocale:product.priceLocale];
+     NSString *formattedPrice = [numberFormatter stringFromNumber:product.price];
+     */
     cell.textLabel.text = product.localizedTitle;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"价格:%@ %@", product.price,product.localizedDescription];
 
@@ -124,10 +132,71 @@
     
 }
 
+// 恢复失败
+-(void)failedRestoredPurchaseOfId:(NSString *)errorDescripiton {
+    NSLog(@"恢复失败");
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:nil message:errorDescripiton delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
+// 所有商品恢复成功
+- (void)successRestoredPurchaseOfId : (SKPaymentQueue *)queue {
+    
+    /* VideoShow的做法 商品全部恢复成功后，再依次保存UserDefaults
+    for (int i = 0; i<[queue.transactions count]; i++) {
+        SKPaymentTransaction *transaction = [queue.transactions objectAtIndex:i];
+        NSString *productIdentifier = transaction.originalTransaction.payment.productIdentifier;
+        
+        [[NSUserDefaults standardUserDefaults] setBool:true forKey:productIdentifier];
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"restored", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+     */
+}
+
 - (void)CSAPManagerRestorePurchaseWithProductid:(NSString *)productIdent{
     // 保存恢复记录
     [[NSUserDefaults standardUserDefaults] setBool:true forKey:productIdent];
 }
 
+- (void)filedWithErrorCode:(NSInteger)errorCode andError:(NSString *)error {
+    switch (errorCode) {
+        case IAP_FILEDCOED_APPLECODE:
+        {
+            NSLog(@"用户禁止应用内付费购买:%@",error);
+            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:nil message:error delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+            break;
+            
+        case IAP_FILEDCOED_NORIGHT:
+        {
+            NSLog(@"用户禁止应用内付费购买");
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Unlock_privilege_2" ,nil) message:NSLocalizedString(@"Unlock_privilege_2", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+            
+            break;
+            
+        case IAP_FILEDCOED_EMPTYGOODS:
+            NSLog(@"商品为空");
+            break;
+            
+        case IAP_FILEDCOED_CANNOTGETINFORMATION:
+            NSLog(@"无法获取产品信息，请重试");
+            break;
+            
+        case IAP_FILEDCOED_BUYFILED:
+            NSLog(@"购买失败，请重试");
+            break;
+            
+        case IAP_FILEDCOED_USERCANCEL:
+            NSLog(@"用户取消交易");
+            break;
+            
+        default:
+            break;
+    }
+}
 
 @end
