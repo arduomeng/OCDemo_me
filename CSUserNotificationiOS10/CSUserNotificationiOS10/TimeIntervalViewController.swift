@@ -14,18 +14,21 @@ class TimeIntervalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
 
     @IBAction func sendOnclick(_ sender: AnyObject) {
         // 1. 创建通知内容
         let content = UNMutableNotificationContent()
-        content.title = "Time Interval Notification"
+        content.title = String.localizedUserNotificationString(forKey: "Time Interval Notification", arguments: [])
         content.body = "My first notification"
         content.userInfo = ["name" : "arduomeng"]
         
         // 2. 创建发送触发
+        /*
+         在一定时间后触发 UNTimeIntervalNotificationTrigger，在某月某日某时触发 UNCalendarNotificationTrigger 以及在用户进入或是离开某个区域时触发 UNLocationNotificationTrigger
+         */
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
         // 3. 发送请求标识符

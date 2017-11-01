@@ -207,7 +207,7 @@
 				TargetAttributes = {
 					031391021C9EB02F00C5B3CE = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 8RSWW685EX;
+						DevelopmentTeam = NS277JF24U;
 					};
 					0313911B1C9EB02F00C5B3CE = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -416,6 +416,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = CSCALayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.lcs.com.CSCALayer;
@@ -427,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = CSCALayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.lcs.com.CSCALayer;
@@ -501,6 +503,7 @@
 				031391321C9EB02F00C5B3CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		031391331C9EB02F00C5B3CE /* Build configuration list for PBXNativeTarget "CSCALayerTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +512,7 @@
 				031391351C9EB02F00C5B3CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		031391361C9EB02F00C5B3CE /* Build configuration list for PBXNativeTarget "CSCALayerUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +521,7 @@
 				031391381C9EB02F00C5B3CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
