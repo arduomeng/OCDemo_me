@@ -28,6 +28,7 @@
 		B3E82E9C1D9A15B7002A1079 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E82E9A1D9A15B7002A1079 /* Main.storyboard */; };
 		B3E82E9E1D9A15B7002A1079 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E82E9D1D9A15B7002A1079 /* Assets.xcassets */; };
 		B3E82EA11D9A15B7002A1079 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E82E9F1D9A15B7002A1079 /* LaunchScreen.storyboard */; };
+		CE107D891F73B27F004FBF46 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE107D881F73B27F004FBF46 /* DataExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		B3E82E9D1D9A15B7002A1079 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3E82EA01D9A15B7002A1079 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3E82EA21D9A15B7002A1079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE107D881F73B27F004FBF46 /* DataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				B3141E871D9B8F3C006D4BB3 /* UIAlertControllerExtension.swift */,
+				CE107D881F73B27F004FBF46 /* DataExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3141E881D9B8F3C006D4BB3 /* UIAlertControllerExtension.swift in Sources */,
+				CE107D891F73B27F004FBF46 /* DataExtension.swift in Sources */,
 				B38D1EC71D9A9E3000B1E8D2 /* AuthorizationViewController.swift in Sources */,
 				B38D1EC51D9A9BC500B1E8D2 /* MainTableViewController.swift in Sources */,
 				B3141E961D9BB2D2006D4BB3 /* NotificationHandler.swift in Sources */,
@@ -360,7 +364,7 @@
 				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = NotificationContent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.enjoy.VdeoShoww;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enjoy.VdeoSho.UN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -373,7 +377,7 @@
 				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = NotificationContent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.enjoy.VdeoShoww;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enjoy.VdeoSho.UN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -482,7 +486,7 @@
 				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = CSUserNotificationiOS10/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.enjoy.VdeoShoww;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enjoy.VdeoSho;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -497,7 +501,7 @@
 				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = CSUserNotificationiOS10/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.enjoy.VdeoShoww;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enjoy.VdeoSho;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

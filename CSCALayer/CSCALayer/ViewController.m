@@ -22,12 +22,13 @@
 }
 //渐变图层
 - (void)CAGradientLayer{
+    
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     
     gradientLayer.frame = CGRectMake([UIScreen mainScreen].bounds.size.width / 2 - 50, 50, 100, 100);
     //设置渐变数组
     gradientLayer.colors = @[(id)[UIColor redColor].CGColor, (id)[UIColor greenColor].CGColor, (id)[UIColor blueColor].CGColor];
-    //设置渐变位置,颜色所占比例
+    //设置渐变位置,颜色所占比例 ？ 怎么配比？
     gradientLayer.locations = @[@0.1, @0.8];
     //设置渐变开始点
     gradientLayer.startPoint = CGPointMake(0, 0.5);

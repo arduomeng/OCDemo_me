@@ -10,9 +10,11 @@
 
 #define angleToRadia(angle) (angle * M_PI / 180)
 
-@interface ViewController ()
+@interface ViewController () <CAAnimationDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (nonatomic, strong) CALayer *layer;
+
+@property (nonatomic, strong) CAAnimationGroup *CAGroup;
 @end
 
 @implementation ViewController
@@ -35,7 +37,8 @@
     _layer.bounds = CGRectMake(0, 0, 100, 100);
     [self.view.layer addSublayer:_layer];
     
-    [self CABasic];
+//    [self CABasic];
+    [self CAGroupAnimation];
 }
 //基础动画
 - (void)CABasic{
@@ -53,37 +56,38 @@
     形变属性：
     @property CATransform3D transform;
      */
-    CABasic.keyPath = @"transform.scale";
-    CABasic.toValue = @0.5;
-    CABasic.duration = 0.5;
-    //动画执行完后取消反弹
-    CABasic.removedOnCompletion = NO;
-    //动画完成后图片的状态保持最新的位置
-    CABasic.fillMode = kCAFillModeForwards;
-    [_image.layer addAnimation:CABasic forKey:nil];
+//    CABasic.keyPath = @"transform.scale";
+//    CABasic.toValue = @0.5;
+//    CABasic.duration = 0.5;
+//    //动画执行完后取消反弹
+//    CABasic.removedOnCompletion = NO;
+//    //动画完成后图片的状态保持最新的位置
+//    CABasic.fillMode = kCAFillModeForwards;
+//    [_image.layer addAnimation:CABasic forKey:nil];
     
     _image.layer.anchorPoint = CGPointMake(0.5, 1);
-    CABasic.keyPath = @"transform.rotation";
+    CABasic.keyPath = @"transform.rotation.y";
     CABasic.toValue = @M_PI;
     CABasic.duration = 0.5;
+    CABasic.beginTime = CACurrentMediaTime() + 1;
     //动画执行完后取消反弹
     CABasic.removedOnCompletion = NO;
     //动画完成后图片的状态保持最新的位置
     CABasic.fillMode = kCAFillModeForwards;
     [_image.layer addAnimation:CABasic forKey:nil];
     
-    CABasic.keyPath = @"transform.translation";
-    CABasic.toValue = @100;
-    CABasic.duration = 0.5;
-    //动画执行完后取消反弹
-    CABasic.removedOnCompletion = NO;
-    //动画完成后图片的状态保持最新的位置
-    CABasic.fillMode = kCAFillModeForwards;
-    [_image.layer addAnimation:CABasic forKey:nil];
-    
-    //图层的属性还是原来的值没有改变
-    NSLog(@"image width : %f", _image.frame.size.width);
-    NSLog(@"image height : %f", _image.frame.size.height);
+//    CABasic.keyPath = @"transform.translation";
+//    CABasic.toValue = @100;
+//    CABasic.duration = 0.5;
+//    //动画执行完后取消反弹
+//    CABasic.removedOnCompletion = NO;
+//    //动画完成后图片的状态保持最新的位置
+//    CABasic.fillMode = kCAFillModeForwards;
+//    [_image.layer addAnimation:CABasic forKey:nil];
+//
+//    //图层的属性还是原来的值没有改变
+//    NSLog(@"image width : %f", _image.frame.size.width);
+//    NSLog(@"image height : %f", _image.frame.size.height);
 }
 //帧动画（路径动画）
 - (void)CAKeyframe{
@@ -96,23 +100,38 @@
 }
 
 //动画组
-- (void)CAGroup{
-    CAAnimationGroup *CAGroup = [[CAAnimationGroup alloc] init];
+- (void)CAGroupAnimation{
+    _CAGroup = [[CAAnimationGroup alloc] init];
+    _CAGroup.delegate = self;
     //动画执行完后取消反弹
-    CAGroup.removedOnCompletion = NO;
+    _CAGroup.removedOnCompletion = NO;
     //动画完成后图片的状态保持最新的位置
-    CAGroup.fillMode = kCAFillModeForwards;
+    _CAGroup.fillMode = kCAFillModeForwards;
     
     CABasicAnimation *CABasic1 = [[CABasicAnimation alloc] init];
-    CABasic1.keyPath = @"transform.scale";
-    CABasic1.toValue = @0.5;
+    CABasic1.keyPath = @"transform.translation.y";
+    CABasic1.toValue = @300;
+    //动画执行完后取消反弹
+    CABasic1.removedOnCompletion = NO;
+    //动画完成后图片的状态保持最新的位置
+    CABasic1.fillMode = kCAFillModeForwards;
+    [CABasic1 setBeginTime:0];
+    [CABasic1 setDuration:1];
     
     CABasicAnimation *CABasic2 = [[CABasicAnimation alloc] init];
-    CABasic2.keyPath = @"transform.rotation";
-    CABasic2.toValue = @M_PI;
+    CABasic2.keyPath = @"transform.rotation.y";
+    CABasic2.toValue = @(2 * M_PI);
+    //动画执行完后取消反弹
+    CABasic2.removedOnCompletion = NO;
+    //动画完成后图片的状态保持最新的位置
+    CABasic2.fillMode = kCAFillModeForwards;
+    [CABasic2 setBeginTime:1];
+    [CABasic2 setDuration:1];
     
-    CAGroup.animations = @[CABasic1, CABasic2];
-    [_image.layer addAnimation:CAGroup forKey:nil];
+    _CAGroup.duration = 2;
+    _CAGroup.animations = @[CABasic1, CABasic2];
+    [_image.layer addAnimation:_CAGroup forKey:nil];
+    
 }
 
 //转场动画
@@ -167,6 +186,15 @@
     } completion:nil];
     
     
+}
+
+#pragma mark delegate
+- (void)animationDidStart:(CAAnimation *)anim{
+    NSLog(@"Start");
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
+    NSLog(@"End");
 }
 
 @end

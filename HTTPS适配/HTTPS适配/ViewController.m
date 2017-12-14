@@ -60,12 +60,7 @@ NSString *urlString = @"https://kyfw.12306.cn/otn/";
 {
     NSLog(@"challenge %@",challenge.protectionSpace);
     
-    // 判断是否是受信任的证书
-    if (![challenge.protectionSpace.authenticationMethod isEqualToString:@"NSURLAuthenticationMethodServerTrust"]){
-        
-        NSLog(@"---------------------------------------------------------------- 不受信任的证书");
-        return;
-    }
+    
     /*
      NSURLSessionAuthChallengeUseCredential 使用证书
      NSURLSessionAuthChallengePerformDefaultHandling  忽略证书 默认的做法
@@ -73,11 +68,29 @@ NSString *urlString = @"https://kyfw.12306.cn/otn/";
      NSURLSessionAuthChallengeRejectProtectionSpace 拒绝,忽略证书
      */
     
-    // 创建证书
-    NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
     
-    // 安装证书
-    completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
+    NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+    // 创建证书
+    NSURLCredential *credential = nil;
+    // 判断是否是受信任的证书
+    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+        credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+        if (credential) {
+            disposition = NSURLSessionAuthChallengeUseCredential;
+        } else {
+            disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+        }
+    } else {
+        disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+    }
+    
+    if (completionHandler) {
+        // 安装证书
+        completionHandler(disposition, credential);
+    }
+    
+    
+    
 }
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler{

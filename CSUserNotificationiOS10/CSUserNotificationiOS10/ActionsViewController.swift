@@ -22,8 +22,18 @@ class ActionsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // 发送Category消息成功 但是没有设置的Action ？
     @IBAction func sendOnclick(_ sender: AnyObject) {
         
+        /*
+         远程通知添加category键
+         {
+             "aps":{
+             "alert":"Please say something",
+             "category":"saySomething"
+         }
+         }
+         */
         // 1. 创建通知内容
         let content = UNMutableNotificationContent()
         content.title = "Action Notification"

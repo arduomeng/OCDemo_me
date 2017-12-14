@@ -29,7 +29,8 @@ enum NotificationCustomActionType : String {
 class NotificationHandler: NSObject,UNUserNotificationCenterDelegate{
 
     
-    // 通知点击后调用
+    // 通知点击后或者点击或者触发了某个 action调用
+    // 推送请求对应的 response，UNNotificationResponse 是一个几乎包括了通知的所有信息的对象
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if let categoryType = NotificationCategoryType(rawValue:response.notification.request.content.categoryIdentifier){
             switch categoryType {
@@ -45,7 +46,7 @@ class NotificationHandler: NSObject,UNUserNotificationCenterDelegate{
         completionHandler()
     }
     
-    // 应用内显示通知
+    // 应用内显示通知 如果不想显示某个通知，可以直接用空 options 调用 completionHandler:
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let option : UNNotificationPresentationOptions = [.alert, .sound]
         completionHandler(option)
