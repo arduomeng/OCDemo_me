@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <p></p>
+    <div>
+        <button onclick="fn_open_camera();">拍照</button>
+    </div>
+    <p></p>
+    <div>
+        <button onclick="fn_call();">打电话</button>
+    </div>
+    <a href="http://www.baidu.com">百度</a>
+<script>
+function fn_call() {
+    // 调用OC中call方法
+    window.location.href = 'hm://call';
+}
+
+function fn_open_camera() {
+    // 调用OC中openCamera方法
+    window.location.href = 'hm://openCamera';
+}
+</script>
+</body>
+</html>

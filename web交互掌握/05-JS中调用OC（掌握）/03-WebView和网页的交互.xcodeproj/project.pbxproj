@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		184D82CB19D93B5E002AABD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184D82CA19D93B5E002AABD9 /* Foundation.framework */; };
+		184D82CD19D93B5E002AABD9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184D82CC19D93B5E002AABD9 /* CoreGraphics.framework */; };
+		184D82CF19D93B5E002AABD9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184D82CE19D93B5E002AABD9 /* UIKit.framework */; };
+		184D82D519D93B5E002AABD9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 184D82D319D93B5E002AABD9 /* InfoPlist.strings */; };
+		184D82D719D93B5E002AABD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 184D82D619D93B5E002AABD9 /* main.m */; };
+		184D82DB19D93B5F002AABD9 /* HMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 184D82DA19D93B5E002AABD9 /* HMAppDelegate.m */; };
+		184D82DE19D93B5F002AABD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184D82DC19D93B5F002AABD9 /* Main.storyboard */; };
+		184D82E119D93B5F002AABD9 /* HMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184D82E019D93B5F002AABD9 /* HMViewController.m */; };
+		184D82E319D93B5F002AABD9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184D82E219D93B5F002AABD9 /* Images.xcassets */; };
+		184D82EA19D93B5F002AABD9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184D82E919D93B5F002AABD9 /* XCTest.framework */; };
+		184D82EB19D93B5F002AABD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184D82CA19D93B5E002AABD9 /* Foundation.framework */; };
+		184D82EC19D93B5F002AABD9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184D82CE19D93B5E002AABD9 /* UIKit.framework */; };
+		184D82F419D93B5F002AABD9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 184D82F219D93B5F002AABD9 /* InfoPlist.strings */; };
+		184D82F619D93B5F002AABD9 /* _3_WebView______Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 184D82F519D93B5F002AABD9 /* _3_WebView______Tests.m */; };
+		184D830019D94921002AABD9 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 184D82FF19D94921002AABD9 /* test.html */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		184D82ED19D93B5F002AABD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 184D82BF19D93B5E002AABD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 184D82C619D93B5E002AABD9;
+			remoteInfo = "03-WebView和网页的交互";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		184D82C719D93B5E002AABD9 /* 03-WebView和网页的交互.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "03-WebView和网页的交互.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		184D82CA19D93B5E002AABD9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		184D82CC19D93B5E002AABD9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		184D82CE19D93B5E002AABD9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		184D82D219D93B5E002AABD9 /* 03-WebView和网页的交互-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "03-WebView和网页的交互-Info.plist"; sourceTree = "<group>"; };
+		184D82D419D93B5E002AABD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		184D82D619D93B5E002AABD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		184D82D819D93B5E002AABD9 /* 03-WebView和网页的交互-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "03-WebView和网页的交互-Prefix.pch"; sourceTree = "<group>"; };
+		184D82D919D93B5E002AABD9 /* HMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMAppDelegate.h; sourceTree = "<group>"; };
+		184D82DA19D93B5E002AABD9 /* HMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMAppDelegate.m; sourceTree = "<group>"; };
+		184D82DD19D93B5F002AABD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		184D82DF19D93B5F002AABD9 /* HMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMViewController.h; sourceTree = "<group>"; };
+		184D82E019D93B5F002AABD9 /* HMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMViewController.m; sourceTree = "<group>"; };
+		184D82E219D93B5F002AABD9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		184D82E819D93B5F002AABD9 /* 03-WebView和网页的交互Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "03-WebView和网页的交互Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		184D82E919D93B5F002AABD9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		184D82F119D93B5F002AABD9 /* 03-WebView和网页的交互Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "03-WebView和网页的交互Tests-Info.plist"; sourceTree = "<group>"; };
+		184D82F319D93B5F002AABD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		184D82F519D93B5F002AABD9 /* _3_WebView______Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_3_WebView______Tests.m"; sourceTree = "<group>"; };
+		184D82FF19D94921002AABD9 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		184D82C419D93B5E002AABD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				184D82CD19D93B5E002AABD9 /* CoreGraphics.framework in Frameworks */,
+				184D82CF19D93B5E002AABD9 /* UIKit.framework in Frameworks */,
+				184D82CB19D93B5E002AABD9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		184D82E519D93B5F002AABD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				184D82EA19D93B5F002AABD9 /* XCTest.framework in Frameworks */,
+				184D82EC19D93B5F002AABD9 /* UIKit.framework in Frameworks */,
+				184D82EB19D93B5F002AABD9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		184D82BE19D93B5E002AABD9 = {
+			isa = PBXGroup;
+			children = (
+				184D82D019D93B5E002AABD9 /* 03-WebView和网页的交互 */,
+				184D82EF19D93B5F002AABD9 /* 03-WebView和网页的交互Tests */,
+				184D82C919D93B5E002AABD9 /* Frameworks */,
+				184D82C819D93B5E002AABD9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		184D82C819D93B5E002AABD9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				184D82C719D93B5E002AABD9 /* 03-WebView和网页的交互.app */,
+				184D82E819D93B5F002AABD9 /* 03-WebView和网页的交互Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		184D82C919D93B5E002AABD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				184D82CA19D93B5E002AABD9 /* Foundation.framework */,
+				184D82CC19D93B5E002AABD9 /* CoreGraphics.framework */,
+				184D82CE19D93B5E002AABD9 /* UIKit.framework */,
+				184D82E919D93B5F002AABD9 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		184D82D019D93B5E002AABD9 /* 03-WebView和网页的交互 */ = {
+			isa = PBXGroup;
+			children = (
+				184D82D919D93B5E002AABD9 /* HMAppDelegate.h */,
+				184D82DA19D93B5E002AABD9 /* HMAppDelegate.m */,
+				184D82DC19D93B5F002AABD9 /* Main.storyboard */,
+				184D82DF19D93B5F002AABD9 /* HMViewController.h */,
+				184D82E019D93B5F002AABD9 /* HMViewController.m */,
+				184D82E219D93B5F002AABD9 /* Images.xcassets */,
+				184D82D119D93B5E002AABD9 /* Supporting Files */,
+			);
+			path = "03-WebView和网页的交互";
+			sourceTree = "<group>";
+		};
+		184D82D119D93B5E002AABD9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				184D82FF19D94921002AABD9 /* test.html */,
+				184D82D219D93B5E002AABD9 /* 03-WebView和网页的交互-Info.plist */,
+				184D82D319D93B5E002AABD9 /* InfoPlist.strings */,
+				184D82D619D93B5E002AABD9 /* main.m */,
+				184D82D819D93B5E002AABD9 /* 03-WebView和网页的交互-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		184D82EF19D93B5F002AABD9 /* 03-WebView和网页的交互Tests */ = {
+			isa = PBXGroup;
+			children = (
+				184D82F519D93B5F002AABD9 /* _3_WebView______Tests.m */,
+				184D82F019D93B5F002AABD9 /* Supporting Files */,
+			);
+			path = "03-WebView和网页的交互Tests";
+			sourceTree = "<group>";
+		};
+		184D82F019D93B5F002AABD9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				184D82F119D93B5F002AABD9 /* 03-WebView和网页的交互Tests-Info.plist */,
+				184D82F219D93B5F002AABD9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		184D82C619D93B5E002AABD9 /* 03-WebView和网页的交互 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 184D82F919D93B5F002AABD9 /* Build configuration list for PBXNativeTarget "03-WebView和网页的交互" */;
+			buildPhases = (
+				184D82C319D93B5E002AABD9 /* Sources */,
+				184D82C419D93B5E002AABD9 /* Frameworks */,
+				184D82C519D93B5E002AABD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "03-WebView和网页的交互";
+			productName = "03-WebView和网页的交互";
+			productReference = 184D82C719D93B5E002AABD9 /* 03-WebView和网页的交互.app */;
+			productType = "com.apple.product-type.application";
+		};
+		184D82E719D93B5F002AABD9 /* 03-WebView和网页的交互Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 184D82FC19D93B5F002AABD9 /* Build configuration list for PBXNativeTarget "03-WebView和网页的交互Tests" */;
+			buildPhases = (
+				184D82E419D93B5F002AABD9 /* Sources */,
+				184D82E519D93B5F002AABD9 /* Frameworks */,
+				184D82E619D93B5F002AABD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				184D82EE19D93B5F002AABD9 /* PBXTargetDependency */,
+			);
+			name = "03-WebView和网页的交互Tests";
+			productName = "03-WebView和网页的交互Tests";
+			productReference = 184D82E819D93B5F002AABD9 /* 03-WebView和网页的交互Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		184D82BF19D93B5E002AABD9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HM;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = heima;
+				TargetAttributes = {
+					184D82E719D93B5F002AABD9 = {
+						TestTargetID = 184D82C619D93B5E002AABD9;
+					};
+				};
+			};
+			buildConfigurationList = 184D82C219D93B5E002AABD9 /* Build configuration list for PBXProject "03-WebView和网页的交互" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 184D82BE19D93B5E002AABD9;
+			productRefGroup = 184D82C819D93B5E002AABD9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				184D82C619D93B5E002AABD9 /* 03-WebView和网页的交互 */,
+				184D82E719D93B5F002AABD9 /* 03-WebView和网页的交互Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		184D82C519D93B5E002AABD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				184D830019D94921002AABD9 /* test.html in Resources */,
+				184D82E319D93B5F002AABD9 /* Images.xcassets in Resources */,
+				184D82D519D93B5E002AABD9 /* InfoPlist.strings in Resources */,
+				184D82DE19D93B5F002AABD9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		184D82E619D93B5F002AABD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				184D82F419D93B5F002AABD9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		184D82C319D93B5E002AABD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				184D82E119D93B5F002AABD9 /* HMViewController.m in Sources */,
+				184D82D719D93B5E002AABD9 /* main.m in Sources */,
+				184D82DB19D93B5F002AABD9 /* HMAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		184D82E419D93B5F002AABD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				184D82F619D93B5F002AABD9 /* _3_WebView______Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		184D82EE19D93B5F002AABD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 184D82C619D93B5E002AABD9 /* 03-WebView和网页的交互 */;
+			targetProxy = 184D82ED19D93B5F002AABD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		184D82D319D93B5E002AABD9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				184D82D419D93B5E002AABD9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		184D82DC19D93B5F002AABD9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				184D82DD19D93B5F002AABD9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		184D82F219D93B5F002AABD9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				184D82F319D93B5F002AABD9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		184D82F719D93B5F002AABD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		184D82F819D93B5F002AABD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		184D82FA19D93B5F002AABD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "03-WebView和网页的交互/03-WebView和网页的交互-Prefix.pch";
+				INFOPLIST_FILE = "03-WebView和网页的交互/03-WebView和网页的交互-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		184D82FB19D93B5F002AABD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "03-WebView和网页的交互/03-WebView和网页的交互-Prefix.pch";
+				INFOPLIST_FILE = "03-WebView和网页的交互/03-WebView和网页的交互-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		184D82FD19D93B5F002AABD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/03-WebView和网页的交互.app/03-WebView和网页的交互";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "03-WebView和网页的交互/03-WebView和网页的交互-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "03-WebView和网页的交互Tests/03-WebView和网页的交互Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		184D82FE19D93B5F002AABD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/03-WebView和网页的交互.app/03-WebView和网页的交互";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "03-WebView和网页的交互/03-WebView和网页的交互-Prefix.pch";
+				INFOPLIST_FILE = "03-WebView和网页的交互Tests/03-WebView和网页的交互Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		184D82C219D93B5E002AABD9 /* Build configuration list for PBXProject "03-WebView和网页的交互" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				184D82F719D93B5F002AABD9 /* Debug */,
+				184D82F819D93B5F002AABD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		184D82F919D93B5F002AABD9 /* Build configuration list for PBXNativeTarget "03-WebView和网页的交互" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				184D82FA19D93B5F002AABD9 /* Debug */,
+				184D82FB19D93B5F002AABD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		184D82FC19D93B5F002AABD9 /* Build configuration list for PBXNativeTarget "03-WebView和网页的交互Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				184D82FD19D93B5F002AABD9 /* Debug */,
+				184D82FE19D93B5F002AABD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 184D82BF19D93B5E002AABD9 /* Project object */;
+}
