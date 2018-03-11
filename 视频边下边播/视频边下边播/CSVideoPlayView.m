@@ -431,6 +431,8 @@
 
 - (void)didFailLoadingWithResourceLoader:(CSResourceLoader *)resourceLoader{
     self.replayBtn.hidden = NO;
+    
+    // retry
 }
 
 
