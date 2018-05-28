@@ -59,8 +59,8 @@
 
 - (BOOL)becomeFirstResponder{
     
-//    UILabel *palceholderLabel = [self valueForKey:@"_placeholderLabel"];
-//    palceholderLabel.textColor = [UIColor redColor];
+    UILabel *palceholderLabel = [self valueForKey:@"_placeholderLabel"];
+    palceholderLabel.textColor = [UIColor redColor];
     
     [self setValue:[UIColor redColor] forKeyPath:@"_placeholderLabel.textColor"];
     
