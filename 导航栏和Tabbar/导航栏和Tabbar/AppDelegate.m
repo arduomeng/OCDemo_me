@@ -49,6 +49,7 @@
         
 //设置导航栏颜色（若设置了setBackgroundImage， 则该设置无效）
 //[[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+//self.navigationController.navigationBar.translucent=NO; 将translucent设置NO 否则颜色不生效
 //设置导航栏的背景颜色
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bg_detail_info"] forBarMetrics:UIBarMetricsDefault];
         

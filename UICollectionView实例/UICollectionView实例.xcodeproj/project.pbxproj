@@ -217,7 +217,7 @@
 				TargetAttributes = {
 					033038E41CD5A9B10062B3B4 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 8RSWW685EX;
+						DevelopmentTeam = NS277JF24U;
 					};
 					033038FD1CD5A9B10062B3B4 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -428,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = "UICollectionView实例/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "www.lcs.com.UICollectionView--";
@@ -439,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NS277JF24U;
 				INFOPLIST_FILE = "UICollectionView实例/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "www.lcs.com.UICollectionView--";

@@ -34,6 +34,20 @@
     free(property);
 }
 
+- (void)getMethodList{
+    // 运用Runtime获取TextField里面的所有属性
+    unsigned int count = 0;
+    // 返回属性数组的指针
+    Method *property = class_copyMethodList([UIScrollView class], &count);
+    
+    for(unsigned int i = 0; i < count; i++){
+        NSLog(@"%@", NSStringFromSelector(method_getName(property[i])));
+    }
+    
+    // 释放内存
+    free(property);
+}
+
 - (void)getIvars{
     // 运用Runtime获取TextField里面的所有成员变量Ivar 此处用到_placeholderLabel
     unsigned int count = 0;
@@ -54,7 +68,9 @@
     
     [self resignFirstResponder];
     
-    [self getIvars];
+//    [self getIvars];
+    
+    [self getMethodList];
 }
 
 - (BOOL)becomeFirstResponder{
